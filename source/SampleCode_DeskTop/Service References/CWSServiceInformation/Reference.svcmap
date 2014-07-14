@@ -20,17 +20,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="C:\OwnCloud\EVO\CustomerCare\SalesEngineering\CustomerProjects\Triangle Payments\EVO-Snap-SampleApplication-CSharp-GUI\source\SampleCode_DeskTop\WSDL's\CwsServiceInformation.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="schemas7.xsd" MetadataType="Schema" ID="b0f20daf-cf6d-4c0f-bbce-57d29db36091" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.microsoft.com_2003_10_Serialization.xsd" />
-    <MetadataFile FileName="schemas71.xsd" MetadataType="Schema" ID="c6ffdf4a-1a03-4c08-a4f9-75805ce6e83f" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.microsoft.com_2003_10_Serialization_Arrays.xsd" />
-    <MetadataFile FileName="CWSServiceInformation.wsdl" MetadataType="Wsdl" ID="bf78f28f-079e-41ae-a68e-ed8f5f70ade9" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/CwsServiceInformation.wsdl" />
-    <MetadataFile FileName="schemas72.xsd" MetadataType="Schema" ID="ed99e487-bfd0-4992-b001-31ac4347ce47" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.evosnap.com_Ipc.General.WCF.Contracts.Common_External.xsd" />
-    <MetadataFile FileName="schemas73.xsd" MetadataType="Schema" ID="779b2fd2-5b4f-4b20-bdca-bb90b8214845" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.evosnap.com_Identity_1.0.xsd" />
-    <MetadataFile FileName="schemas74.xsd" MetadataType="Schema" ID="24f96d96-0f38-4039-82d5-464c327543f1" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.evosnap.com_CWS_v2.0_ServiceInformation_Faults.xsd" />
-    <MetadataFile FileName="schemas75.xsd" MetadataType="Schema" ID="577dcb5e-76da-44bb-b9e6-3596d20e3009" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.evosnap.com_Ipc.General.WCF.Contracts.Common.xsd" />
-    <MetadataFile FileName="schemas76.xsd" MetadataType="Schema" ID="fd21ee31-7b02-463c-8755-0764815fa172" SourceId="1" SourceUrl="file:///C:/OwnCloud/EVO/CustomerCare/SalesEngineering/CustomerProjects/Triangle Payments/EVO-Snap-SampleApplication-CSharp-GUI/source/SampleCode_DeskTop/WSDL's/schemas.evosnap.com_CWS_v2.0_ServiceInformation.xsd" />
+    <MetadataFile FileName="ServiceInformation.wsdl" MetadataType="Wsdl" ID="026ee333-e7ee-4b92-8f81-d84b8ffedc00" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="Ipc.General.WCF.Contracts.Common.xsd" MetadataType="Schema" ID="4c80e595-aa81-45ad-9fd7-e700dc099e79" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="513462c4-7af8-4ba0-8a74-b1f657fd9d61" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="External.xsd" MetadataType="Schema" ID="b65ba7c0-0820-4c3a-b9f5-24eaefae3252" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="ServiceInformation.xsd" MetadataType="Schema" ID="bc7eba3e-08f8-4c89-b157-41fcdb31f7bc" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c3d1de2f-cb20-4e2c-944f-9f4f63181005" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="Faults.xsd" MetadataType="Schema" ID="9202fb6d-2d2a-470d-882f-b86fabf40c4f" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="539d0f13-5c7b-4a8c-97d7-1c5f86979c5d" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

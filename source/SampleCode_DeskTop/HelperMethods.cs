@@ -527,18 +527,18 @@ namespace SampleCode
 
         #region BankCardTransaction Methods
 
-        public Addendum CredentialsRequired(string serviceID, string username, string password)
+  public Addendum CredentialsRequired(string serviceID, string username, string password)
         {
             //The following items have to be included in every transaction and is specific to each individual merchant. 
             //A UI has to be in place to support entry of these data elements
             if (username.Length > 1 && password.Length > 1)
             {
                 List<string> _add = new List<string>();
-                //if (serviceID == "35A7700001" || serviceID == "DF29D1300C")
-                //{
+                if (serviceID == "2EAFA00001" )//|| serviceID == "DF29D1300C")
+                {
                     _add.Add("<UserId>" + username + "</UserId>");
                     _add.Add("<Password>" + password + "</Password>");
-                //}
+               }
                 //else
                 //{
                 //    _add.Add("<Username>" + username + "</Username>");
@@ -560,11 +560,12 @@ namespace SampleCode
         {
 
             //Affirmative ACH Now
-            if (ServiceID == "35A7700001") return true; //Sandbox
+            if (ServiceID == "2EAFA00001") return true; //Sandbox
             if (ServiceID == "DF29D1300C") return true; //Production
-			
+ 
             return false;
         }
+
 
         public AlternativeMerchantData SetSoftDescriptors()
         {

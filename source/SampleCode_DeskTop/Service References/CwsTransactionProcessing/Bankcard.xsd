@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/Transactions/Bankcard" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/Transactions/Bankcard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.evosnap.com/CWS/v2.0/Transactions" />
+  <xs:complexType name="BankcardTransactionData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q1:TransactionData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountType" type="tns:AccountType" />
+          <xs:element minOccurs="0" name="AlternativeMerchantData" nillable="true" type="q1:AlternativeMerchantData" />
+          <xs:element minOccurs="0" name="ApprovalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CashBackAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CustomerPresent" type="tns:CustomerPresent" />
+          <xs:element minOccurs="0" name="EmployeeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntryMode" type="q1:EntryMode" />
+          <xs:element minOccurs="0" name="GoodsType" type="tns:GoodsType" />
+          <xs:element minOccurs="0" name="InternetTransactionData" nillable="true" type="tns:InternetTransactionData" />
+          <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SignatureCaptured" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BatchAssignment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPartialShipment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FeeAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LaneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartialApprovalCapable" type="tns:PartialApprovalSupportType" />
+          <xs:element minOccurs="0" name="ScoreThreshold" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsQuasiCash" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TransactionCode" type="tns:TransactionCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardTransactionData" nillable="true" type="tns:BankcardTransactionData" />
+  <xs:complexType name="BankcardTransaction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q2:Transaction">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationConfigurationData" nillable="true" type="tns:BankcardApplicationConfigurationData" />
+          <xs:element minOccurs="0" name="TenderData" nillable="true" type="tns:BankcardTenderData" />
+          <xs:element minOccurs="0" name="TransactionData" nillable="true" type="tns:BankcardTransactionData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardTransaction" nillable="true" type="tns:BankcardTransaction" />
+  <xs:complexType name="BankcardApplicationConfigurationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationAttended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ApplicationLocation" type="tns:ApplicationLocation" />
+      <xs:element minOccurs="0" name="HardwareType" type="tns:HardwareType" />
+      <xs:element minOccurs="0" name="PINCapability" type="tns:PINCapability" />
+      <xs:element minOccurs="0" name="ReadCapability" type="tns:ReadCapability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankcardApplicationConfigurationData" nillable="true" type="tns:BankcardApplicationConfigurationData" />
+  <xs:simpleType name="ApplicationLocation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="OnPremises" />
+      <xs:enumeration value="OffPremises" />
+      <xs:enumeration value="HomeInternet" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationLocation" nillable="true" type="tns:ApplicationLocation" />
+  <xs:simpleType name="HardwareType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="DialTerminal" />
+      <xs:enumeration value="ElectronicCashRegister" />
+      <xs:enumeration value="InStoreController" />
+      <xs:enumeration value="Mainframe" />
+      <xs:enumeration value="ThirdPartyDeveloper" />
+      <xs:enumeration value="POSPort" />
+      <xs:enumeration value="POSPartner" />
+      <xs:enumeration value="TicketMachine" />
+      <xs:enumeration value="ATM" />
+      <xs:enumeration value="ScripDevice" />
+      <xs:enumeration value="Telephone" />
+      <xs:enumeration value="InitiatedCAT" />
+      <xs:enumeration value="VirtualTerminal" />
+      <xs:enumeration value="MobileBanking" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HardwareType" nillable="true" type="tns:HardwareType" />
+  <xs:simpleType name="PINCapability">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="PINSupported" />
+      <xs:enumeration value="PINNotSupported" />
+      <xs:enumeration value="PINVerifiedByDevice" />
+      <xs:enumeration value="PINPadInoperative" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PINCapability" nillable="true" type="tns:PINCapability" />
+  <xs:simpleType name="ReadCapability">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="HasMSR" />
+      <xs:enumeration value="NoMSR" />
+      <xs:enumeration value="KeyOnly" />
+      <xs:enumeration value="Chip" />
+      <xs:enumeration value="ContactlessChip" />
+      <xs:enumeration value="ContactlessMSR" />
+      <xs:enumeration value="ECR" />
+      <xs:enumeration value="VSCCapable" />
+      <xs:enumeration value="RFIDCapable" />
+      <xs:enumeration value="EmvICC" />
+      <xs:enumeration value="MSREMVICC" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="OCRReader" />
+      <xs:enumeration value="BarCodeReader" />
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="ARUIVR" />
+      <xs:enumeration value="NoTerminal" />
+      <xs:enumeration value="NFCCapable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadCapability" nillable="true" type="tns:ReadCapability" />
+  <xs:complexType name="BankcardTenderData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q3:TransactionTenderData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardData" nillable="true" type="tns:CardData" />
+          <xs:element minOccurs="0" name="CardSecurityData" nillable="true" type="tns:CardSecurityData" />
+          <xs:element minOccurs="0" name="EcommerceSecurityData" nillable="true" type="tns:EcommerceSecurityData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardTenderData" nillable="true" type="tns:BankcardTenderData" />
+  <xs:complexType name="CardData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardType" type="tns:TypeCardType" />
+      <xs:element minOccurs="0" name="CardholderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expire" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Track1Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Track2Data" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardData" nillable="true" type="tns:CardData" />
+  <xs:simpleType name="TypeCardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="PrivateLabel" />
+      <xs:enumeration value="Visa" />
+      <xs:enumeration value="MasterCard" />
+      <xs:enumeration value="AmericanExpress" />
+      <xs:enumeration value="DinersCartBlanche" />
+      <xs:enumeration value="Discover" />
+      <xs:enumeration value="JCB" />
+      <xs:enumeration value="CitibankFinancial" />
+      <xs:enumeration value="RevolutionCard" />
+      <xs:enumeration value="UnbrandedATM" />
+      <xs:enumeration value="Dankort" />
+      <xs:enumeration value="Solo" />
+      <xs:enumeration value="Maestro" />
+      <xs:enumeration value="LaserCard" />
+      <xs:enumeration value="Electron" />
+      <xs:enumeration value="Finax" />
+      <xs:enumeration value="Kopkort" />
+      <xs:enumeration value="CarteAurore" />
+      <xs:enumeration value="CartesBancaires" />
+      <xs:enumeration value="DinersClub" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeCardType" nillable="true" type="tns:TypeCardType" />
+  <xs:complexType name="CardSecurityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AVSData" nillable="true" type="tns:AVSData" />
+      <xs:element minOccurs="0" name="InternationalAVSData" nillable="true" type="tns:InternationalAVSData" />
+      <xs:element minOccurs="0" name="InternationalAVSOverride" nillable="true" type="tns:InternationalAVSOverride" />
+      <xs:element xmlns:q4="http://schemas.evosnap.com/CWS/v2.0/Transactions" minOccurs="0" name="CVDataProvided" type="q4:CVDataProvided" />
+      <xs:element minOccurs="0" name="CVData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeySerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentificationInformation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardSecurityData" nillable="true" type="tns:CardSecurityData" />
+  <xs:complexType name="AVSData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardholderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.evosnap.com/CWS/v2.0/Transactions" minOccurs="0" name="Country" type="q5:TypeISOCountryCodeA3" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AVSData" nillable="true" type="tns:AVSData" />
+  <xs:complexType name="InternationalAVSData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBoxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.evosnap.com/CWS/v2.0/Transactions" minOccurs="0" name="Country" type="q6:TypeISOCountryCodeA3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InternationalAVSData" nillable="true" type="tns:InternationalAVSData" />
+  <xs:complexType name="InternationalAVSOverride">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SkipAVS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IgnoreAVS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AVSRejectCodes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InternationalAVSOverride" nillable="true" type="tns:InternationalAVSOverride" />
+  <xs:complexType name="EcommerceSecurityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TokenData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenIndicator" type="tns:TokenIndicator" />
+      <xs:element minOccurs="0" name="XID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EcommerceSecurityData" nillable="true" type="tns:EcommerceSecurityData" />
+  <xs:simpleType name="TokenIndicator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="VPAS" />
+      <xs:enumeration value="UCAFWithData" />
+      <xs:enumeration value="UCAFWithoutData" />
+      <xs:enumeration value="AttemptedCardUnsupported" />
+      <xs:enumeration value="AttemptedServiceUnavailable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TokenIndicator" nillable="true" type="tns:TokenIndicator" />
+  <xs:simpleType name="BillPayment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="DeferredBilling" />
+      <xs:enumeration value="SinglePayment" />
+      <xs:enumeration value="Installment" />
+      <xs:enumeration value="Recurring" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillPayment" nillable="true" type="tns:BillPayment" />
+  <xs:simpleType name="RequestCommercialCard">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Disable" />
+      <xs:enumeration value="Enable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestCommercialCard" nillable="true" type="tns:RequestCommercialCard" />
+  <xs:simpleType name="ExistingDebt">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotExistingDebt" />
+      <xs:enumeration value="IsExistingDebt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExistingDebt" nillable="true" type="tns:ExistingDebt" />
+  <xs:simpleType name="RequestACI">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotCPSMeritCapable" />
+      <xs:enumeration value="IsCPSMeritCapable" />
+      <xs:enumeration value="CPSMeritCapableIncAuth" />
+      <xs:enumeration value="PremierCustomer" />
+      <xs:enumeration value="RecurringInstallment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestACI" nillable="true" type="tns:RequestACI" />
+  <xs:simpleType name="RequestAdvice">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotCapable" />
+      <xs:enumeration value="Capable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestAdvice" nillable="true" type="tns:RequestAdvice" />
+  <xs:simpleType name="AccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="SavingsAccount" />
+      <xs:enumeration value="CheckingAccount" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountType" nillable="true" type="tns:AccountType" />
+  <xs:simpleType name="CustomerPresent">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Present" />
+      <xs:enumeration value="Suspicious" />
+      <xs:enumeration value="BillPayment" />
+      <xs:enumeration value="Transponder" />
+      <xs:enumeration value="MOTO" />
+      <xs:enumeration value="VisaOpenNetworkTransaction" />
+      <xs:enumeration value="VisaCardPresentStripeUnreadable" />
+      <xs:enumeration value="MailFax" />
+      <xs:enumeration value="Ecommerce" />
+      <xs:enumeration value="TelARU" />
+      <xs:enumeration value="MOTOCC" />
+      <xs:enumeration value="VoiceResponse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerPresent" nillable="true" type="tns:CustomerPresent" />
+  <xs:simpleType name="GoodsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="DigitalGoods" />
+      <xs:enumeration value="PhysicalGoods" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GoodsType" nillable="true" type="tns:GoodsType" />
+  <xs:complexType name="InternetTransactionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InternetTransactionData" nillable="true" type="tns:InternetTransactionData" />
+  <xs:simpleType name="PartialApprovalSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Capable" />
+      <xs:enumeration value="NotCapable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PartialApprovalSupportType" nillable="true" type="tns:PartialApprovalSupportType" />
+  <xs:simpleType name="TransactionCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Override" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionCode" nillable="true" type="tns:TransactionCode" />
+  <xs:complexType name="ManagedBilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownPayment" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Installments" nillable="true" type="tns:ManagedBillingInstallments" />
+      <xs:element minOccurs="0" name="Interval" type="tns:Interval" />
+      <xs:element minOccurs="0" name="Period" type="xs:int" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManagedBilling" nillable="true" type="tns:ManagedBilling" />
+  <xs:complexType name="ManagedBillingInstallments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManagedBillingInstallments" nillable="true" type="tns:ManagedBillingInstallments" />
+  <xs:simpleType name="Interval">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Day" />
+      <xs:enumeration value="Week" />
+      <xs:enumeration value="Month" />
+      <xs:enumeration value="Year" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Interval" nillable="true" type="tns:Interval" />
+  <xs:complexType name="Level2Data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommodityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.evosnap.com/CWS/v2.0/Transactions" minOccurs="0" name="DestinationCountryCode" type="q7:TypeISOCountryCodeA3" />
+      <xs:element minOccurs="0" name="DestinationPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DutyAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FreightAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MiscHandlingAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequesterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipFromPostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipmentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxExempt" nillable="true" type="tns:TaxExempt" />
+      <xs:element minOccurs="0" name="Tax" nillable="true" type="tns:Tax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Level2Data" nillable="true" type="tns:Level2Data" />
+  <xs:complexType name="TaxExempt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsTaxExempt" type="tns:IsTaxExempt" />
+      <xs:element minOccurs="0" name="TaxExemptNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaxExempt" nillable="true" type="tns:TaxExempt" />
+  <xs:simpleType name="IsTaxExempt">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Exempt" />
+      <xs:enumeration value="NotExemptTaxInfoNotProvided" />
+      <xs:enumeration value="NotExemptTaxInfoProvided" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IsTaxExempt" nillable="true" type="tns:IsTaxExempt" />
+  <xs:complexType name="Tax">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemizedTaxes" nillable="true" type="tns:ArrayOfItemizedTax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tax" nillable="true" type="tns:Tax" />
+  <xs:complexType name="ArrayOfItemizedTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemizedTax" nillable="true" type="tns:ItemizedTax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemizedTax" nillable="true" type="tns:ArrayOfItemizedTax" />
+  <xs:complexType name="ItemizedTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Type" type="tns:TypeTaxType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemizedTax" nillable="true" type="tns:ItemizedTax" />
+  <xs:simpleType name="TypeTaxType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="CityTax" />
+      <xs:enumeration value="CountyTax" />
+      <xs:enumeration value="CountyParishTax" />
+      <xs:enumeration value="EnergyTax" />
+      <xs:enumeration value="FederalTax" />
+      <xs:enumeration value="EnvironmentalTax" />
+      <xs:enumeration value="GoodsServicesTax" />
+      <xs:enumeration value="HarmonizedTax" />
+      <xs:enumeration value="LuxuryTax" />
+      <xs:enumeration value="LocalSalesTax" />
+      <xs:enumeration value="MunicipalTax" />
+      <xs:enumeration value="OccupancyTax" />
+      <xs:enumeration value="OtherTax" />
+      <xs:enumeration value="QuebecSalesTax" />
+      <xs:enumeration value="RoomTax" />
+      <xs:enumeration value="StateLocalSalesTax" />
+      <xs:enumeration value="StateProvincialGoodsTax" />
+      <xs:enumeration value="StateSalesTax" />
+      <xs:enumeration value="StateProvincialTax" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="VAT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeTaxType" nillable="true" type="tns:TypeTaxType" />
+  <xs:complexType name="ArrayOfLineItemDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineItemDetail" nillable="true" type="tns:LineItemDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLineItemDetail" nillable="true" type="tns:ArrayOfLineItemDetail" />
+  <xs:complexType name="LineItemDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommodityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiscountIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Tax" nillable="true" type="tns:Tax" />
+      <xs:element minOccurs="0" name="TaxIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UnitOfMeasure" type="tns:TypeUnitOfMeasure" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UPC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineItemDetail" nillable="true" type="tns:LineItemDetail" />
+  <xs:simpleType name="TypeUnitOfMeasure">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Acre" />
+      <xs:enumeration value="AmpereHour" />
+      <xs:enumeration value="Ampere" />
+      <xs:enumeration value="Year" />
+      <xs:enumeration value="TroyOunceOrApothecariesOunce" />
+      <xs:enumeration value="Are" />
+      <xs:enumeration value="AlcoholicStrengthByMass" />
+      <xs:enumeration value="AlcoholicStrengthByVolume" />
+      <xs:enumeration value="StandardAtmosphere" />
+      <xs:enumeration value="TechnicalAtmosphere" />
+      <xs:enumeration value="Bar" />
+      <xs:enumeration value="BoardFoot" />
+      <xs:enumeration value="BrakeHorsePower" />
+      <xs:enumeration value="BillionEURTrillionUS" />
+      <xs:enumeration value="DryBarrelUS" />
+      <xs:enumeration value="BarrelUSPetroleumEtc" />
+      <xs:enumeration value="Becquerel" />
+      <xs:enumeration value="BritishThermalUnit" />
+      <xs:enumeration value="BushelUS" />
+      <xs:enumeration value="BushelUK" />
+      <xs:enumeration value="CarryingCapacityInMetricTon" />
+      <xs:enumeration value="Candela" />
+      <xs:enumeration value="DegreeCelsius" />
+      <xs:enumeration value="Hundred" />
+      <xs:enumeration value="Centigram" />
+      <xs:enumeration value="CoulombPerKilogram" />
+      <xs:enumeration value="HundredLeave" />
+      <xs:enumeration value="Centilitre" />
+      <xs:enumeration value="Centiliter" />
+      <xs:enumeration value="SquareCentimetre" />
+      <xs:enumeration value="SquareCentimeter" />
+      <xs:enumeration value="CubicCentimetre" />
+      <xs:enumeration value="CubicCentimeter" />
+      <xs:enumeration value="Centimetre" />
+      <xs:enumeration value="Centimeter" />
+      <xs:enumeration value="HundredPack" />
+      <xs:enumeration value="CentalUK" />
+      <xs:enumeration value="Coulomb" />
+      <xs:enumeration value="MetricCarat" />
+      <xs:enumeration value="Curie" />
+      <xs:enumeration value="HundredPoundsCWTHundredWeightUS" />
+      <xs:enumeration value="HundredWeightUK" />
+      <xs:enumeration value="Decare" />
+      <xs:enumeration value="TenDay" />
+      <xs:enumeration value="Day" />
+      <xs:enumeration value="Decade" />
+      <xs:enumeration value="Decilitre" />
+      <xs:enumeration value="Deciliter" />
+      <xs:enumeration value="SquareDecimetre" />
+      <xs:enumeration value="SquareDecimeter" />
+      <xs:enumeration value="CubicDecimetre" />
+      <xs:enumeration value="CubicDecimeter" />
+      <xs:enumeration value="Decimetre" />
+      <xs:enumeration value="Decimeter" />
+      <xs:enumeration value="DozenPiece" />
+      <xs:enumeration value="DozenPair" />
+      <xs:enumeration value="DisplacementTonnage" />
+      <xs:enumeration value="DramUS" />
+      <xs:enumeration value="DramUK" />
+      <xs:enumeration value="DozenRoll" />
+      <xs:enumeration value="DrachmUK" />
+      <xs:enumeration value="DecitonneCentnerMetric100KgQuintalMetric100Kg" />
+      <xs:enumeration value="Pennyweight" />
+      <xs:enumeration value="Dozen" />
+      <xs:enumeration value="DozenPack" />
+      <xs:enumeration value="DegreeFahrenheit" />
+      <xs:enumeration value="Farad" />
+      <xs:enumeration value="Foot" />
+      <xs:enumeration value="SquareFoot" />
+      <xs:enumeration value="CubicFoot" />
+      <xs:enumeration value="Gigabecquerel" />
+      <xs:enumeration value="GramOfFissileIsotope" />
+      <xs:enumeration value="GreatGross" />
+      <xs:enumeration value="GillUS" />
+      <xs:enumeration value="GillUK" />
+      <xs:enumeration value="DryGallonUS" />
+      <xs:enumeration value="GallonUK" />
+      <xs:enumeration value="GallonUS" />
+      <xs:enumeration value="Gram" />
+      <xs:enumeration value="Grain" />
+      <xs:enumeration value="Gross" />
+      <xs:enumeration value="GrossRegisterTon" />
+      <xs:enumeration value="GigawattHour" />
+      <xs:enumeration value="Hectare" />
+      <xs:enumeration value="Hectobar" />
+      <xs:enumeration value="HundredBox" />
+      <xs:enumeration value="Hectogram" />
+      <xs:enumeration value="HundredInternationalUnit" />
+      <xs:enumeration value="Hectolitre" />
+      <xs:enumeration value="Hectoliter" />
+      <xs:enumeration value="MillionCubicMetre" />
+      <xs:enumeration value="MillionCubicMeter" />
+      <xs:enumeration value="Hectometre" />
+      <xs:enumeration value="Hectometer" />
+      <xs:enumeration value="HectolitreOfPureAlcohol" />
+      <xs:enumeration value="HectoliterOfPureAlcohol" />
+      <xs:enumeration value="Hertz" />
+      <xs:enumeration value="Hour" />
+      <xs:enumeration value="Inch" />
+      <xs:enumeration value="SquareInch" />
+      <xs:enumeration value="CubicInch" />
+      <xs:enumeration value="Joule" />
+      <xs:enumeration value="Kilobar" />
+      <xs:enumeration value="Kelvin" />
+      <xs:enumeration value="Kilogram" />
+      <xs:enumeration value="KilogramPerSecond" />
+      <xs:enumeration value="Kilohertz" />
+      <xs:enumeration value="Kilojoule" />
+      <xs:enumeration value="KilometrePerHour" />
+      <xs:enumeration value="KilometerPerHour" />
+      <xs:enumeration value="SquareKilometre" />
+      <xs:enumeration value="SquareKilometer" />
+      <xs:enumeration value="KilogramPerCubicMetre" />
+      <xs:enumeration value="KilogramPerCubicMeter" />
+      <xs:enumeration value="Kilometre" />
+      <xs:enumeration value="Kilometer" />
+      <xs:enumeration value="KilogramOfNitrogen" />
+      <xs:enumeration value="KilogramNamedSubstance" />
+      <xs:enumeration value="Knot" />
+      <xs:enumeration value="Kilopascal" />
+      <xs:enumeration value="KilogramOfPotassiumHydroxideCausticPotash" />
+      <xs:enumeration value="KilogramOfPotassiumOxide" />
+      <xs:enumeration value="KilogramOfPhosphorusPentoxidePhosphoricAnhydride" />
+      <xs:enumeration value="KilogramOfSubstance90PercentDry" />
+      <xs:enumeration value="KilogramOfSodiumHydroxideCausticSoda" />
+      <xs:enumeration value="Kilotonne" />
+      <xs:enumeration value="KilogramOfUranium" />
+      <xs:enumeration value="KilovoltAmpere" />
+      <xs:enumeration value="Kilovar" />
+      <xs:enumeration value="Kilovolt" />
+      <xs:enumeration value="KilowattHour" />
+      <xs:enumeration value="Kilowatt" />
+      <xs:enumeration value="Pound" />
+      <xs:enumeration value="TroyPoundUS" />
+      <xs:enumeration value="Leaf" />
+      <xs:enumeration value="LitreOfPureAlcohol" />
+      <xs:enumeration value="LiterOfPureAlcohol" />
+      <xs:enumeration value="TonUKorLongTonUS" />
+      <xs:enumeration value="Litre" />
+      <xs:enumeration value="Liter" />
+      <xs:enumeration value="Lumen" />
+      <xs:enumeration value="Lux" />
+      <xs:enumeration value="MegaLitre" />
+      <xs:enumeration value="MegaLiter" />
+      <xs:enumeration value="Megametre" />
+      <xs:enumeration value="Megameter" />
+      <xs:enumeration value="Megawatt" />
+      <xs:enumeration value="ThousandStandardBrickEquivalent" />
+      <xs:enumeration value="ThousandBoardFeet" />
+      <xs:enumeration value="Millibar" />
+      <xs:enumeration value="Millicurie" />
+      <xs:enumeration value="Milligram" />
+      <xs:enumeration value="Megahertz" />
+      <xs:enumeration value="SquareMile" />
+      <xs:enumeration value="Thousand" />
+      <xs:enumeration value="Minute" />
+      <xs:enumeration value="Million" />
+      <xs:enumeration value="MillionInternationalUnit" />
+      <xs:enumeration value="MilliardBillionUS" />
+      <xs:enumeration value="Millilitre" />
+      <xs:enumeration value="Milliliter" />
+      <xs:enumeration value="SquareMillimetre" />
+      <xs:enumeration value="SquareMillimeter" />
+      <xs:enumeration value="CubicMillimetre" />
+      <xs:enumeration value="CubicMillimeter" />
+      <xs:enumeration value="Millimetre" />
+      <xs:enumeration value="Millimeter" />
+      <xs:enumeration value="Month" />
+      <xs:enumeration value="Megapascal" />
+      <xs:enumeration value="CubicMetrePerHour" />
+      <xs:enumeration value="CubicMeterPerHour" />
+      <xs:enumeration value="CubicMetrePerSecond" />
+      <xs:enumeration value="CubicMeterPerSecond" />
+      <xs:enumeration value="MetrePerSecondSquared" />
+      <xs:enumeration value="MeterPerSecondSquared" />
+      <xs:enumeration value="SquareMetre" />
+      <xs:enumeration value="SquareMeter" />
+      <xs:enumeration value="CubicMetre" />
+      <xs:enumeration value="CubicMeter" />
+      <xs:enumeration value="Metre" />
+      <xs:enumeration value="Meter" />
+      <xs:enumeration value="MetrePerSecond" />
+      <xs:enumeration value="MeterPerSecond" />
+      <xs:enumeration value="MegavoltAmpere" />
+      <xs:enumeration value="MegawattHour1000KWH" />
+      <xs:enumeration value="NumberOfArticles" />
+      <xs:enumeration value="NumberOfBobbins" />
+      <xs:enumeration value="NumberOfCells" />
+      <xs:enumeration value="Newton" />
+      <xs:enumeration value="NumberOfInternationalUnits" />
+      <xs:enumeration value="NauticalMile" />
+      <xs:enumeration value="NumberOfPacks" />
+      <xs:enumeration value="NumberOfParcels" />
+      <xs:enumeration value="NumberOfPairs" />
+      <xs:enumeration value="NumberOfParts" />
+      <xs:enumeration value="NumberOfRolls" />
+      <xs:enumeration value="NetRegisterTon" />
+      <xs:enumeration value="Ohm" />
+      <xs:enumeration value="Ounce" />
+      <xs:enumeration value="FluidOunceUS" />
+      <xs:enumeration value="FluidOunceUK" />
+      <xs:enumeration value="Pascal" />
+      <xs:enumeration value="Piece" />
+      <xs:enumeration value="ProofGallon" />
+      <xs:enumeration value="DryPintUS" />
+      <xs:enumeration value="PintUK" />
+      <xs:enumeration value="LiquidPintUS" />
+      <xs:enumeration value="QuarterOfAYear" />
+      <xs:enumeration value="DryQuartUS" />
+      <xs:enumeration value="QuartUK" />
+      <xs:enumeration value="LiquidQuartUS" />
+      <xs:enumeration value="QuarterUK" />
+      <xs:enumeration value="RevolutionsPerMinute" />
+      <xs:enumeration value="RevolutionsPerSecond" />
+      <xs:enumeration value="HalfYear6Months" />
+      <xs:enumeration value="Score" />
+      <xs:enumeration value="Scruple" />
+      <xs:enumeration value="Second" />
+      <xs:enumeration value="Set" />
+      <xs:enumeration value="ShippingTon" />
+      <xs:enumeration value="Siemens" />
+      <xs:enumeration value="MileStatuteMile" />
+      <xs:enumeration value="ShortStandard7200Matches" />
+      <xs:enumeration value="StoneUK" />
+      <xs:enumeration value="TonUSOrShortTonUKUS" />
+      <xs:enumeration value="KiloampereHourThousandAmpereHour" />
+      <xs:enumeration value="TonneMetricTon" />
+      <xs:enumeration value="TenPair" />
+      <xs:enumeration value="ThousandCubicMetrePerDay" />
+      <xs:enumeration value="ThousandCubicMeterPerDay" />
+      <xs:enumeration value="TrillionEUR" />
+      <xs:enumeration value="TonneOfSubstance90PercentDry" />
+      <xs:enumeration value="TonOfSteamPerHour" />
+      <xs:enumeration value="Volt" />
+      <xs:enumeration value="Cord" />
+      <xs:enumeration value="Weber" />
+      <xs:enumeration value="Week" />
+      <xs:enumeration value="WattHour" />
+      <xs:enumeration value="Standard" />
+      <xs:enumeration value="Watt" />
+      <xs:enumeration value="SquareYard" />
+      <xs:enumeration value="CubicYard" />
+      <xs:enumeration value="Yard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeUnitOfMeasure" nillable="true" type="tns:TypeUnitOfMeasure" />
+  <xs:complexType name="IIASData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HealthcareAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClinicOtherAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DentalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PrescriptionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VisionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IIASDesignation" type="tns:IIASDesignation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IIASData" nillable="true" type="tns:IIASData" />
+  <xs:simpleType name="IIASDesignation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="IIASVerified" />
+      <xs:enumeration value="IIASExempt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IIASDesignation" nillable="true" type="tns:IIASDesignation" />
+  <xs:complexType name="BankcardReturn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q8:Return">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TenderData" nillable="true" type="tns:BankcardTenderData" />
+          <xs:element minOccurs="0" name="FeeAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TransactionCode" type="tns:TransactionCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardReturn" nillable="true" type="tns:BankcardReturn" />
+  <xs:complexType name="BankcardTransactionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q9:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CardType" type="tns:TypeCardType" />
+          <xs:element minOccurs="0" name="FeeAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ApprovalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AVSResult" nillable="true" type="tns:AVSResult" />
+          <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CVResult" type="q9:CVResult" />
+          <xs:element minOccurs="0" name="CardLevel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DowngradeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedPAN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentAccountDataToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RetrievalReferenceNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Resubmit" type="tns:Resubmit" />
+          <xs:element minOccurs="0" name="SettlementDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FinalBalance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CashBackAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidCard" type="tns:PrepaidCard" />
+          <xs:element minOccurs="0" name="Expire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ErrorType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardTransactionResponse" nillable="true" type="tns:BankcardTransactionResponse" />
+  <xs:simpleType name="AdviceResponse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unsupported" />
+      <xs:enumeration value="NewAccountInfoAvailable" />
+      <xs:enumeration value="TryAgainLater" />
+      <xs:enumeration value="DoNotTryAgainLater" />
+      <xs:enumeration value="DoNotHonor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdviceResponse" nillable="true" type="tns:AdviceResponse" />
+  <xs:simpleType name="CommercialCardResponse">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotImplemented" />
+      <xs:enumeration value="PurchaseCard" />
+      <xs:enumeration value="CorporateCard" />
+      <xs:enumeration value="BusinessCard" />
+      <xs:enumeration value="NonCommercialCard" />
+      <xs:enumeration value="PurchaseCardDataUnsupported" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CommercialCardResponse" nillable="true" type="tns:CommercialCardResponse" />
+  <xs:complexType name="BankcardCaptureResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q10:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndustryType" type="q10:IndustryType" />
+          <xs:element minOccurs="0" name="TransactionSummaryData" nillable="true" type="tns:TransactionSummaryData" />
+          <xs:element minOccurs="0" name="PrepaidCard" type="tns:PrepaidCard" />
+          <xs:element minOccurs="0" name="ErrorType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardCaptureResponse" nillable="true" type="tns:BankcardCaptureResponse" />
+  <xs:complexType name="TransactionSummaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CashBackTotals" nillable="true" type="tns:Totals" />
+      <xs:element minOccurs="0" name="NetTotals" nillable="true" type="tns:Totals" />
+      <xs:element minOccurs="0" name="ReturnTotals" nillable="true" type="tns:Totals" />
+      <xs:element minOccurs="0" name="SaleTotals" nillable="true" type="tns:Totals" />
+      <xs:element minOccurs="0" name="VoidTotals" nillable="true" type="tns:Totals" />
+      <xs:element minOccurs="0" name="PINDebitReturnTotals" nillable="true" type="tns:Totals" />
+      <xs:element minOccurs="0" name="PINDebitSaleTotals" nillable="true" type="tns:Totals" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionSummaryData" nillable="true" type="tns:TransactionSummaryData" />
+  <xs:complexType name="Totals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NetAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Totals" nillable="true" type="tns:Totals" />
+  <xs:simpleType name="PrepaidCard">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Yes" />
+      <xs:enumeration value="No" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PrepaidCard" nillable="true" type="tns:PrepaidCard" />
+  <xs:complexType name="AVSResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualResult" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressResult" type="tns:AddressResult" />
+      <xs:element minOccurs="0" name="CountryResult" type="tns:CountryResult" />
+      <xs:element minOccurs="0" name="StateResult" type="tns:StateResult" />
+      <xs:element minOccurs="0" name="PostalCodeResult" type="tns:PostalCodeResult" />
+      <xs:element minOccurs="0" name="PhoneResult" type="tns:PhoneResult" />
+      <xs:element minOccurs="0" name="CardholderNameResult" type="tns:CardholderNameResult" />
+      <xs:element minOccurs="0" name="CityResult" type="tns:CityResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AVSResult" nillable="true" type="tns:AVSResult" />
+  <xs:simpleType name="AddressResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddressResult" nillable="true" type="tns:AddressResult" />
+  <xs:simpleType name="CountryResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CountryResult" nillable="true" type="tns:CountryResult" />
+  <xs:simpleType name="StateResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StateResult" nillable="true" type="tns:StateResult" />
+  <xs:simpleType name="PostalCodeResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostalCodeResult" nillable="true" type="tns:PostalCodeResult" />
+  <xs:simpleType name="PhoneResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhoneResult" nillable="true" type="tns:PhoneResult" />
+  <xs:simpleType name="CardholderNameResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CardholderNameResult" nillable="true" type="tns:CardholderNameResult" />
+  <xs:simpleType name="CityResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotIncluded" />
+      <xs:enumeration value="Match" />
+      <xs:enumeration value="NoMatch" />
+      <xs:enumeration value="IssuerNotCertified" />
+      <xs:enumeration value="NoResponseFromCardAssociation" />
+      <xs:enumeration value="UnknownResponseFromCardAssociation" />
+      <xs:enumeration value="NotVerified" />
+      <xs:enumeration value="BadFormat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CityResult" nillable="true" type="tns:CityResult" />
+  <xs:simpleType name="Resubmit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unspecified" />
+      <xs:enumeration value="Permitted" />
+      <xs:enumeration value="NotPermitted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Resubmit" nillable="true" type="tns:Resubmit" />
+  <xs:complexType name="BankcardUndo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q11:Undo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PINDebitReason" type="tns:PINDebitUndoReason" />
+          <xs:element minOccurs="0" name="TenderData" nillable="true" type="tns:BankcardTenderData" />
+          <xs:element minOccurs="0" name="ForceVoid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TransactionCode" type="tns:TransactionCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardUndo" nillable="true" type="tns:BankcardUndo" />
+  <xs:simpleType name="PINDebitUndoReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotApplicable" />
+      <xs:enumeration value="NoResponse" />
+      <xs:enumeration value="LateResponse" />
+      <xs:enumeration value="UnableToDeliverToPOS" />
+      <xs:enumeration value="CustomerCancellation" />
+      <xs:enumeration value="SuspectMalfunction" />
+      <xs:enumeration value="PartiallyCompleted" />
+      <xs:enumeration value="OriginalAmountIncorrect" />
+      <xs:enumeration value="ResponseIncomplete" />
+      <xs:enumeration value="CADFailure" />
+      <xs:enumeration value="UnableToDeliverResponse" />
+      <xs:enumeration value="ResponseTimeout" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PINDebitUndoReason" nillable="true" type="tns:PINDebitUndoReason" />
+  <xs:complexType name="BankcardCapture">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q12:Capture">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ChargeType" type="tns:ChargeType" />
+          <xs:element minOccurs="0" name="ShipDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TipAmount" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankcardCapture" nillable="true" type="tns:BankcardCapture" />
+  <xs:simpleType name="ChargeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Lodging" />
+      <xs:enumeration value="Restaurant" />
+      <xs:enumeration value="GiftShop" />
+      <xs:enumeration value="HealthSpa" />
+      <xs:enumeration value="BeautyShop" />
+      <xs:enumeration value="ConventionFee" />
+      <xs:enumeration value="TennisProShop" />
+      <xs:enumeration value="GolfProShop" />
+      <xs:enumeration value="RetailOther" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChargeType" nillable="true" type="tns:ChargeType" />
+</xs:schema>

@@ -44,6 +44,7 @@ namespace SampleCode
         
         public IndustryTypeValues _ITV;
         //Message regarding processing. Likely instead of this your software would write the results directly to your database or a log file. 
+        public bool IntService = false;
         public string _message;
 
         #endregion Variable Declarations
@@ -438,6 +439,8 @@ namespace SampleCode
             #region Simulating a flag used to set either AVS CV or PINDebit data
             //Simulating a flag used to set either AVS, CV data or PINDebit
             bool blnAVS = _ITV._IncludeAVS;
+            bool blnIntService = IntService;
+            bool blnIntAVSOverride = _ITV._IntAVSOverride;
             bool blnCVV = _ITV._IncludeCV;
 
             if (blnAVS | blnCVV)
@@ -446,17 +449,41 @@ namespace SampleCode
                     BCtransaction.TenderData.CardSecurityData = new CardSecurityData(); //Required if AVS or CV is used
                 if (blnAVS)
                 {
-                    //AVSData
-                    BCtransaction.TenderData.CardSecurityData.AVSData = new AVSData();
-                    //Required AVS Elements
-                    BCtransaction.TenderData.CardSecurityData.AVSData.PostalCode = "10101";
-                    //Optional AVS Elements
-                    BCtransaction.TenderData.CardSecurityData.AVSData.CardholderName = "John Smith";
-                    BCtransaction.TenderData.CardSecurityData.AVSData.City = "Denver";
-                    BCtransaction.TenderData.CardSecurityData.AVSData.Country = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
-                    BCtransaction.TenderData.CardSecurityData.AVSData.Phone = "303 5456699"; //Must be of format "NNN NNNNNNN"
-                    BCtransaction.TenderData.CardSecurityData.AVSData.StateProvince = "CO";
-                    BCtransaction.TenderData.CardSecurityData.AVSData.Street = "1000 1st Av";
+                    if (!blnIntService)
+                    {
+                        //AVSData
+                        BCtransaction.TenderData.CardSecurityData.AVSData = new AVSData();
+                        //Required AVS Elements
+                        BCtransaction.TenderData.CardSecurityData.AVSData.PostalCode = "10101";
+                        //Optional AVS Elements
+                        BCtransaction.TenderData.CardSecurityData.AVSData.CardholderName = "John Smith";
+                        BCtransaction.TenderData.CardSecurityData.AVSData.City = "Denver";
+                        BCtransaction.TenderData.CardSecurityData.AVSData.Country = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
+                        BCtransaction.TenderData.CardSecurityData.AVSData.Phone = "303 5456699"; //Must be of format "NNN NNNNNNN"
+                        BCtransaction.TenderData.CardSecurityData.AVSData.StateProvince = "CO";
+                        BCtransaction.TenderData.CardSecurityData.AVSData.Street = "1000 1st Av";
+                    }
+                    else
+                    {
+                        //International AVSData
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData = new InternationalAVSData();
+                        //Required International AVS Elements
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.HouseNumber = "5";
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.Street = "Schulstrasse";
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.City = "Bad Oyenhausen";
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.PostalCode = "32547";
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.Country = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3.DEU;
+                        //Optional International AVS Elements
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.POBoxNumber = "";
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.StateProvince = "RW";
+                    }
+                    if (blnIntAVSOverride && cardType != TypeCardType.Maestro) //To be able to override AVS results the merchant will have to get permission from EVO payments
+                    {
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride = new InternationalAVSOverride();
+                        BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride.IgnoreAVS = true; //This will keep the system from declining transactions on 'No Match' AVS
+                        //BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride.AVSRejectCodes = "NI"; //EVO payments and merchant will agree on what is populated here
+                        //BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride.SkipAVS = true; //This will skip AVS processing
+                    }
                 }
                 if (blnCVV)
                 {
@@ -477,6 +504,41 @@ namespace SampleCode
                 }
             }
             #endregion END Simulating a flag used to set either AVS CV or PINDebit data
+
+            #region Simulating Internation Billing and Shipping Data
+
+            bool blnIntBilling = _ITV._IncludeBilling;
+            if(blnIntService && blnIntBilling)
+            {
+            //Billing Data
+            BCtransaction.CustomerData.BillingData = new CustomerInfo();
+            BCtransaction.CustomerData.BillingData.Name = new NameInfo();
+            BCtransaction.CustomerData.BillingData.InternationalAddress = new InternationalAddressInfo();
+            BCtransaction.CustomerData.BillingData.Name.First = "Mark";
+            BCtransaction.CustomerData.BillingData.Name.Last = "Malinowski";
+            BCtransaction.CustomerData.BillingData.InternationalAddress.Street1 = "Platte St";
+            BCtransaction.CustomerData.BillingData.InternationalAddress.HouseNumber = "1553";
+            BCtransaction.CustomerData.BillingData.InternationalAddress.City = "Denver";
+            BCtransaction.CustomerData.BillingData.InternationalAddress.CountryCode = CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
+            BCtransaction.CustomerData.BillingData.InternationalAddress.PostalCode = "80228";
+            BCtransaction.CustomerData.BillingData.InternationalAddress.StateProvince = "CO";
+            BCtransaction.CustomerData.BillingData.InternationalAddress.Street2 = "Unit 310";
+            //Shipping Data
+            BCtransaction.CustomerData.ShippingData = new CustomerInfo();
+            BCtransaction.CustomerData.ShippingData.Name = new NameInfo();
+            BCtransaction.CustomerData.ShippingData.InternationalAddress = new InternationalAddressInfo();
+            BCtransaction.CustomerData.ShippingData.Name.First = "Dustin";
+            BCtransaction.CustomerData.ShippingData.Name.Last = "Dowell";
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.Street1 = "Larimer St";
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.City = "Lakewood";
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.CountryCode = CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.HouseNumber = "1625";
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.PostalCode = "80228";
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.StateProvince = "CO";
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.Street2 = "2601";
+            }
+
+            #endregion Simulating Internation Billing and Shipping Data
 
             #region Check to see if PINLessDebit selected
 
@@ -932,7 +994,9 @@ namespace SampleCode
                 i._ProcessAsKeyed = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_ProcessAsKeyed"]);
                 i._SignatureCaptured = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_SignatureCaptured"]);
                 i._IncludeAVS = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IncludeAVS"]);
+                i._IntAVSOverride = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IntAVSOverride"]);
                 i._IncludeCV= Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IncludeCV"]);
+                i._IncludeBilling = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IncludeBilling"]);
             }
             if (_industryType == "Ecommerce")
             {
@@ -953,7 +1017,9 @@ namespace SampleCode
                 i._ProcessAsKeyed = true;
                 i._SignatureCaptured = false;
                 i._IncludeAVS = true;
+                i._IntAVSOverride = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IntAVSOverride"]);
                 i._IncludeCV = true;
+                i._IncludeBilling = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IncludeBilling"]);
             }
             if (_industryType == "MOTO")
             {
@@ -974,7 +1040,9 @@ namespace SampleCode
                 i._ProcessAsKeyed = true;
                 i._SignatureCaptured = false;
                 i._IncludeAVS = true;
+                i._IntAVSOverride = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IntAVSOverride"]);
                 i._IncludeCV = true;
+                i._IncludeBilling = Convert.ToBoolean(ConfigurationSettings.AppSettings["TxnData_IncludeBilling"]);
             }
             if (_industryType == "Retail")
             {
@@ -1256,7 +1324,9 @@ namespace SampleCode
         public bool _ProcessAsKeyed;
         public bool _SignatureCaptured;
         public bool _IncludeAVS;
+        public bool _IntAVSOverride;
         public bool _IncludeCV;
+        public bool _IncludeBilling;
 
     }
 

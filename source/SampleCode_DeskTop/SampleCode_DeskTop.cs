@@ -362,11 +362,27 @@ namespace SampleCode
                     Cursor = Cursors.Default;
                 }
             }
-            else if (_ecks != null) //Process as a Check transaction
+			else if (_ecks != null) //Process as a Check transaction
             {
+                //First verify if all transactions selected are "Authorize" transactions
+                List<ResponseDetails> txnsToProcess = new List<ResponseDetails>();
+                foreach (object itemChecked in ChkLstTransactionsProcessed.CheckedItems)
+                {
+                    if (((ResponseDetails)(itemChecked)).TransactionType != TransactionType.QueryAccount.ToString())
+                    {
+                        MessageBox.Show("All selected messages must be of type Authorize");
+                        Cursor = Cursors.Default;
+                        return;
+                    }
+                    txnsToProcess.Add(((ResponseDetails)(itemChecked)));
+                }
                 try
                 {
-                    MessageBox.Show(@"Placeholder for ECK code. Please ask your solution consultant for an example");
+                    ElectronicCheckingTransaction ECKTransaction = dg.SetElectronicCheckTxnData();
+
+                    //Let's Authorize the transaction
+                    processResponse(Helper.ProcessECKTransaction(TransactionType.Authorize, ECKTransaction, null,
+                        null, null, ChkAcknowledge.Checked, ChkForceCloseBatch.Checked));
                 }
                 catch (Exception ex)
                 {
@@ -377,24 +393,7 @@ namespace SampleCode
                     Cursor = Cursors.Default;
                 }
             }
-            else if (_svas != null) //Process as a Check transaction
-            {
-                try
-                {
-                    StoredValueTransaction SVATransaction = dg.SetStoredValueTxnData();
-                    //Let's Query a transaction
-                    processResponse(Helper.ProcessSVATransaction(TransactionType.Authorize, SVATransaction, null, null, null, null, ChkAcknowledge.Checked));
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    Cursor = Cursors.Default;
-                }
-            }
-        }
+
 
         private void cmdAuthorize_Click(object sender, EventArgs e)
         {//The Authorize() operation is used to authorize transactions prior to capture.
@@ -2075,7 +2074,14 @@ namespace SampleCode
                     if (BCS.ServiceId == Helper.ServiceID)
                     {
                         _bcs = BCS; //Set the BankCard Service to be used
-
+                        if (BCS.ServiceId == "39C6700001" || BCS.ServiceId == "FC85600001")
+                        {
+                            dg.IntService = false;
+                        }
+                        else
+                        {
+                            dg.IntService = true;
+                        }
                         SupportedTxnTypes = BCS.Operations;
                         //Toggle the buttons to match supported transaction types.
                         if (!AvailableTxnTypes(SupportedTxnTypes))
