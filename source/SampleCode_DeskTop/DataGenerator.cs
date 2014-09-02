@@ -69,6 +69,22 @@ namespace SampleCode
         public string persistedAndCached = "";
         public static ServiceInformation si;
         public static List<string> merchantProfileIds;
+        public static AVSData avsData;
+        public static InternationalAVSData intlAVSData;
+        public static InternationalAVSOverride intAVSOverride;
+        public static bool processInternationalAVS;
+
+        public InternationalAVSOverride InternationalAvsOverride
+        {
+            get { return intAVSOverride; }
+            set { intAVSOverride = value; }
+        }
+
+        public bool ProcessInternationalAVS
+        {
+            get { return processInternationalAVS; }
+            set { processInternationalAVS = value; }
+        }
 
         public string Amount
         {
@@ -160,7 +176,16 @@ namespace SampleCode
             get { return merchantProfileIds; }
             set { merchantProfileIds = value; }
         }
-        
+        public AVSData AVSData
+        {
+            get { return avsData; }
+            set { avsData = value; }
+        }
+        public InternationalAVSData IntlAVSData
+        {
+            get { return intlAVSData; }
+            set { intlAVSData = value; }
+        }
 
         #endregion Class Properties
 
@@ -362,7 +387,7 @@ namespace SampleCode
                 BCtransaction.TenderData.CardData.CardType = cardType;
                 BCtransaction.TenderData.CardData.Expire = expirationDate; // Note : that in a swipe track data the format is "YYMM" however here it's "MMYY"
                 BCtransaction.TenderData.CardData.PAN = pan;
-                BCtransaction.TenderData.CardData.CardholderName = "Dirk Pit";
+                BCtransaction.TenderData.CardData.CardholderName = avsData.CardholderName;
             }
             else if (processAs == ProcessAs.PaymentAccountDataToken)
             {//Card tokenization
@@ -451,31 +476,49 @@ namespace SampleCode
                 {
                     if (!blnIntService)
                     {
-                        //AVSData
-                        BCtransaction.TenderData.CardSecurityData.AVSData = new AVSData();
-                        //Required AVS Elements
-                        BCtransaction.TenderData.CardSecurityData.AVSData.PostalCode = "10101";
-                        //Optional AVS Elements
-                        BCtransaction.TenderData.CardSecurityData.AVSData.CardholderName = "John Smith";
-                        BCtransaction.TenderData.CardSecurityData.AVSData.City = "Denver";
-                        BCtransaction.TenderData.CardSecurityData.AVSData.Country = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
-                        BCtransaction.TenderData.CardSecurityData.AVSData.Phone = "303 5456699"; //Must be of format "NNN NNNNNNN"
-                        BCtransaction.TenderData.CardSecurityData.AVSData.StateProvince = "CO";
-                        BCtransaction.TenderData.CardSecurityData.AVSData.Street = "1000 1st Av";
+                        if (avsData != null)
+                        {
+                            //AVSData
+                            BCtransaction.TenderData.CardSecurityData.AVSData = new AVSData();
+                            //Required AVS Elements
+                            BCtransaction.TenderData.CardSecurityData.AVSData.PostalCode = avsData.PostalCode;
+                            //Optional AVS Elements
+                            BCtransaction.TenderData.CardSecurityData.AVSData.CardholderName = avsData.CardholderName;
+                            BCtransaction.TenderData.CardSecurityData.AVSData.City = avsData.City;
+                            BCtransaction.TenderData.CardSecurityData.AVSData.Country = avsData.Country;
+                            //BCtransaction.TenderData.CardSecurityData.AVSData.Phone = "303 5456699"; //Must be of format "NNN NNNNNNN"
+                            BCtransaction.TenderData.CardSecurityData.AVSData.StateProvince = avsData.StateProvince;
+                            BCtransaction.TenderData.CardSecurityData.AVSData.Street = avsData.Street;
+                        }
                     }
                     else
                     {
-                        //International AVSData
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData = new InternationalAVSData();
-                        //Required International AVS Elements
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.HouseNumber = "5";
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.Street = "Schulstrasse";
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.City = "Bad Oyenhausen";
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.PostalCode = "32547";
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.Country = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3.DEU;
-                        //Optional International AVS Elements
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.POBoxNumber = "";
-                        BCtransaction.TenderData.CardSecurityData.InternationalAVSData.StateProvince = "RW";
+                        if (intlAVSData != null)
+                        {
+                            //International AVSData
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData = new InternationalAVSData();
+                            //Required International AVS Elements
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.HouseNumber =
+                                intlAVSData.HouseNumber;
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.Street = intlAVSData.Street;
+
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.City = intlAVSData.City;
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.PostalCode =
+                                intlAVSData.PostalCode;
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.Country = intlAVSData.Country;
+                            //Optional International AVS Elements
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.POBoxNumber =
+                                intlAVSData.POBoxNumber;
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSData.StateProvince =
+                                intlAVSData.StateProvince;
+
+
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride = new InternationalAVSOverride();
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride.IgnoreAVS =
+                                intAVSOverride.IgnoreAVS;
+                            BCtransaction.TenderData.CardSecurityData.InternationalAVSOverride.SkipAVS =
+                                intAVSOverride.SkipAVS;
+                        }
                     }
                     if (blnIntAVSOverride && cardType != TypeCardType.Maestro) //To be able to override AVS results the merchant will have to get permission from EVO payments
                     {
@@ -804,6 +847,8 @@ namespace SampleCode
 
             #endregion Soft Descriptors
 
+            TxnData.Is3DSecure = true;
+
             BCtransaction.TransactionData = TxnData;
             return BCtransaction;
         }
@@ -905,7 +950,7 @@ namespace SampleCode
             //Transaction Data
             ECKTransaction.TransactionData.Amount = Convert.ToDecimal(Amount);
             //ECKTransaction.TransactionData.CurrencyCode = SampleCode.CwsTransactionProcessing.TypeISOCurrencyCodeA3.USD;
-            ECKTransaction.TransactionData.EffectiveDate = DateTime.UtcNow; //Specifies the effective date of the transaction. Required.
+            ECKTransaction.TransactionData.EffectiveDate = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz"); ; //Specifies the effective date of the transaction. Required.
             ECKTransaction.TransactionData.IsRecurring = false; //Indicates whether the transaction is recurring. Conditional, required if SECCode = 'WEB'.
             //Supported SEC Codes are PPD, CCD, TEL, WEB and BOC.  CCD and PPD transactions can be either credit or debit.  TEL, WEB and BOC are debit transactions only.
             ECKTransaction.TransactionData.SECCode = SECCode.WEB; //The three letter code that indicates what NACHA regulations the transaction must adhere to. Required.
@@ -1278,6 +1323,7 @@ namespace SampleCode
         public PurchaseCardLevel PurchaseCardLevel;
         public bool InterchangeData;
         public bool IncludeLevel2OrLevel3Data;
+        
         public BankCardProProcessingOptions(PurchaseCardLevel purchaseCardLevel, bool interchangeData, bool includeLevel2OrLevel3Data)
         {
             PurchaseCardLevel = purchaseCardLevel;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="113f944d-61da-4b92-aa10-15f0b5ec7b76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\SVN\SC\CustomerProjects\Mind Body Online\CSharp-SampleApp-Premium-CardNotPresent\source\SampleCode_DeskTop\WSDLs\CWSDataServices.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="schemas.xsd" MetadataType="Schema" ID="c520c3ac-1620-4a38-989e-17e0703ecfc8" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_Transactions_Bankcard_Pro.xsd" />
+    <MetadataFile FileName="schemas1.xsd" MetadataType="Schema" ID="0dbb7afa-327a-4417-be6c-c9da3dfb77d1" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_DataServices_TMS_Faults.xsd" />
+    <MetadataFile FileName="schemas2.xsd" MetadataType="Schema" ID="8c6f9e58-cf80-4a3a-9392-069041629c20" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_Transactions_Bankcard.xsd" />
+    <MetadataFile FileName="CWSDataServices.wsdl" MetadataType="Wsdl" ID="b0d1ae18-9713-4aa9-88c4-dbdbc8419959" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/CWSDataServices.wsdl" />
+    <MetadataFile FileName="schemas3.xsd" MetadataType="Schema" ID="bfb8e871-20c2-48dd-a91a-a2223d7e789c" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_DataServices_TMS.xsd" />
+    <MetadataFile FileName="schemas4.xsd" MetadataType="Schema" ID="f7e828c0-b7bb-42cc-a58b-fc582fbd3259" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.microsoft.com_2003_10_Serialization_Arrays.xsd" />
+    <MetadataFile FileName="schemas5.xsd" MetadataType="Schema" ID="62bbbfe2-6102-4cac-ac4f-fddb12c71bf0" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_Transactions.xsd" />
+    <MetadataFile FileName="schemas6.xsd" MetadataType="Schema" ID="04f972f7-4236-4922-8264-de0c571ec4b1" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_DataServices_TMS_Fault.xsd" />
+    <MetadataFile FileName="schemas7.xsd" MetadataType="Schema" ID="0dd17a34-fa5e-41c1-9746-74037cecf37c" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_Ipc.General.WCF.Contracts.Common.xsd" />
+    <MetadataFile FileName="schemas8.xsd" MetadataType="Schema" ID="6924fd8c-35bf-4472-b962-09a3b85bcb37" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_Transactions_ElectronicChecking.xsd" />
+    <MetadataFile FileName="schemas9.xsd" MetadataType="Schema" ID="805055b1-d8a0-4074-9e65-cfe76fc556bc" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_ServiceInformation.xsd" />
+    <MetadataFile FileName="schemas10.xsd" MetadataType="Schema" ID="a2a13df5-dfc5-4e09-b542-8c97b1edc5e5" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_DataServices.xsd" />
+    <MetadataFile FileName="schemas11.xsd" MetadataType="Schema" ID="62c4049f-b93b-42f3-ae38-1ebbb7892d82" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.microsoft.com_2003_10_Serialization.xsd" />
+    <MetadataFile FileName="schemas12.xsd" MetadataType="Schema" ID="7a47bf74-2394-431f-8923-0761bb07810a" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_Transactions_StoredValue.xsd" />
+    <MetadataFile FileName="schemas13.xsd" MetadataType="Schema" ID="891c4ae8-efff-4a75-a63b-5129c76790b4" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_Ipc.General.WCF.Contracts.Common_External.xsd" />
+    <MetadataFile FileName="schemas14.xsd" MetadataType="Schema" ID="a067cfe0-977a-4d90-80d5-a7fc0261289c" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_Identity_1.0.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

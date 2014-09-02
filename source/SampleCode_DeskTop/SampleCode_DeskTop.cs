@@ -43,6 +43,7 @@ using CardData = SampleCode.CwsTransactionProcessing.CardData;
 using CommercialCardResponse = SampleCode.CwsTransactionProcessing.CommercialCardResponse;
 using IndustryType = SampleCode.CWSServiceInformation.IndustryType;
 using LineItemDetail = SampleCode.CwsTransactionProcessing.LineItemDetail;
+using TypeISOCountryCodeA3 = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3;
 
 #region GENERATING the Proxy with svcUtil.exe
 /* Generating the proxy using svcutil.exe
@@ -50,8 +51,8 @@ using LineItemDetail = SampleCode.CwsTransactionProcessing.LineItemDetail;
      * Note:  the use of lists,  and merge switch below. 
      * Note: To contain all of the wsdl and xsd files I created a child folder "CWSSOAP".
      * svcutil.exe CWSSOAP/CwsServiceInformation.wsdl /namespace:*,schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.SvcInfo /ct:System.Collections.Generic.List`1 /config:app.config /mergeConfig
-     * svcutil.exe https://api.cipcert.goevo.com/2.0.19/Txn?wsdl /namespace:*,schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.Txn  /ct:System.Collections.Generic.List`1 /config:app.config /mergeConfig
-     * svcutil.exe https://api.cipcert.goevo.com/2.0.19/DataServices?wsdl /namespace:*,schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.DataServices  /ct:System.Collections.Generic.List`1 /config:app.config /mergeConfig
+     * svcutil.exe https://api.cipcert.goevo.com/2.0.20/Txn?wsdl /namespace:*,schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.Txn  /ct:System.Collections.Generic.List`1 /config:app.config /mergeConfig
+     * svcutil.exe https://api.cipcert.goevo.com/2.0.20/DataServices?wsdl /namespace:*,schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.DataServices  /ct:System.Collections.Generic.List`1 /config:app.config /mergeConfig
      * 
      * Note : for VB.NET customers you should add the switch /language:VB to command lines above
      * 
@@ -151,6 +152,16 @@ namespace SampleCode
             try{CboindustryType.SelectedItem = ConfigurationSettings.AppSettings["IndustryType"];}
             catch{}
 
+            
+            CboAVUSCountry.Sorted = true;
+            CboAVUSCountry.DataSource = Enum.GetValues(typeof(TypeISOCountryCodeA3));
+            CboAVUSCountry.Text = "USA";
+
+            CboAVSIntlCountry.Sorted = true;
+            CboAVSIntlCountry.DataSource = Enum.GetValues(typeof(TypeISOCountryCodeA3));
+            CboAVSIntlCountry.Text = "GBR";
+
+            RdoAVSUS.Checked = true;
             //Setup Card Types CboCardTypes
             CboCardTypes.Sorted = true;
             CboCardTypes.DataSource = Enum.GetValues(typeof(TypeCardType));
@@ -323,7 +334,11 @@ namespace SampleCode
             //The AuthorizeAndCapture() operation is used to authorize and capture a transaction in a single invocation.
 
             //Check to see if this transaction type is supported
-            if (!SupportedTxnTypes.AuthAndCapture) { MessageBox.Show("AuthAndCapture Not Supported"); return; }
+            if (!SupportedTxnTypes.AuthAndCapture)
+            {
+                MessageBox.Show("AuthAndCapture Not Supported");
+                return;
+            }
 
             Cursor = Cursors.WaitCursor;
 
@@ -349,9 +364,10 @@ namespace SampleCode
                 try
                 {
                     BankcardTransaction BCtransaction = dg.SetBankCardTxnData();
-                    processResponse(Helper.ProcessBCPTransaction(TransactionType.AuthorizeAndCapture, BCtransaction, null, null, null,
-                                                 null, null, null, null, ChkAcknowledge.Checked,
-                                                 ChkUserWorkflowId.Checked, ChkForceCloseBatch.Checked));
+                    processResponse(Helper.ProcessBCPTransaction(TransactionType.AuthorizeAndCapture, BCtransaction,
+                        null, null, null,
+                        null, null, null, null, ChkAcknowledge.Checked,
+                        ChkUserWorkflowId.Checked, ChkForceCloseBatch.Checked));
                 }
                 catch (Exception ex)
                 {
@@ -362,19 +378,19 @@ namespace SampleCode
                     Cursor = Cursors.Default;
                 }
             }
-			else if (_ecks != null) //Process as a Check transaction
+            else if (_ecks != null) //Process as a Check transaction
             {
                 //First verify if all transactions selected are "Authorize" transactions
                 List<ResponseDetails> txnsToProcess = new List<ResponseDetails>();
                 foreach (object itemChecked in ChkLstTransactionsProcessed.CheckedItems)
                 {
-                    if (((ResponseDetails)(itemChecked)).TransactionType != TransactionType.QueryAccount.ToString())
+                    if (((ResponseDetails) (itemChecked)).TransactionType != TransactionType.QueryAccount.ToString())
                     {
                         MessageBox.Show("All selected messages must be of type Authorize");
                         Cursor = Cursors.Default;
                         return;
                     }
-                    txnsToProcess.Add(((ResponseDetails)(itemChecked)));
+                    txnsToProcess.Add(((ResponseDetails) (itemChecked)));
                 }
                 try
                 {
@@ -393,6 +409,7 @@ namespace SampleCode
                     Cursor = Cursors.Default;
                 }
             }
+        }
 
 
         private void cmdAuthorize_Click(object sender, EventArgs e)
@@ -2077,10 +2094,14 @@ namespace SampleCode
                         if (BCS.ServiceId == "39C6700001" || BCS.ServiceId == "FC85600001")
                         {
                             dg.IntService = false;
+                            RdoAVSIntl.Checked = false;
+                            RdoAVSUS.Checked = true;
                         }
                         else
                         {
                             dg.IntService = true;
+                            RdoAVSIntl.Checked = true;
+                            RdoAVSUS.Checked = false;
                         }
                         SupportedTxnTypes = BCS.Operations;
                         //Toggle the buttons to match supported transaction types.
@@ -2605,6 +2626,41 @@ namespace SampleCode
             merchantProfileIdToolStripMenuItem.Text = "MerchantProfileId : " + Helper.MerchantProfileId;
             identityTokenToolStripMenuItem.Text = strIdentityTokenMessage;
             ServiceKeyToolStripMenuItem.Text = "Service Key : " + Helper.ServiceKey;
+            if (RdoAVSUS.Checked)
+            {
+                GrpBxAVSIntl.Enabled = false;
+                GrpBxAVSUS.Enabled = true;
+                AVSData usAVSData = new AVSData();
+                usAVSData.CardholderName = TxtCardHolderName.Text;
+                usAVSData.Street = TxtAVSUSStreet.Text;
+                usAVSData.City = TxtAVSUSCity.Text;
+                usAVSData.StateProvince = TxtAVSUSState.Text;
+                usAVSData.PostalCode = TxtAVSUSPostal.Text;
+                usAVSData.Country = (TypeISOCountryCodeA3)CboAVUSCountry.SelectedItem;
+                dg.AVSData = usAVSData;
+                dg.ProcessInternationalAVS = false;
+                
+            }
+            else
+            {
+                GrpBxAVSIntl.Enabled = true;
+                GrpBxAVSUS.Enabled = false;
+                InternationalAVSData intAVSData = new InternationalAVSData();
+
+                intAVSData.Street = TxtAVSIntlStreet.Text;
+                intAVSData.HouseNumber = TxtAVSIntlHouse.Text;
+                intAVSData.POBoxNumber = TxtAVSIntlPOBox.Text;
+                intAVSData.City = TxtAVSIntlCity.Text;
+                intAVSData.StateProvince = TxtAVSIntlState.Text;
+                intAVSData.PostalCode = TxtAVSIntlPostal.Text;
+                intAVSData.Country = (TypeISOCountryCodeA3)CboAVSIntlCountry.SelectedItem;
+                dg.IntlAVSData = intAVSData;
+                dg.ProcessInternationalAVS = true;
+                InternationalAVSOverride intAvsOverride = new InternationalAVSOverride();
+                intAvsOverride.IgnoreAVS = ChkIgnoreAVS.Checked;
+                intAvsOverride.SkipAVS = ChkSkipAVS.Checked;
+                dg.InternationalAvsOverride = intAvsOverride;
+            }
         }
 
         private void txtIdentityToken_KeyDown(object sender, KeyEventArgs e)
@@ -2913,7 +2969,42 @@ namespace SampleCode
 
     #endregion Helper Methods
 
-       
-
+        private void RdoAVSUS_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RdoAVSUS.Checked)
+            {
+                GrpBxAVSIntl.Enabled = false;
+                GrpBxAVSUS.Enabled = true;
+                AVSData usAVSData = new AVSData();
+                usAVSData.CardholderName = TxtCardHolderName.Text;
+                usAVSData.Street = TxtAVSUSStreet.Text;
+                usAVSData.City = TxtAVSUSCity.Text;
+                usAVSData.StateProvince = TxtAVSUSState.Text;
+                usAVSData.PostalCode = TxtAVSUSPostal.Text;
+                usAVSData.Country = (TypeISOCountryCodeA3) CboAVUSCountry.SelectedItem;
+                dg.AVSData = usAVSData;
+                dg.ProcessInternationalAVS = false;
+            }
+            else
+            {
+                GrpBxAVSIntl.Enabled = true;
+                GrpBxAVSUS.Enabled = false;
+                InternationalAVSData intAVSData = new InternationalAVSData();
+                
+                intAVSData.Street = TxtAVSIntlStreet.Text;
+                intAVSData.HouseNumber = TxtAVSIntlHouse.Text;
+                intAVSData.POBoxNumber = TxtAVSIntlPOBox.Text;
+                intAVSData.City = TxtAVSIntlCity.Text;
+                intAVSData.StateProvince = TxtAVSIntlState.Text;
+                intAVSData.PostalCode = TxtAVSIntlPostal.Text;
+                intAVSData.Country = (TypeISOCountryCodeA3)CboAVSIntlCountry.SelectedItem;
+                dg.IntlAVSData = intAVSData;
+                dg.ProcessInternationalAVS = true;
+                InternationalAVSOverride intAvsOverride = new InternationalAVSOverride();
+                intAvsOverride.IgnoreAVS = ChkIgnoreAVS.Checked;
+                intAvsOverride.SkipAVS = ChkSkipAVS.Checked;
+                dg.InternationalAvsOverride = intAvsOverride;
+            }
+        }
     }
 }

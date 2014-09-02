@@ -444,7 +444,7 @@ namespace SampleCode
             this.Controls.Add(this.cmdClose);
             this.ForeColor = System.Drawing.Color.DarkMagenta;
             this.Name = "ManageApplicationData";
-            this.Text = "Manage Application Configuration Data - CWS 2.0.19";
+            this.Text = "Manage Application Configuration Data - CWS 2.0.20";
             this.Load += new System.EventHandler(this.ManageApplicationData_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -87,6 +87,7 @@ namespace SampleCode
             this.txtIdentityToken = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbIntroduction = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
             this.CboindustryType = new System.Windows.Forms.ComboBox();
             this.TxtServiceKey = new System.Windows.Forms.TextBox();
             this.cmdPopulateWithMyTestValues = new System.Windows.Forms.Button();
@@ -185,6 +186,38 @@ namespace SampleCode
             this.cmdAuthorizeAndCapture = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbTransactionData = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.RdoAVSIntl = new System.Windows.Forms.RadioButton();
+            this.RdoAVSUS = new System.Windows.Forms.RadioButton();
+            this.GrpBxAVSUS = new System.Windows.Forms.GroupBox();
+            this.TxtAVSUSStreet = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.TxtAVSUSPostal = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.CboAVUSCountry = new System.Windows.Forms.ComboBox();
+            this.TxtAVSUSState = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.TxtAVSUSCity = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.GrpBxAVSIntl = new System.Windows.Forms.GroupBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.ChkIgnoreAVS = new System.Windows.Forms.CheckBox();
+            this.ChkSkipAVS = new System.Windows.Forms.CheckBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.TxtAVSIntlPOBox = new System.Windows.Forms.TextBox();
+            this.TxtAVSIntlHouse = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.TxtAVSIntlStreet = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.TxtAVSIntlPostal = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.CboAVSIntlCountry = new System.Windows.Forms.ComboBox();
+            this.TxtAVSIntlState = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.TxtAVSIntlCity = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
             this.grpProcessasPINLessDebit = new System.Windows.Forms.GroupBox();
             this.ChkProcessAsPINLessDebit = new System.Windows.Forms.CheckBox();
             this.GrpTrackDataFromMSR = new System.Windows.Forms.GroupBox();
@@ -203,6 +236,10 @@ namespace SampleCode
             this.CboTokenizedCard = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.GrpCNP = new System.Windows.Forms.GroupBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.TxtCardHolderName = new System.Windows.Forms.TextBox();
+            this.TxtCVV = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.ChkCardNotPresent = new System.Windows.Forms.CheckBox();
             this.TxtPAN = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -214,7 +251,6 @@ namespace SampleCode
             this.tmrServiceArrow = new System.Windows.Forms.Timer(this.components);
             this.industryToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.linkLblToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label35 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
             this.groupBox10.SuspendLayout();
@@ -237,6 +273,10 @@ namespace SampleCode
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tbTransactionData.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.GrpBxAVSUS.SuspendLayout();
+            this.GrpBxAVSIntl.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.grpProcessasPINLessDebit.SuspendLayout();
             this.GrpTrackDataFromMSR.SuspendLayout();
             this.grpPinDebit.SuspendLayout();
@@ -911,6 +951,15 @@ namespace SampleCode
             this.tbIntroduction.TabIndex = 0;
             this.tbIntroduction.Text = "Introduction";
             this.tbIntroduction.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(201, 248);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(204, 13);
+            this.label35.TabIndex = 144;
+            this.label35.Text = "Application is configured for IndustryType:";
             // 
             // CboindustryType
             // 
@@ -2080,6 +2129,7 @@ namespace SampleCode
             // 
             // tbTransactionData
             // 
+            this.tbTransactionData.Controls.Add(this.groupBox17);
             this.tbTransactionData.Controls.Add(this.grpProcessasPINLessDebit);
             this.tbTransactionData.Controls.Add(this.GrpTrackDataFromMSR);
             this.tbTransactionData.Controls.Add(this.GrpTokenization);
@@ -2092,10 +2142,320 @@ namespace SampleCode
             this.tbTransactionData.Text = "Processing Data";
             this.tbTransactionData.UseVisualStyleBackColor = true;
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.RdoAVSIntl);
+            this.groupBox17.Controls.Add(this.RdoAVSUS);
+            this.groupBox17.Controls.Add(this.GrpBxAVSUS);
+            this.groupBox17.Controls.Add(this.GrpBxAVSIntl);
+            this.groupBox17.Location = new System.Drawing.Point(380, 19);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(357, 501);
+            this.groupBox17.TabIndex = 149;
+            this.groupBox17.TabStop = false;
+            // 
+            // RdoAVSIntl
+            // 
+            this.RdoAVSIntl.AutoSize = true;
+            this.RdoAVSIntl.Location = new System.Drawing.Point(6, 186);
+            this.RdoAVSIntl.Name = "RdoAVSIntl";
+            this.RdoAVSIntl.Size = new System.Drawing.Size(14, 13);
+            this.RdoAVSIntl.TabIndex = 150;
+            this.RdoAVSIntl.UseVisualStyleBackColor = true;
+            // 
+            // RdoAVSUS
+            // 
+            this.RdoAVSUS.AutoSize = true;
+            this.RdoAVSUS.Location = new System.Drawing.Point(7, 19);
+            this.RdoAVSUS.Name = "RdoAVSUS";
+            this.RdoAVSUS.Size = new System.Drawing.Size(14, 13);
+            this.RdoAVSUS.TabIndex = 149;
+            this.RdoAVSUS.UseVisualStyleBackColor = true;
+            this.RdoAVSUS.CheckedChanged += new System.EventHandler(this.RdoAVSUS_CheckedChanged);
+            // 
+            // GrpBxAVSUS
+            // 
+            this.GrpBxAVSUS.Controls.Add(this.TxtAVSUSStreet);
+            this.GrpBxAVSUS.Controls.Add(this.label41);
+            this.GrpBxAVSUS.Controls.Add(this.TxtAVSUSPostal);
+            this.GrpBxAVSUS.Controls.Add(this.label40);
+            this.GrpBxAVSUS.Controls.Add(this.CboAVUSCountry);
+            this.GrpBxAVSUS.Controls.Add(this.TxtAVSUSState);
+            this.GrpBxAVSUS.Controls.Add(this.label28);
+            this.GrpBxAVSUS.Controls.Add(this.label36);
+            this.GrpBxAVSUS.Controls.Add(this.TxtAVSUSCity);
+            this.GrpBxAVSUS.Controls.Add(this.label37);
+            this.GrpBxAVSUS.Location = new System.Drawing.Point(26, 19);
+            this.GrpBxAVSUS.Name = "GrpBxAVSUS";
+            this.GrpBxAVSUS.Size = new System.Drawing.Size(316, 159);
+            this.GrpBxAVSUS.TabIndex = 147;
+            this.GrpBxAVSUS.TabStop = false;
+            this.GrpBxAVSUS.Text = "AVS Data - US";
+            // 
+            // TxtAVSUSStreet
+            // 
+            this.TxtAVSUSStreet.Location = new System.Drawing.Point(96, 18);
+            this.TxtAVSUSStreet.Name = "TxtAVSUSStreet";
+            this.TxtAVSUSStreet.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSUSStreet.TabIndex = 143;
+            this.TxtAVSUSStreet.Text = "1001 1st Av";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(11, 129);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(43, 13);
+            this.label41.TabIndex = 142;
+            this.label41.Text = "Country";
+            // 
+            // TxtAVSUSPostal
+            // 
+            this.TxtAVSUSPostal.Location = new System.Drawing.Point(96, 100);
+            this.TxtAVSUSPostal.Name = "TxtAVSUSPostal";
+            this.TxtAVSUSPostal.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSUSPostal.TabIndex = 141;
+            this.TxtAVSUSPostal.Text = "10101";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(11, 103);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(36, 13);
+            this.label40.TabIndex = 140;
+            this.label40.Text = "Postal";
+            // 
+            // CboAVUSCountry
+            // 
+            this.CboAVUSCountry.FormattingEnabled = true;
+            this.CboAVUSCountry.Location = new System.Drawing.Point(96, 126);
+            this.CboAVUSCountry.Name = "CboAVUSCountry";
+            this.CboAVUSCountry.Size = new System.Drawing.Size(183, 21);
+            this.CboAVUSCountry.TabIndex = 6;
+            // 
+            // TxtAVSUSState
+            // 
+            this.TxtAVSUSState.Location = new System.Drawing.Point(96, 74);
+            this.TxtAVSUSState.Name = "TxtAVSUSState";
+            this.TxtAVSUSState.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSUSState.TabIndex = 5;
+            this.TxtAVSUSState.Text = "CO";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(11, 21);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Street";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(11, 48);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(24, 13);
+            this.label36.TabIndex = 1;
+            this.label36.Text = "City";
+            // 
+            // TxtAVSUSCity
+            // 
+            this.TxtAVSUSCity.Location = new System.Drawing.Point(96, 45);
+            this.TxtAVSUSCity.Name = "TxtAVSUSCity";
+            this.TxtAVSUSCity.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSUSCity.TabIndex = 2;
+            this.TxtAVSUSCity.Text = "Denver";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(11, 77);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(32, 13);
+            this.label37.TabIndex = 3;
+            this.label37.Text = "State";
+            // 
+            // GrpBxAVSIntl
+            // 
+            this.GrpBxAVSIntl.Controls.Add(this.groupBox16);
+            this.GrpBxAVSIntl.Controls.Add(this.label50);
+            this.GrpBxAVSIntl.Controls.Add(this.TxtAVSIntlPOBox);
+            this.GrpBxAVSIntl.Controls.Add(this.TxtAVSIntlHouse);
+            this.GrpBxAVSIntl.Controls.Add(this.label49);
+            this.GrpBxAVSIntl.Controls.Add(this.TxtAVSIntlStreet);
+            this.GrpBxAVSIntl.Controls.Add(this.label42);
+            this.GrpBxAVSIntl.Controls.Add(this.TxtAVSIntlPostal);
+            this.GrpBxAVSIntl.Controls.Add(this.label43);
+            this.GrpBxAVSIntl.Controls.Add(this.CboAVSIntlCountry);
+            this.GrpBxAVSIntl.Controls.Add(this.TxtAVSIntlState);
+            this.GrpBxAVSIntl.Controls.Add(this.label44);
+            this.GrpBxAVSIntl.Controls.Add(this.label47);
+            this.GrpBxAVSIntl.Controls.Add(this.TxtAVSIntlCity);
+            this.GrpBxAVSIntl.Controls.Add(this.label48);
+            this.GrpBxAVSIntl.Enabled = false;
+            this.GrpBxAVSIntl.Location = new System.Drawing.Point(26, 186);
+            this.GrpBxAVSIntl.Name = "GrpBxAVSIntl";
+            this.GrpBxAVSIntl.Size = new System.Drawing.Size(316, 285);
+            this.GrpBxAVSIntl.TabIndex = 148;
+            this.GrpBxAVSIntl.TabStop = false;
+            this.GrpBxAVSIntl.Text = "AVS Data - International";
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.ChkIgnoreAVS);
+            this.groupBox16.Controls.Add(this.ChkSkipAVS);
+            this.groupBox16.Location = new System.Drawing.Point(14, 207);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(265, 62);
+            this.groupBox16.TabIndex = 149;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "InternationalAVSOverride";
+            // 
+            // ChkIgnoreAVS
+            // 
+            this.ChkIgnoreAVS.AutoSize = true;
+            this.ChkIgnoreAVS.Location = new System.Drawing.Point(20, 39);
+            this.ChkIgnoreAVS.Name = "ChkIgnoreAVS";
+            this.ChkIgnoreAVS.Size = new System.Drawing.Size(77, 17);
+            this.ChkIgnoreAVS.TabIndex = 149;
+            this.ChkIgnoreAVS.Text = "IgnoreAVS";
+            this.ChkIgnoreAVS.UseVisualStyleBackColor = true;
+            // 
+            // ChkSkipAVS
+            // 
+            this.ChkSkipAVS.AutoSize = true;
+            this.ChkSkipAVS.Location = new System.Drawing.Point(20, 16);
+            this.ChkSkipAVS.Name = "ChkSkipAVS";
+            this.ChkSkipAVS.Size = new System.Drawing.Size(68, 17);
+            this.ChkSkipAVS.TabIndex = 148;
+            this.ChkSkipAVS.Text = "SkipAVS";
+            this.ChkSkipAVS.UseVisualStyleBackColor = true;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(11, 73);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(77, 13);
+            this.label50.TabIndex = 146;
+            this.label50.Text = "POBoxNumber";
+            // 
+            // TxtAVSIntlPOBox
+            // 
+            this.TxtAVSIntlPOBox.Location = new System.Drawing.Point(96, 70);
+            this.TxtAVSIntlPOBox.Name = "TxtAVSIntlPOBox";
+            this.TxtAVSIntlPOBox.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSIntlPOBox.TabIndex = 147;
+            // 
+            // TxtAVSIntlHouse
+            // 
+            this.TxtAVSIntlHouse.Location = new System.Drawing.Point(96, 19);
+            this.TxtAVSIntlHouse.Name = "TxtAVSIntlHouse";
+            this.TxtAVSIntlHouse.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSIntlHouse.TabIndex = 145;
+            this.TxtAVSIntlHouse.Text = "5";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(11, 22);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(78, 13);
+            this.label49.TabIndex = 144;
+            this.label49.Text = "House Number";
+            // 
+            // TxtAVSIntlStreet
+            // 
+            this.TxtAVSIntlStreet.Location = new System.Drawing.Point(96, 44);
+            this.TxtAVSIntlStreet.Name = "TxtAVSIntlStreet";
+            this.TxtAVSIntlStreet.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSIntlStreet.TabIndex = 143;
+            this.TxtAVSIntlStreet.Text = "Schulstrasse";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(11, 180);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 13);
+            this.label42.TabIndex = 142;
+            this.label42.Text = "Country";
+            // 
+            // TxtAVSIntlPostal
+            // 
+            this.TxtAVSIntlPostal.Location = new System.Drawing.Point(96, 151);
+            this.TxtAVSIntlPostal.Name = "TxtAVSIntlPostal";
+            this.TxtAVSIntlPostal.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSIntlPostal.TabIndex = 141;
+            this.TxtAVSIntlPostal.Text = "W11 2BQ";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(11, 154);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(36, 13);
+            this.label43.TabIndex = 140;
+            this.label43.Text = "Postal";
+            // 
+            // CboAVSIntlCountry
+            // 
+            this.CboAVSIntlCountry.FormattingEnabled = true;
+            this.CboAVSIntlCountry.Location = new System.Drawing.Point(96, 177);
+            this.CboAVSIntlCountry.Name = "CboAVSIntlCountry";
+            this.CboAVSIntlCountry.Size = new System.Drawing.Size(183, 21);
+            this.CboAVSIntlCountry.TabIndex = 6;
+            // 
+            // TxtAVSIntlState
+            // 
+            this.TxtAVSIntlState.Location = new System.Drawing.Point(96, 125);
+            this.TxtAVSIntlState.Name = "TxtAVSIntlState";
+            this.TxtAVSIntlState.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSIntlState.TabIndex = 5;
+            this.TxtAVSIntlState.Text = "GB";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(11, 47);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(35, 13);
+            this.label44.TabIndex = 0;
+            this.label44.Text = "Street";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(11, 99);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(24, 13);
+            this.label47.TabIndex = 1;
+            this.label47.Text = "City";
+            // 
+            // TxtAVSIntlCity
+            // 
+            this.TxtAVSIntlCity.Location = new System.Drawing.Point(96, 96);
+            this.TxtAVSIntlCity.Name = "TxtAVSIntlCity";
+            this.TxtAVSIntlCity.Size = new System.Drawing.Size(183, 20);
+            this.TxtAVSIntlCity.TabIndex = 2;
+            this.TxtAVSIntlCity.Text = "London";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(11, 128);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(59, 13);
+            this.label48.TabIndex = 3;
+            this.label48.Text = "State/Prov";
+            // 
             // grpProcessasPINLessDebit
             // 
             this.grpProcessasPINLessDebit.Controls.Add(this.ChkProcessAsPINLessDebit);
-            this.grpProcessasPINLessDebit.Location = new System.Drawing.Point(6, 379);
+            this.grpProcessasPINLessDebit.Enabled = false;
+            this.grpProcessasPINLessDebit.Location = new System.Drawing.Point(6, 441);
             this.grpProcessasPINLessDebit.Name = "grpProcessasPINLessDebit";
             this.grpProcessasPINLessDebit.Size = new System.Drawing.Size(316, 49);
             this.grpProcessasPINLessDebit.TabIndex = 146;
@@ -2117,7 +2477,7 @@ namespace SampleCode
             this.GrpTrackDataFromMSR.Controls.Add(this.ChkTrackDataFromMSR);
             this.GrpTrackDataFromMSR.Controls.Add(this.grpPinDebit);
             this.GrpTrackDataFromMSR.Controls.Add(this.TxtTrackDataFromMSR);
-            this.GrpTrackDataFromMSR.Location = new System.Drawing.Point(6, 141);
+            this.GrpTrackDataFromMSR.Location = new System.Drawing.Point(6, 203);
             this.GrpTrackDataFromMSR.Name = "GrpTrackDataFromMSR";
             this.GrpTrackDataFromMSR.Size = new System.Drawing.Size(316, 161);
             this.GrpTrackDataFromMSR.TabIndex = 144;
@@ -2221,7 +2581,7 @@ namespace SampleCode
             this.GrpTokenization.Controls.Add(this.ChkTokenization);
             this.GrpTokenization.Controls.Add(this.CboTokenizedCard);
             this.GrpTokenization.Controls.Add(this.label27);
-            this.GrpTokenization.Location = new System.Drawing.Point(6, 308);
+            this.GrpTokenization.Location = new System.Drawing.Point(6, 370);
             this.GrpTokenization.Name = "GrpTokenization";
             this.GrpTokenization.Size = new System.Drawing.Size(316, 65);
             this.GrpTokenization.TabIndex = 139;
@@ -2258,6 +2618,10 @@ namespace SampleCode
             // 
             // GrpCNP
             // 
+            this.GrpCNP.Controls.Add(this.label39);
+            this.GrpCNP.Controls.Add(this.TxtCardHolderName);
+            this.GrpCNP.Controls.Add(this.TxtCVV);
+            this.GrpCNP.Controls.Add(this.label38);
             this.GrpCNP.Controls.Add(this.ChkCardNotPresent);
             this.GrpCNP.Controls.Add(this.TxtPAN);
             this.GrpCNP.Controls.Add(this.label23);
@@ -2267,10 +2631,44 @@ namespace SampleCode
             this.GrpCNP.Controls.Add(this.CboCardTypes);
             this.GrpCNP.Location = new System.Drawing.Point(6, 38);
             this.GrpCNP.Name = "GrpCNP";
-            this.GrpCNP.Size = new System.Drawing.Size(316, 101);
+            this.GrpCNP.Size = new System.Drawing.Size(316, 159);
             this.GrpCNP.TabIndex = 137;
             this.GrpCNP.TabStop = false;
             this.GrpCNP.Text = "Card Not Present";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(11, 48);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(88, 13);
+            this.label39.TabIndex = 142;
+            this.label39.Text = "CardHolderName";
+            // 
+            // TxtCardHolderName
+            // 
+            this.TxtCardHolderName.Location = new System.Drawing.Point(101, 45);
+            this.TxtCardHolderName.Name = "TxtCardHolderName";
+            this.TxtCardHolderName.Size = new System.Drawing.Size(183, 20);
+            this.TxtCardHolderName.TabIndex = 143;
+            this.TxtCardHolderName.Text = "John Doe";
+            // 
+            // TxtCVV
+            // 
+            this.TxtCVV.Location = new System.Drawing.Point(101, 126);
+            this.TxtCVV.Name = "TxtCVV";
+            this.TxtCVV.Size = new System.Drawing.Size(183, 20);
+            this.TxtCVV.TabIndex = 141;
+            this.TxtCVV.Text = "111";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(11, 129);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(28, 13);
+            this.label38.TabIndex = 140;
+            this.label38.Text = "CVV";
             // 
             // ChkCardNotPresent
             // 
@@ -2286,7 +2684,7 @@ namespace SampleCode
             // 
             // TxtPAN
             // 
-            this.TxtPAN.Location = new System.Drawing.Point(96, 71);
+            this.TxtPAN.Location = new System.Drawing.Point(101, 74);
             this.TxtPAN.Name = "TxtPAN";
             this.TxtPAN.Size = new System.Drawing.Size(183, 20);
             this.TxtPAN.TabIndex = 5;
@@ -2304,7 +2702,7 @@ namespace SampleCode
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(11, 48);
+            this.label25.Location = new System.Drawing.Point(11, 103);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(79, 13);
             this.label25.TabIndex = 1;
@@ -2312,7 +2710,7 @@ namespace SampleCode
             // 
             // TxtExpirationDate
             // 
-            this.TxtExpirationDate.Location = new System.Drawing.Point(96, 45);
+            this.TxtExpirationDate.Location = new System.Drawing.Point(101, 100);
             this.TxtExpirationDate.Name = "TxtExpirationDate";
             this.TxtExpirationDate.Size = new System.Drawing.Size(183, 20);
             this.TxtExpirationDate.TabIndex = 2;
@@ -2321,7 +2719,7 @@ namespace SampleCode
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(11, 74);
+            this.label26.Location = new System.Drawing.Point(11, 77);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(29, 13);
             this.label26.TabIndex = 3;
@@ -2330,7 +2728,7 @@ namespace SampleCode
             // CboCardTypes
             // 
             this.CboCardTypes.FormattingEnabled = true;
-            this.CboCardTypes.Location = new System.Drawing.Point(96, 18);
+            this.CboCardTypes.Location = new System.Drawing.Point(101, 18);
             this.CboCardTypes.Name = "CboCardTypes";
             this.CboCardTypes.Size = new System.Drawing.Size(183, 21);
             this.CboCardTypes.TabIndex = 6;
@@ -2353,15 +2751,6 @@ namespace SampleCode
             // 
             this.tmrServiceArrow.Interval = 5000;
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(201, 248);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(204, 13);
-            this.label35.TabIndex = 144;
-            this.label35.Text = "Application is configured for IndustryType:";
-            // 
             // SampleCode_DeskTop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2371,7 +2760,7 @@ namespace SampleCode
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(884, 750);
+            this.ClientSize = new System.Drawing.Size(952, 750);
             this.Controls.Add(this.lnkOnlineDocumentation);
             this.Controls.Add(this.tabControl1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -2379,7 +2768,7 @@ namespace SampleCode
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SampleCode_DeskTop";
-            this.Text = "Sample Code - CWS 2.0.19";
+            this.Text = "Sample Code - CWS 2.0.20";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
@@ -2418,6 +2807,14 @@ namespace SampleCode
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tbTransactionData.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.GrpBxAVSUS.ResumeLayout(false);
+            this.GrpBxAVSUS.PerformLayout();
+            this.GrpBxAVSIntl.ResumeLayout(false);
+            this.GrpBxAVSIntl.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             this.grpProcessasPINLessDebit.ResumeLayout(false);
             this.grpProcessasPINLessDebit.PerformLayout();
             this.GrpTrackDataFromMSR.ResumeLayout(false);
@@ -2620,6 +3017,42 @@ namespace SampleCode
         private System.Windows.Forms.ToolTip industryToolTip;
         private System.Windows.Forms.ToolTip linkLblToolTip;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.GroupBox GrpBxAVSUS;
+        public System.Windows.Forms.TextBox TxtAVSUSState;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label36;
+        public System.Windows.Forms.TextBox TxtAVSUSCity;
+        private System.Windows.Forms.Label label37;
+        public System.Windows.Forms.ComboBox CboAVUSCountry;
+        private System.Windows.Forms.Label label39;
+        public System.Windows.Forms.TextBox TxtCardHolderName;
+        public System.Windows.Forms.TextBox TxtCVV;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.GroupBox GrpBxAVSIntl;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.CheckBox ChkIgnoreAVS;
+        private System.Windows.Forms.CheckBox ChkSkipAVS;
+        private System.Windows.Forms.Label label50;
+        public System.Windows.Forms.TextBox TxtAVSIntlPOBox;
+        public System.Windows.Forms.TextBox TxtAVSIntlHouse;
+        private System.Windows.Forms.Label label49;
+        public System.Windows.Forms.TextBox TxtAVSIntlStreet;
+        private System.Windows.Forms.Label label42;
+        public System.Windows.Forms.TextBox TxtAVSIntlPostal;
+        private System.Windows.Forms.Label label43;
+        public System.Windows.Forms.ComboBox CboAVSIntlCountry;
+        public System.Windows.Forms.TextBox TxtAVSIntlState;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label47;
+        public System.Windows.Forms.TextBox TxtAVSIntlCity;
+        private System.Windows.Forms.Label label48;
+        public System.Windows.Forms.TextBox TxtAVSUSStreet;
+        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.TextBox TxtAVSUSPostal;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.RadioButton RdoAVSIntl;
+        private System.Windows.Forms.RadioButton RdoAVSUS;
         //internal static System.Windows.Forms.CheckBox ckBoxDelegatedSignOn;
         //internal static System.Windows.Forms.TextBox txtDelegatedServiceKey;
     }

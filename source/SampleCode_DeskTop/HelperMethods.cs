@@ -752,9 +752,7 @@ namespace SampleCode
                 string strErrorId;
                 string strErrorMessage;
                 if (_FaultHandler.handleTxnFault(ex, out strErrorId, out strErrorMessage))
-                { _message +=strErrorId + " : " + strErrorMessage;
-                throw ex;
-                }
+                { _message +=strErrorId + " : " + strErrorMessage; }
                 else { _message +=ex.Message; }
             }
 

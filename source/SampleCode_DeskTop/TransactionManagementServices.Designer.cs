@@ -841,7 +841,7 @@ namespace SampleCode
             this.Controls.Add(this.dtpStartTimeTMS);
             this.ForeColor = System.Drawing.Color.DarkMagenta;
             this.Name = "TransactionManagementServices";
-            this.Text = "TransactionManagementServices - CWS 2.0.19";
+            this.Text = "TransactionManagementServices - CWS 2.0.20";
             this.Load += new System.EventHandler(this.TransactionManagementServices_Load);
             this.grpQueryTransactionsParameters.ResumeLayout(false);
             this.grpQueryTransactionsParameters.PerformLayout();

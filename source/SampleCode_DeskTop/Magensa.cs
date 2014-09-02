@@ -243,7 +243,7 @@ namespace SampleCode
             _bct.TenderData.DeviceSerialNumber = TxtDeviceSerialNumber.Text;
             _bct.TransactionData.EntryMode = EntryMode.Track2DataFromMSR;
             // Note Reference should be a unique value for each transaction being sent.
-            _bct.TransactionData.Reference = "25";
+            _bct.TransactionData.Reference = "11";
 
             _bct.TransactionData.Amount = Convert.ToDecimal(TxtAmount.Text);
             if (TxtScoreThreshold.Text.Length > 0)

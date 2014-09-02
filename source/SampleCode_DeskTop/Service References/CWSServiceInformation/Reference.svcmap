@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c58c4fbc-1737-4c1f-b5aa-db0fa66baefd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fbbd9d50-f832-4760-a1bf-0bf7904d38b7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,17 +20,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="C:\SVN\SC\CustomerProjects\Mind Body Online\CSharp-SampleApp-Premium-CardNotPresent\source\SampleCode_DeskTop\WSDLs\CWSServiceInformation.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceInformation.wsdl" MetadataType="Wsdl" ID="026ee333-e7ee-4b92-8f81-d84b8ffedc00" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="Ipc.General.WCF.Contracts.Common.xsd" MetadataType="Schema" ID="4c80e595-aa81-45ad-9fd7-e700dc099e79" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="513462c4-7af8-4ba0-8a74-b1f657fd9d61" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="External.xsd" MetadataType="Schema" ID="b65ba7c0-0820-4c3a-b9f5-24eaefae3252" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="ServiceInformation.xsd" MetadataType="Schema" ID="bc7eba3e-08f8-4c89-b157-41fcdb31f7bc" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c3d1de2f-cb20-4e2c-944f-9f4f63181005" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="Faults.xsd" MetadataType="Schema" ID="9202fb6d-2d2a-470d-882f-b86fabf40c4f" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="539d0f13-5c7b-4a8c-97d7-1c5f86979c5d" SourceId="1" SourceUrl="https://api.cipcert.goevo.com/2.0.20/SvcInfo/mex" />
+    <MetadataFile FileName="schemas.xsd" MetadataType="Schema" ID="15307897-eefc-4874-a906-b7c113102388" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_Ipc.General.WCF.Contracts.Common.xsd" />
+    <MetadataFile FileName="schemas1.xsd" MetadataType="Schema" ID="1b8b1be6-cbbd-4c87-a136-247e3a58f02c" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.microsoft.com_2003_10_Serialization_Arrays.xsd" />
+    <MetadataFile FileName="schemas2.xsd" MetadataType="Schema" ID="128d3eb2-eeef-4e13-84de-14e70e1c07ba" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.microsoft.com_2003_10_Serialization.xsd" />
+    <MetadataFile FileName="schemas3.xsd" MetadataType="Schema" ID="faa83cad-7291-42b9-8005-9f90b2486a77" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_Identity_1.0.xsd" />
+    <MetadataFile FileName="schemas4.xsd" MetadataType="Schema" ID="264c281f-f29b-420a-9c78-164c978b9faa" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_ServiceInformation_Faults.xsd" />
+    <MetadataFile FileName="schemas5.xsd" MetadataType="Schema" ID="2ff22311-5931-407b-b156-57d4dbc54d1f" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_Ipc.General.WCF.Contracts.Common_External.xsd" />
+    <MetadataFile FileName="CWSServiceInformation.wsdl" MetadataType="Wsdl" ID="4412e539-17a7-4b59-8401-b83b753240f5" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/CWSServiceInformation.wsdl" />
+    <MetadataFile FileName="schemas6.xsd" MetadataType="Schema" ID="b0336472-d3db-4f4d-b600-42331827ada4" SourceId="1" SourceUrl="file:///C:/SVN/SC/CustomerProjects/Mind Body Online/CSharp-SampleApp-Premium-CardNotPresent/source/SampleCode_DeskTop/WSDLs/schemas.evosnap.com_CWS_v2.0_ServiceInformation.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

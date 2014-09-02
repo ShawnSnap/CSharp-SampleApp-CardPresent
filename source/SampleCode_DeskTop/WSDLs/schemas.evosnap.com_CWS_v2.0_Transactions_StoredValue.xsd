@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/Transactions/StoredValue" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/Transactions/StoredValue" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="schemas.evosnap.com_CWS_v2.0_Transactions.xsd" namespace="http://schemas.evosnap.com/CWS/v2.0/Transactions" />
+  <xs:complexType name="StoredValueTransaction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q1:Transaction">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TenderData" nillable="true" type="tns:StoredValueTenderData" />
+          <xs:element minOccurs="0" name="TransactionData" nillable="true" type="tns:StoredValueTransactionData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueTransaction" nillable="true" type="tns:StoredValueTransaction" />
+  <xs:complexType name="StoredValueTenderData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q2:TransactionTenderData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CardData" nillable="true" type="tns:CardData" />
+          <xs:element minOccurs="0" name="CardSecurityData" nillable="true" type="tns:CardSecurityData" />
+          <xs:element minOccurs="0" name="CardholderId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConsumerIdentifications" nillable="true" type="tns:ArrayOfConsumerIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueTenderData" nillable="true" type="tns:StoredValueTenderData" />
+  <xs:complexType name="CardData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expire" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Track1Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Track2Data" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardData" nillable="true" type="tns:CardData" />
+  <xs:complexType name="CardSecurityData">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.evosnap.com/CWS/v2.0/Transactions" minOccurs="0" name="CVDataProvided" type="q3:CVDataProvided" />
+      <xs:element minOccurs="0" name="CVData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardSecurityData" nillable="true" type="tns:CardSecurityData" />
+  <xs:complexType name="ArrayOfConsumerIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsumerIdentification" nillable="true" type="tns:ConsumerIdentification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsumerIdentification" nillable="true" type="tns:ArrayOfConsumerIdentification" />
+  <xs:complexType name="ConsumerIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdType" type="tns:IdType" />
+      <xs:element minOccurs="0" name="IdData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdEntryMode" type="tns:IdEntryMode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsumerIdentification" nillable="true" type="tns:ConsumerIdentification" />
+  <xs:simpleType name="IdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="PIN" />
+      <xs:enumeration value="PINEncrypted" />
+      <xs:enumeration value="PINEncryptedKeySerialNumber" />
+      <xs:enumeration value="PhoneNumber" />
+      <xs:enumeration value="DriversLicenseNumber" />
+      <xs:enumeration value="EmailAddress" />
+      <xs:enumeration value="BiometricAlgorithm" />
+      <xs:enumeration value="BiometricMap" />
+      <xs:enumeration value="X509Certificate" />
+      <xs:enumeration value="Passphrase" />
+      <xs:enumeration value="Hash" />
+      <xs:enumeration value="PublicKey" />
+      <xs:enumeration value="RetinaAlg" />
+      <xs:enumeration value="RetinaMap" />
+      <xs:enumeration value="BarCode" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IdType" nillable="true" type="tns:IdType" />
+  <xs:simpleType name="IdEntryMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="TrackData" />
+      <xs:enumeration value="Keyed" />
+      <xs:enumeration value="Internet" />
+      <xs:enumeration value="BlueTooth" />
+      <xs:enumeration value="RFID" />
+      <xs:enumeration value="Wireless" />
+      <xs:enumeration value="Biometric" />
+      <xs:enumeration value="NFC" />
+      <xs:enumeration value="Transponder" />
+      <xs:enumeration value="ContactlessDevice" />
+      <xs:enumeration value="ChipCapableDevice" />
+      <xs:enumeration value="ProviderIssued" />
+      <xs:enumeration value="BarCodeReader" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IdEntryMode" nillable="true" type="tns:IdEntryMode" />
+  <xs:complexType name="StoredValueTransactionData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q4:TransactionData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmployeeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndustryType" type="q4:IndustryType" />
+          <xs:element minOccurs="0" name="TipAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TenderCurrencyCode" type="q4:TypeISOCurrencyCodeA3" />
+          <xs:element minOccurs="0" name="CardRestrictionValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntryMode" type="q4:EntryMode" />
+          <xs:element minOccurs="0" name="Unload" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CardStatus" type="tns:CardStatus" />
+          <xs:element minOccurs="0" name="OperationType" type="tns:OperationType" />
+          <xs:element minOccurs="0" name="OrderNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransactionCode" type="tns:TransactionCode" />
+          <xs:element minOccurs="0" name="IsCashOut" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueTransactionData" nillable="true" type="tns:StoredValueTransactionData" />
+  <xs:simpleType name="CardStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Lost" />
+      <xs:enumeration value="Stolen" />
+      <xs:enumeration value="Suspended" />
+      <xs:enumeration value="RemoveStatus" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CardStatus" nillable="true" type="tns:CardStatus" />
+  <xs:simpleType name="OperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Activate" />
+      <xs:enumeration value="BalanceTransfer" />
+      <xs:enumeration value="Deactivate" />
+      <xs:enumeration value="Reload" />
+      <xs:enumeration value="UpdateStatus" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationType" nillable="true" type="tns:OperationType" />
+  <xs:simpleType name="TransactionCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Override" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionCode" nillable="true" type="tns:TransactionCode" />
+  <xs:complexType name="StoredValueBalanceTransferTenderData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StoredValueTenderData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SourceCardData" nillable="true" type="tns:CardData" />
+          <xs:element minOccurs="0" name="ConsumerIdentification" nillable="true" type="tns:ConsumerIdentification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueBalanceTransferTenderData" nillable="true" type="tns:StoredValueBalanceTransferTenderData" />
+  <xs:complexType name="StoredValueActivateTenderData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StoredValueTenderData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VirtualCardData" nillable="true" type="tns:VirtualCardData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueActivateTenderData" nillable="true" type="tns:StoredValueActivateTenderData" />
+  <xs:complexType name="VirtualCardData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumberLength" type="xs:int" />
+      <xs:element minOccurs="0" name="BIN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VirtualCardData" nillable="true" type="tns:VirtualCardData" />
+  <xs:complexType name="StoredValueReturn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q5:Return">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TransactionCode" type="tns:TransactionCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueReturn" nillable="true" type="tns:StoredValueReturn" />
+  <xs:complexType name="StoredValueCapture">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q6:Capture">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueCapture" nillable="true" type="tns:StoredValueCapture" />
+  <xs:complexType name="StoredValueManage">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q7:Manage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SourceCardData" nillable="true" type="tns:CardData" />
+          <xs:element minOccurs="0" name="CardStatus" type="tns:CardStatus" />
+          <xs:element minOccurs="0" name="IsCashOut" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OperationType" type="tns:OperationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueManage" nillable="true" type="tns:StoredValueManage" />
+  <xs:complexType name="StoredValueTransactionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q8:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FeeAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ApprovalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CVResult" type="q8:CVResult" />
+          <xs:element minOccurs="0" name="CashBackAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LockAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NewBalance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PreviousBalance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CardStatus" type="tns:CardStatus" />
+          <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CVData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CardRestrictionValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentAccountDataToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedPAN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Expire" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueTransactionResponse" nillable="true" type="tns:StoredValueTransactionResponse" />
+  <xs:complexType name="StoredValueCaptureResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q9:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatchId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SummaryData" nillable="true" type="q9:SummaryData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoredValueCaptureResponse" nillable="true" type="tns:StoredValueCaptureResponse" />
+</xs:schema>

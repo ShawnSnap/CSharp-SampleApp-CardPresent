@@ -892,7 +892,7 @@ namespace SampleCode
             this.Controls.Add(this.ChkEnableAllMerchantFields);
             this.ForeColor = System.Drawing.Color.DarkMagenta;
             this.Name = "ManageMerchantProfile";
-            this.Text = "Manage Merchant Profiles - CWS 2.0.19";
+            this.Text = "Manage Merchant Profiles - CWS 2.0.20";
             this.Load += new System.EventHandler(this.ManageMerchantProfile_Load);
             this.tbMerchantInformation.ResumeLayout(false);
             this.tbMerchantContactData.ResumeLayout(false);

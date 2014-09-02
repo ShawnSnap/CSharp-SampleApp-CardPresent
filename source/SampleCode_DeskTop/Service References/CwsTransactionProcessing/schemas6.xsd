@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/Transactions/ElectronicChecking" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/Transactions/ElectronicChecking" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="schemas.evosnap.com_CWS_v2.0_Transactions.xsd" namespace="http://schemas.evosnap.com/CWS/v2.0/Transactions" />
+  <xs:complexType name="ElectronicCheckingCaptureResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q1:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SummaryData" nillable="true" type="q1:SummaryData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingCaptureResponse" nillable="true" type="tns:ElectronicCheckingCaptureResponse" />
+  <xs:complexType name="ElectronicCheckingTransactionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q2:Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ACHCapable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ApprovalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifiedAccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModifiedRoutingNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentAccountDataToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnInformation" nillable="true" type="tns:ReturnInformation" />
+          <xs:element minOccurs="0" name="SubmitDate" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingTransactionResponse" nillable="true" type="tns:ElectronicCheckingTransactionResponse" />
+  <xs:complexType name="ReturnInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReturnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnDate" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnReason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnInformation" nillable="true" type="tns:ReturnInformation" />
+  <xs:complexType name="ElectronicCheckingTransaction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q3:Transaction">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TenderData" nillable="true" type="tns:ElectronicCheckingTenderData" />
+          <xs:element minOccurs="0" name="TransactionData" nillable="true" type="tns:ElectronicCheckingTransactionData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingTransaction" nillable="true" type="tns:ElectronicCheckingTransaction" />
+  <xs:complexType name="ElectronicCheckingCustomerData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q4:TransactionCustomerData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalBillingData" nillable="true" type="q4:PersonalInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingCustomerData" nillable="true" type="tns:ElectronicCheckingCustomerData" />
+  <xs:complexType name="ElectronicCheckingTenderData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q5:TransactionTenderData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CheckData" nillable="true" type="tns:CheckData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingTenderData" nillable="true" type="tns:ElectronicCheckingTenderData" />
+  <xs:complexType name="CheckData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckCountryCode" type="tns:CheckCountryCode" />
+      <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerType" type="tns:OwnerType" />
+      <xs:element minOccurs="0" name="RoutingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseType" type="tns:UseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckData" nillable="true" type="tns:CheckData" />
+  <xs:simpleType name="CheckCountryCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="US" />
+      <xs:enumeration value="MX" />
+      <xs:enumeration value="CA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CheckCountryCode" nillable="true" type="tns:CheckCountryCode" />
+  <xs:simpleType name="OwnerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Personal" />
+      <xs:enumeration value="Business" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OwnerType" nillable="true" type="tns:OwnerType" />
+  <xs:simpleType name="UseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Savings" />
+      <xs:enumeration value="Checking" />
+      <xs:enumeration value="Travelers" />
+      <xs:enumeration value="Payroll" />
+      <xs:enumeration value="Cash" />
+      <xs:enumeration value="TwoParty" />
+      <xs:enumeration value="Government" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UseType" nillable="true" type="tns:UseType" />
+  <xs:complexType name="ElectronicCheckingTransactionData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.evosnap.com/CWS/v2.0/Transactions" base="q6:TransactionData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:string" />
+          <xs:element minOccurs="0" name="IsRecurring" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PayeeEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PayeeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SECCode" type="tns:SECCode" />
+          <xs:element minOccurs="0" name="ServiceType" type="tns:ServiceType" />
+          <xs:element minOccurs="0" name="TransactionType" type="tns:TransactionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingTransactionData" nillable="true" type="tns:ElectronicCheckingTransactionData" />
+  <xs:simpleType name="SECCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="BOC" />
+      <xs:enumeration value="CCD" />
+      <xs:enumeration value="PPD" />
+      <xs:enumeration value="TEL" />
+      <xs:enumeration value="WEB" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SECCode" nillable="true" type="tns:SECCode" />
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="ACH" />
+      <xs:enumeration value="ECK" />
+      <xs:enumeration value="RDC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />
+  <xs:simpleType name="TransactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Credit" />
+      <xs:enumeration value="Debit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionType" nillable="true" type="tns:TransactionType" />
+</xs:schema>

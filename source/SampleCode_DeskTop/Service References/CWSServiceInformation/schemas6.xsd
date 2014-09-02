@@ -1,0 +1,1833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="schemas.microsoft.com_2003_10_Serialization_Arrays.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SignOnWithToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identityToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignOnWithTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignOnWithTokenResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetServiceInformationResult" nillable="true" type="tns:ServiceInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankcardServices" nillable="true" type="tns:ArrayOfBankcardService" />
+      <xs:element minOccurs="0" name="ElectronicCheckingServices" nillable="true" type="tns:ArrayOfElectronicCheckingService" />
+      <xs:element minOccurs="0" name="StoredValueServices" nillable="true" type="tns:ArrayOfStoredValueService" />
+      <xs:element minOccurs="0" name="Workflows" nillable="true" type="tns:ArrayOfWorkflow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceInformation" nillable="true" type="tns:ServiceInformation" />
+  <xs:complexType name="ArrayOfBankcardService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BankcardService" nillable="true" type="tns:BankcardService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBankcardService" nillable="true" type="tns:ArrayOfBankcardService" />
+  <xs:complexType name="BankcardService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlternativeMerchantData" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AutoBatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AVSData" nillable="true" type="tns:BankcardServiceAVSData" />
+      <xs:element minOccurs="0" name="CutoffTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EncryptionKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManagedBilling" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaximumBatchItems" type="xs:long" />
+      <xs:element minOccurs="0" name="MaximumLineItems" type="xs:long" />
+      <xs:element minOccurs="0" name="MultiplePartialCapture" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Operations" nillable="true" type="tns:Operations" />
+      <xs:element minOccurs="0" name="PurchaseCardLevel" type="tns:PurchaseCardLevel" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tenders" nillable="true" type="tns:Tenders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankcardService" nillable="true" type="tns:BankcardService" />
+  <xs:complexType name="BankcardServiceAVSData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardholderName" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Street" type="xs:boolean" />
+      <xs:element minOccurs="0" name="City" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StateProvince" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PostalCode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Country" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phone" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankcardServiceAVSData" nillable="true" type="tns:BankcardServiceAVSData" />
+  <xs:complexType name="Operations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Verify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QueryAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AuthAndCapture" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Authorize" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Adjust" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnById" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnUnlinked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Undo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Capture" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CaptureSelective" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CaptureAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CloseBatch" type="tns:CloseBatch" />
+      <xs:element minOccurs="0" name="QueryRejected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManageAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManageAccountById" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Disburse" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operations" nillable="true" type="tns:Operations" />
+  <xs:simpleType name="CloseBatch">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Supported" />
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="Required" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CloseBatch" nillable="true" type="tns:CloseBatch" />
+  <xs:simpleType name="PurchaseCardLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Level1" />
+      <xs:enumeration value="Level2" />
+      <xs:enumeration value="Level3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PurchaseCardLevel" nillable="true" type="tns:PurchaseCardLevel" />
+  <xs:complexType name="Tenders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Credit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINDebit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINlessDebit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PINDebitReturnSupportType" type="tns:PINDebitReturnSupportType" />
+      <xs:element minOccurs="0" name="PINDebitUndoTenderDataRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CreditAuthorizeSupport" type="tns:CreditAuthorizeSupportType" />
+      <xs:element minOccurs="0" name="QueryRejectedSupport" type="tns:QueryRejectedSupportType" />
+      <xs:element minOccurs="0" name="PinDebitUndoSupport" type="tns:PinDebitUndoSupportType" />
+      <xs:element minOccurs="0" name="BatchAssignmentSupport" type="tns:BatchAssignmentSupport" />
+      <xs:element minOccurs="0" name="CreditReturnSupportType" type="tns:CreditReturnSupportType" />
+      <xs:element minOccurs="0" name="TrackDataSupport" type="tns:TrackDataSupportType" />
+      <xs:element minOccurs="0" name="CredentialsRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CreditReversalSupportType" type="tns:CreditReversalSupportType" />
+      <xs:element minOccurs="0" name="PartialApprovalSupportType" type="tns:PartialApprovalSupportType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tenders" nillable="true" type="tns:Tenders" />
+  <xs:simpleType name="PINDebitReturnSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unsupported" />
+      <xs:enumeration value="Standalone" />
+      <xs:enumeration value="Linked" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PINDebitReturnSupportType" nillable="true" type="tns:PINDebitReturnSupportType" />
+  <xs:simpleType name="CreditAuthorizeSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AuthorizeOnly" />
+      <xs:enumeration value="AuthorizeAndCaptureOnly" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreditAuthorizeSupportType" nillable="true" type="tns:CreditAuthorizeSupportType" />
+  <xs:simpleType name="QueryRejectedSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="SupportedWithDateRange" />
+      <xs:enumeration value="SupportedWithSpecificDate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryRejectedSupportType" nillable="true" type="tns:QueryRejectedSupportType" />
+  <xs:simpleType name="PinDebitUndoSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="Supported" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PinDebitUndoSupportType" nillable="true" type="tns:PinDebitUndoSupportType" />
+  <xs:simpleType name="BatchAssignmentSupport">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Supported" />
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="SupportedWithCaptureAll" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BatchAssignmentSupport" nillable="true" type="tns:BatchAssignmentSupport" />
+  <xs:simpleType name="CreditReturnSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unsupported" />
+      <xs:enumeration value="Standalone" />
+      <xs:enumeration value="Linked" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreditReturnSupportType" nillable="true" type="tns:CreditReturnSupportType" />
+  <xs:simpleType name="TrackDataSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="Track1" />
+      <xs:enumeration value="Track2" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrackDataSupportType" nillable="true" type="tns:TrackDataSupportType" />
+  <xs:simpleType name="CreditReversalSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSupported" />
+      <xs:enumeration value="Captured" />
+      <xs:enumeration value="ReadyForCapture" />
+      <xs:enumeration value="Both" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreditReversalSupportType" nillable="true" type="tns:CreditReversalSupportType" />
+  <xs:simpleType name="PartialApprovalSupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DisabledAlwaysSupported" />
+      <xs:enumeration value="DisabledNotSupported" />
+      <xs:enumeration value="Enabled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PartialApprovalSupportType" nillable="true" type="tns:PartialApprovalSupportType" />
+  <xs:complexType name="ArrayOfElectronicCheckingService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ElectronicCheckingService" nillable="true" type="tns:ElectronicCheckingService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfElectronicCheckingService" nillable="true" type="tns:ArrayOfElectronicCheckingService" />
+  <xs:complexType name="ElectronicCheckingService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Operations" nillable="true" type="tns:Operations" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tenders" nillable="true" type="tns:Tenders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingService" nillable="true" type="tns:ElectronicCheckingService" />
+  <xs:complexType name="ArrayOfStoredValueService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredValueService" nillable="true" type="tns:StoredValueService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredValueService" nillable="true" type="tns:ArrayOfStoredValueService" />
+  <xs:complexType name="StoredValueService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Operations" nillable="true" type="tns:Operations" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tenders" nillable="true" type="tns:Tenders" />
+      <xs:element minOccurs="0" name="SecureMSRAllowed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredValueService" nillable="true" type="tns:StoredValueService" />
+  <xs:complexType name="ArrayOfWorkflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Workflow" nillable="true" type="tns:Workflow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflow" nillable="true" type="tns:ArrayOfWorkflow" />
+  <xs:complexType name="Workflow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WorkflowId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkflowServices" nillable="true" type="tns:ArrayOfWorkflowService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Workflow" nillable="true" type="tns:Workflow" />
+  <xs:complexType name="ArrayOfWorkflowService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowService" nillable="true" type="tns:WorkflowService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowService" nillable="true" type="tns:ArrayOfWorkflowService" />
+  <xs:complexType name="WorkflowService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ordinal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowService" nillable="true" type="tns:WorkflowService" />
+  <xs:element name="SaveApplicationData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationData" nillable="true" type="tns:ApplicationData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ApplicationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationAttended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ApplicationLocation" type="tns:ApplicationLocation" />
+      <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeveloperId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HardwareType" type="tns:HardwareType" />
+      <xs:element minOccurs="0" name="PINCapability" type="tns:PINCapability" />
+      <xs:element minOccurs="0" name="PTLSSocketId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReadCapability" type="tns:ReadCapability" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SoftwareVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SoftwareVersionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VendorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EncryptionType" type="tns:EncryptionType" />
+      <xs:element minOccurs="0" name="DeviceSerialNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationData" nillable="true" type="tns:ApplicationData" />
+  <xs:simpleType name="ApplicationLocation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="OnPremises" />
+      <xs:enumeration value="OffPremises" />
+      <xs:enumeration value="HomeInternet" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ApplicationLocation" nillable="true" type="tns:ApplicationLocation" />
+  <xs:simpleType name="HardwareType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="DialTerminal" />
+      <xs:enumeration value="ElectronicCashRegister" />
+      <xs:enumeration value="InStoreController" />
+      <xs:enumeration value="Mainframe" />
+      <xs:enumeration value="ThirdPartyDeveloper" />
+      <xs:enumeration value="POSPort" />
+      <xs:enumeration value="POSPartner" />
+      <xs:enumeration value="TicketMachine" />
+      <xs:enumeration value="ATM" />
+      <xs:enumeration value="ScripDevice" />
+      <xs:enumeration value="Telephone" />
+      <xs:enumeration value="InitiatedCAT" />
+      <xs:enumeration value="VirtualTerminal" />
+      <xs:enumeration value="MobileBanking" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HardwareType" nillable="true" type="tns:HardwareType" />
+  <xs:simpleType name="PINCapability">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="PINSupported" />
+      <xs:enumeration value="PINNotSupported" />
+      <xs:enumeration value="PINVerifiedByDevice" />
+      <xs:enumeration value="PINPadInoperative" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PINCapability" nillable="true" type="tns:PINCapability" />
+  <xs:simpleType name="ReadCapability">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="HasMSR" />
+      <xs:enumeration value="NoMSR" />
+      <xs:enumeration value="KeyOnly" />
+      <xs:enumeration value="Chip" />
+      <xs:enumeration value="ContactlessChip" />
+      <xs:enumeration value="ContactlessMSR" />
+      <xs:enumeration value="ECR" />
+      <xs:enumeration value="VSCCapable" />
+      <xs:enumeration value="RFIDCapable" />
+      <xs:enumeration value="EmvICC" />
+      <xs:enumeration value="MSREMVICC" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="OCRReader" />
+      <xs:enumeration value="BarCodeReader" />
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="ARUIVR" />
+      <xs:enumeration value="NoTerminal" />
+      <xs:enumeration value="NFCCapable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadCapability" nillable="true" type="tns:ReadCapability" />
+  <xs:simpleType name="EncryptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="MagneSafeV4V5Compatible" />
+      <xs:enumeration value="IPADV1Compatible" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EncryptionType" nillable="true" type="tns:EncryptionType" />
+  <xs:element name="SaveApplicationDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveApplicationDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationProfileId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetApplicationDataResult" nillable="true" type="tns:ApplicationData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApplicationData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="applicationProfileId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApplicationDataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMerchantProfileInitialized">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="merchantProfileId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="TenderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Credit" />
+      <xs:enumeration value="PINDebit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TenderType" nillable="true" type="tns:TenderType" />
+  <xs:element name="IsMerchantProfileInitializedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsMerchantProfileInitializedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMerchantProfilesResult" nillable="true" type="tns:ArrayOfMerchantProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfMerchantProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MerchantProfile" nillable="true" type="tns:MerchantProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMerchantProfile" nillable="true" type="tns:ArrayOfMerchantProfile" />
+  <xs:complexType name="MerchantProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProfileId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUpdated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MerchantData" nillable="true" type="tns:MerchantProfileMerchantData" />
+      <xs:element minOccurs="0" name="TransactionData" nillable="true" type="tns:MerchantProfileTransactionData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MerchantProfile" nillable="true" type="tns:MerchantProfile" />
+  <xs:complexType name="MerchantProfileMerchantData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerServiceInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerServicePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Language" type="tns:TypeISOLanguageCodeA3" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:AddressInfo" />
+      <xs:element minOccurs="0" name="MerchantId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankcardMerchantData" nillable="true" type="tns:BankcardMerchantData" />
+      <xs:element minOccurs="0" name="ElectronicCheckingMerchantData" nillable="true" type="tns:ElectronicCheckingMerchantData" />
+      <xs:element minOccurs="0" name="StoredValueMerchantData" nillable="true" type="tns:StoredValueMerchantData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MerchantProfileMerchantData" nillable="true" type="tns:MerchantProfileMerchantData" />
+  <xs:simpleType name="TypeISOLanguageCodeA3">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="AAR" />
+      <xs:enumeration value="ABK" />
+      <xs:enumeration value="ACE" />
+      <xs:enumeration value="ACH" />
+      <xs:enumeration value="ADA" />
+      <xs:enumeration value="ADY" />
+      <xs:enumeration value="AFA" />
+      <xs:enumeration value="AFH" />
+      <xs:enumeration value="AFR" />
+      <xs:enumeration value="AIN" />
+      <xs:enumeration value="AKA" />
+      <xs:enumeration value="AKK" />
+      <xs:enumeration value="ALB" />
+      <xs:enumeration value="ALE" />
+      <xs:enumeration value="ALG" />
+      <xs:enumeration value="ALT" />
+      <xs:enumeration value="AMH" />
+      <xs:enumeration value="ANG" />
+      <xs:enumeration value="ANP" />
+      <xs:enumeration value="APA" />
+      <xs:enumeration value="ARA" />
+      <xs:enumeration value="ARC" />
+      <xs:enumeration value="ARG" />
+      <xs:enumeration value="ARM" />
+      <xs:enumeration value="ARN" />
+      <xs:enumeration value="ARP" />
+      <xs:enumeration value="ARW" />
+      <xs:enumeration value="ASM" />
+      <xs:enumeration value="AST" />
+      <xs:enumeration value="ATH" />
+      <xs:enumeration value="AUS" />
+      <xs:enumeration value="AVA" />
+      <xs:enumeration value="AVE" />
+      <xs:enumeration value="AWA" />
+      <xs:enumeration value="AYM" />
+      <xs:enumeration value="AZE" />
+      <xs:enumeration value="BAD" />
+      <xs:enumeration value="BAI" />
+      <xs:enumeration value="BAK" />
+      <xs:enumeration value="BAL" />
+      <xs:enumeration value="BAM" />
+      <xs:enumeration value="BAN" />
+      <xs:enumeration value="BAQ" />
+      <xs:enumeration value="BAS" />
+      <xs:enumeration value="BAT" />
+      <xs:enumeration value="BEJ" />
+      <xs:enumeration value="BEL" />
+      <xs:enumeration value="BEM" />
+      <xs:enumeration value="BEN" />
+      <xs:enumeration value="BER" />
+      <xs:enumeration value="BHO" />
+      <xs:enumeration value="BIH" />
+      <xs:enumeration value="BIK" />
+      <xs:enumeration value="BIN" />
+      <xs:enumeration value="BIS" />
+      <xs:enumeration value="BLA" />
+      <xs:enumeration value="BNT" />
+      <xs:enumeration value="BOD" />
+      <xs:enumeration value="BOS" />
+      <xs:enumeration value="BRA" />
+      <xs:enumeration value="BRE" />
+      <xs:enumeration value="BTK" />
+      <xs:enumeration value="BUA" />
+      <xs:enumeration value="BUG" />
+      <xs:enumeration value="BUL" />
+      <xs:enumeration value="BUR" />
+      <xs:enumeration value="BYN" />
+      <xs:enumeration value="CAD" />
+      <xs:enumeration value="CAI" />
+      <xs:enumeration value="CAR" />
+      <xs:enumeration value="CAT" />
+      <xs:enumeration value="CAU" />
+      <xs:enumeration value="CEB" />
+      <xs:enumeration value="CEL" />
+      <xs:enumeration value="CES" />
+      <xs:enumeration value="CHA" />
+      <xs:enumeration value="CHB" />
+      <xs:enumeration value="CHE" />
+      <xs:enumeration value="CHG" />
+      <xs:enumeration value="CHI" />
+      <xs:enumeration value="CHK" />
+      <xs:enumeration value="CHM" />
+      <xs:enumeration value="CHN" />
+      <xs:enumeration value="CHO" />
+      <xs:enumeration value="CHP" />
+      <xs:enumeration value="CHR" />
+      <xs:enumeration value="CHU" />
+      <xs:enumeration value="CHV" />
+      <xs:enumeration value="CHY" />
+      <xs:enumeration value="CMC" />
+      <xs:enumeration value="COP" />
+      <xs:enumeration value="COR" />
+      <xs:enumeration value="COS" />
+      <xs:enumeration value="CPE" />
+      <xs:enumeration value="CPF" />
+      <xs:enumeration value="CPP" />
+      <xs:enumeration value="CRE" />
+      <xs:enumeration value="CRH" />
+      <xs:enumeration value="CRP" />
+      <xs:enumeration value="CSB" />
+      <xs:enumeration value="CUS" />
+      <xs:enumeration value="CYM" />
+      <xs:enumeration value="CZE" />
+      <xs:enumeration value="DAK" />
+      <xs:enumeration value="DAN" />
+      <xs:enumeration value="DAR" />
+      <xs:enumeration value="DAY" />
+      <xs:enumeration value="DEL" />
+      <xs:enumeration value="DEN" />
+      <xs:enumeration value="DEU" />
+      <xs:enumeration value="DGR" />
+      <xs:enumeration value="DIN" />
+      <xs:enumeration value="DIV" />
+      <xs:enumeration value="DOI" />
+      <xs:enumeration value="DRA" />
+      <xs:enumeration value="DSB" />
+      <xs:enumeration value="DUA" />
+      <xs:enumeration value="DUM" />
+      <xs:enumeration value="DUT" />
+      <xs:enumeration value="DYU" />
+      <xs:enumeration value="DZO" />
+      <xs:enumeration value="EFI" />
+      <xs:enumeration value="EGY" />
+      <xs:enumeration value="EKA" />
+      <xs:enumeration value="ELL" />
+      <xs:enumeration value="ELX" />
+      <xs:enumeration value="ENG" />
+      <xs:enumeration value="ENM" />
+      <xs:enumeration value="EPO" />
+      <xs:enumeration value="EST" />
+      <xs:enumeration value="EUS" />
+      <xs:enumeration value="EWE" />
+      <xs:enumeration value="EWO" />
+      <xs:enumeration value="FAN" />
+      <xs:enumeration value="FAO" />
+      <xs:enumeration value="FAS" />
+      <xs:enumeration value="FAT" />
+      <xs:enumeration value="FIJ" />
+      <xs:enumeration value="FIL" />
+      <xs:enumeration value="FIN" />
+      <xs:enumeration value="FIU" />
+      <xs:enumeration value="FON" />
+      <xs:enumeration value="FRA" />
+      <xs:enumeration value="FRE" />
+      <xs:enumeration value="FRM" />
+      <xs:enumeration value="FRO" />
+      <xs:enumeration value="FRR" />
+      <xs:enumeration value="FRS" />
+      <xs:enumeration value="FRY" />
+      <xs:enumeration value="FUL" />
+      <xs:enumeration value="FUR" />
+      <xs:enumeration value="GAA" />
+      <xs:enumeration value="GAY" />
+      <xs:enumeration value="GBA" />
+      <xs:enumeration value="GEM" />
+      <xs:enumeration value="GEO" />
+      <xs:enumeration value="GER" />
+      <xs:enumeration value="GEZ" />
+      <xs:enumeration value="GIL" />
+      <xs:enumeration value="GLA" />
+      <xs:enumeration value="GLE" />
+      <xs:enumeration value="GLG" />
+      <xs:enumeration value="GLV" />
+      <xs:enumeration value="GMH" />
+      <xs:enumeration value="GOH" />
+      <xs:enumeration value="GON" />
+      <xs:enumeration value="GOR" />
+      <xs:enumeration value="GOT" />
+      <xs:enumeration value="GRB" />
+      <xs:enumeration value="GRC" />
+      <xs:enumeration value="GRE" />
+      <xs:enumeration value="GRN" />
+      <xs:enumeration value="GSW" />
+      <xs:enumeration value="GUJ" />
+      <xs:enumeration value="GWI" />
+      <xs:enumeration value="HAI" />
+      <xs:enumeration value="HAT" />
+      <xs:enumeration value="HAU" />
+      <xs:enumeration value="HAW" />
+      <xs:enumeration value="HEB" />
+      <xs:enumeration value="HER" />
+      <xs:enumeration value="HIL" />
+      <xs:enumeration value="HIM" />
+      <xs:enumeration value="HIN" />
+      <xs:enumeration value="HIT" />
+      <xs:enumeration value="HMN" />
+      <xs:enumeration value="HMO" />
+      <xs:enumeration value="HRV" />
+      <xs:enumeration value="HSB" />
+      <xs:enumeration value="HUN" />
+      <xs:enumeration value="HUP" />
+      <xs:enumeration value="HYE" />
+      <xs:enumeration value="IBA" />
+      <xs:enumeration value="IBO" />
+      <xs:enumeration value="ICE" />
+      <xs:enumeration value="IDO" />
+      <xs:enumeration value="III" />
+      <xs:enumeration value="IJO" />
+      <xs:enumeration value="IKU" />
+      <xs:enumeration value="ILE" />
+      <xs:enumeration value="ILO" />
+      <xs:enumeration value="INA" />
+      <xs:enumeration value="INC" />
+      <xs:enumeration value="IND" />
+      <xs:enumeration value="INE" />
+      <xs:enumeration value="INH" />
+      <xs:enumeration value="IPK" />
+      <xs:enumeration value="IRA" />
+      <xs:enumeration value="IRO" />
+      <xs:enumeration value="ISL" />
+      <xs:enumeration value="ITA" />
+      <xs:enumeration value="JAV" />
+      <xs:enumeration value="JBO" />
+      <xs:enumeration value="JPN" />
+      <xs:enumeration value="JPR" />
+      <xs:enumeration value="JRB" />
+      <xs:enumeration value="KAA" />
+      <xs:enumeration value="KAB" />
+      <xs:enumeration value="KAC" />
+      <xs:enumeration value="KAL" />
+      <xs:enumeration value="KAM" />
+      <xs:enumeration value="KAN" />
+      <xs:enumeration value="KAR" />
+      <xs:enumeration value="KAS" />
+      <xs:enumeration value="KAT" />
+      <xs:enumeration value="KAU" />
+      <xs:enumeration value="KAW" />
+      <xs:enumeration value="KAZ" />
+      <xs:enumeration value="KBD" />
+      <xs:enumeration value="KHA" />
+      <xs:enumeration value="KHI" />
+      <xs:enumeration value="KHM" />
+      <xs:enumeration value="KHO" />
+      <xs:enumeration value="KIK" />
+      <xs:enumeration value="KIN" />
+      <xs:enumeration value="KIR" />
+      <xs:enumeration value="KMB" />
+      <xs:enumeration value="KOK" />
+      <xs:enumeration value="KOM" />
+      <xs:enumeration value="KON" />
+      <xs:enumeration value="KOR" />
+      <xs:enumeration value="KOS" />
+      <xs:enumeration value="KPE" />
+      <xs:enumeration value="KRC" />
+      <xs:enumeration value="KRL" />
+      <xs:enumeration value="KRO" />
+      <xs:enumeration value="KRU" />
+      <xs:enumeration value="KUA" />
+      <xs:enumeration value="KUM" />
+      <xs:enumeration value="KUR" />
+      <xs:enumeration value="KUT" />
+      <xs:enumeration value="LAD" />
+      <xs:enumeration value="LAH" />
+      <xs:enumeration value="LAM" />
+      <xs:enumeration value="LAO" />
+      <xs:enumeration value="LAT" />
+      <xs:enumeration value="LAV" />
+      <xs:enumeration value="LEZ" />
+      <xs:enumeration value="LIM" />
+      <xs:enumeration value="LIN" />
+      <xs:enumeration value="LIT" />
+      <xs:enumeration value="LOL" />
+      <xs:enumeration value="LOZ" />
+      <xs:enumeration value="LTZ" />
+      <xs:enumeration value="LUA" />
+      <xs:enumeration value="LUB" />
+      <xs:enumeration value="LUG" />
+      <xs:enumeration value="LUI" />
+      <xs:enumeration value="LUN" />
+      <xs:enumeration value="LUO" />
+      <xs:enumeration value="LUS" />
+      <xs:enumeration value="MAC" />
+      <xs:enumeration value="MAD" />
+      <xs:enumeration value="MAG" />
+      <xs:enumeration value="MAH" />
+      <xs:enumeration value="MAI" />
+      <xs:enumeration value="MAK" />
+      <xs:enumeration value="MAL" />
+      <xs:enumeration value="MAN" />
+      <xs:enumeration value="MAO" />
+      <xs:enumeration value="MAP" />
+      <xs:enumeration value="MAR" />
+      <xs:enumeration value="MAS" />
+      <xs:enumeration value="MAY" />
+      <xs:enumeration value="MDF" />
+      <xs:enumeration value="MDR" />
+      <xs:enumeration value="MEN" />
+      <xs:enumeration value="MGA" />
+      <xs:enumeration value="MIC" />
+      <xs:enumeration value="MIN" />
+      <xs:enumeration value="MKD" />
+      <xs:enumeration value="MKH" />
+      <xs:enumeration value="MLG" />
+      <xs:enumeration value="MLT" />
+      <xs:enumeration value="MNC" />
+      <xs:enumeration value="MNI" />
+      <xs:enumeration value="MNO" />
+      <xs:enumeration value="MOH" />
+      <xs:enumeration value="MOL" />
+      <xs:enumeration value="MON" />
+      <xs:enumeration value="MOS" />
+      <xs:enumeration value="MRI" />
+      <xs:enumeration value="MSA" />
+      <xs:enumeration value="MUN" />
+      <xs:enumeration value="MUS" />
+      <xs:enumeration value="MWL" />
+      <xs:enumeration value="MWR" />
+      <xs:enumeration value="MYA" />
+      <xs:enumeration value="MYN" />
+      <xs:enumeration value="MYV" />
+      <xs:enumeration value="NAH" />
+      <xs:enumeration value="NAI" />
+      <xs:enumeration value="NAP" />
+      <xs:enumeration value="NAU" />
+      <xs:enumeration value="NAV" />
+      <xs:enumeration value="NBL" />
+      <xs:enumeration value="NDE" />
+      <xs:enumeration value="NDO" />
+      <xs:enumeration value="NDS" />
+      <xs:enumeration value="NEP" />
+      <xs:enumeration value="NEW" />
+      <xs:enumeration value="NIA" />
+      <xs:enumeration value="NIC" />
+      <xs:enumeration value="NIU" />
+      <xs:enumeration value="NLD" />
+      <xs:enumeration value="NNO" />
+      <xs:enumeration value="NOB" />
+      <xs:enumeration value="NOG" />
+      <xs:enumeration value="NON" />
+      <xs:enumeration value="NOR" />
+      <xs:enumeration value="NQO" />
+      <xs:enumeration value="NSO" />
+      <xs:enumeration value="NUB" />
+      <xs:enumeration value="NWC" />
+      <xs:enumeration value="NYA" />
+      <xs:enumeration value="NYM" />
+      <xs:enumeration value="NYN" />
+      <xs:enumeration value="NYO" />
+      <xs:enumeration value="NZI" />
+      <xs:enumeration value="OCI" />
+      <xs:enumeration value="OJI" />
+      <xs:enumeration value="ORI" />
+      <xs:enumeration value="ORM" />
+      <xs:enumeration value="OSA" />
+      <xs:enumeration value="OSS" />
+      <xs:enumeration value="OTA" />
+      <xs:enumeration value="OTO" />
+      <xs:enumeration value="PAA" />
+      <xs:enumeration value="PAG" />
+      <xs:enumeration value="PAL" />
+      <xs:enumeration value="PAM" />
+      <xs:enumeration value="PAN" />
+      <xs:enumeration value="PAP" />
+      <xs:enumeration value="PAU" />
+      <xs:enumeration value="PEO" />
+      <xs:enumeration value="PER" />
+      <xs:enumeration value="PHI" />
+      <xs:enumeration value="PHN" />
+      <xs:enumeration value="PLI" />
+      <xs:enumeration value="POL" />
+      <xs:enumeration value="PON" />
+      <xs:enumeration value="POR" />
+      <xs:enumeration value="PRA" />
+      <xs:enumeration value="PRO" />
+      <xs:enumeration value="PUS" />
+      <xs:enumeration value="QUE" />
+      <xs:enumeration value="RAJ" />
+      <xs:enumeration value="RAP" />
+      <xs:enumeration value="RAR" />
+      <xs:enumeration value="ROA" />
+      <xs:enumeration value="ROH" />
+      <xs:enumeration value="ROM" />
+      <xs:enumeration value="RON" />
+      <xs:enumeration value="RUM" />
+      <xs:enumeration value="RUN" />
+      <xs:enumeration value="RUP" />
+      <xs:enumeration value="RUS" />
+      <xs:enumeration value="SAD" />
+      <xs:enumeration value="SAG" />
+      <xs:enumeration value="SAH" />
+      <xs:enumeration value="SAI" />
+      <xs:enumeration value="SAL" />
+      <xs:enumeration value="SAM" />
+      <xs:enumeration value="SAN" />
+      <xs:enumeration value="SAS" />
+      <xs:enumeration value="SAT" />
+      <xs:enumeration value="SCC" />
+      <xs:enumeration value="SCN" />
+      <xs:enumeration value="SCO" />
+      <xs:enumeration value="SCR" />
+      <xs:enumeration value="SEL" />
+      <xs:enumeration value="SEM" />
+      <xs:enumeration value="SGA" />
+      <xs:enumeration value="SGN" />
+      <xs:enumeration value="SHN" />
+      <xs:enumeration value="SID" />
+      <xs:enumeration value="SIN" />
+      <xs:enumeration value="SIO" />
+      <xs:enumeration value="SIT" />
+      <xs:enumeration value="SLA" />
+      <xs:enumeration value="SLK" />
+      <xs:enumeration value="SLO" />
+      <xs:enumeration value="SLV" />
+      <xs:enumeration value="SMA" />
+      <xs:enumeration value="SME" />
+      <xs:enumeration value="SMI" />
+      <xs:enumeration value="SMJ" />
+      <xs:enumeration value="SMN" />
+      <xs:enumeration value="SMO" />
+      <xs:enumeration value="SMS" />
+      <xs:enumeration value="SNA" />
+      <xs:enumeration value="SND" />
+      <xs:enumeration value="SNK" />
+      <xs:enumeration value="SOG" />
+      <xs:enumeration value="SOM" />
+      <xs:enumeration value="SON" />
+      <xs:enumeration value="SOT" />
+      <xs:enumeration value="SPA" />
+      <xs:enumeration value="SQI" />
+      <xs:enumeration value="SRD" />
+      <xs:enumeration value="SRN" />
+      <xs:enumeration value="SRP" />
+      <xs:enumeration value="SRR" />
+      <xs:enumeration value="SSA" />
+      <xs:enumeration value="SSW" />
+      <xs:enumeration value="SUK" />
+      <xs:enumeration value="SUN" />
+      <xs:enumeration value="SUS" />
+      <xs:enumeration value="SUX" />
+      <xs:enumeration value="SWA" />
+      <xs:enumeration value="SWE" />
+      <xs:enumeration value="SYR" />
+      <xs:enumeration value="TAH" />
+      <xs:enumeration value="TAI" />
+      <xs:enumeration value="TAM" />
+      <xs:enumeration value="TAT" />
+      <xs:enumeration value="TEL" />
+      <xs:enumeration value="TEM" />
+      <xs:enumeration value="TER" />
+      <xs:enumeration value="TET" />
+      <xs:enumeration value="TGK" />
+      <xs:enumeration value="TGL" />
+      <xs:enumeration value="THA" />
+      <xs:enumeration value="TIB" />
+      <xs:enumeration value="TIG" />
+      <xs:enumeration value="TIR" />
+      <xs:enumeration value="TIV" />
+      <xs:enumeration value="TKL" />
+      <xs:enumeration value="TLH" />
+      <xs:enumeration value="TLI" />
+      <xs:enumeration value="TMH" />
+      <xs:enumeration value="TOG" />
+      <xs:enumeration value="TON" />
+      <xs:enumeration value="TPI" />
+      <xs:enumeration value="TSI" />
+      <xs:enumeration value="TSN" />
+      <xs:enumeration value="TSO" />
+      <xs:enumeration value="TUK" />
+      <xs:enumeration value="TUM" />
+      <xs:enumeration value="TUP" />
+      <xs:enumeration value="TUR" />
+      <xs:enumeration value="TUT" />
+      <xs:enumeration value="TVL" />
+      <xs:enumeration value="TWI" />
+      <xs:enumeration value="TYV" />
+      <xs:enumeration value="UDM" />
+      <xs:enumeration value="UGA" />
+      <xs:enumeration value="UIG" />
+      <xs:enumeration value="UKR" />
+      <xs:enumeration value="UMB" />
+      <xs:enumeration value="URD" />
+      <xs:enumeration value="UZB" />
+      <xs:enumeration value="VAI" />
+      <xs:enumeration value="VEN" />
+      <xs:enumeration value="VIE" />
+      <xs:enumeration value="VOL" />
+      <xs:enumeration value="VOT" />
+      <xs:enumeration value="WAK" />
+      <xs:enumeration value="WAL" />
+      <xs:enumeration value="WAR" />
+      <xs:enumeration value="WAS" />
+      <xs:enumeration value="WEL" />
+      <xs:enumeration value="WEN" />
+      <xs:enumeration value="WLN" />
+      <xs:enumeration value="WOL" />
+      <xs:enumeration value="XAL" />
+      <xs:enumeration value="XHO" />
+      <xs:enumeration value="YAO" />
+      <xs:enumeration value="YAP" />
+      <xs:enumeration value="YID" />
+      <xs:enumeration value="YOR" />
+      <xs:enumeration value="YPK" />
+      <xs:enumeration value="ZAP" />
+      <xs:enumeration value="ZEN" />
+      <xs:enumeration value="ZHA" />
+      <xs:enumeration value="ZHO" />
+      <xs:enumeration value="ZND" />
+      <xs:enumeration value="ZUL" />
+      <xs:enumeration value="ZUN" />
+      <xs:enumeration value="ZZA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeISOLanguageCodeA3" nillable="true" type="tns:TypeISOLanguageCodeA3" />
+  <xs:complexType name="AddressInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Street1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvince" type="tns:TypeStateProvince" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" type="tns:TypeISOCountryCodeA3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressInfo" nillable="true" type="tns:AddressInfo" />
+  <xs:simpleType name="TypeStateProvince">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="AL" />
+      <xs:enumeration value="AK" />
+      <xs:enumeration value="AS" />
+      <xs:enumeration value="AZ" />
+      <xs:enumeration value="AR" />
+      <xs:enumeration value="CA" />
+      <xs:enumeration value="CO" />
+      <xs:enumeration value="CT" />
+      <xs:enumeration value="DE" />
+      <xs:enumeration value="DC" />
+      <xs:enumeration value="FM" />
+      <xs:enumeration value="FL" />
+      <xs:enumeration value="GA" />
+      <xs:enumeration value="GU" />
+      <xs:enumeration value="HI" />
+      <xs:enumeration value="ID" />
+      <xs:enumeration value="IL" />
+      <xs:enumeration value="IN" />
+      <xs:enumeration value="IA" />
+      <xs:enumeration value="KS" />
+      <xs:enumeration value="KY" />
+      <xs:enumeration value="LA" />
+      <xs:enumeration value="ME" />
+      <xs:enumeration value="MH" />
+      <xs:enumeration value="MD" />
+      <xs:enumeration value="MA" />
+      <xs:enumeration value="MI" />
+      <xs:enumeration value="MN" />
+      <xs:enumeration value="MS" />
+      <xs:enumeration value="MO" />
+      <xs:enumeration value="MT" />
+      <xs:enumeration value="NE" />
+      <xs:enumeration value="NV" />
+      <xs:enumeration value="NH" />
+      <xs:enumeration value="NJ" />
+      <xs:enumeration value="NM" />
+      <xs:enumeration value="NY" />
+      <xs:enumeration value="NC" />
+      <xs:enumeration value="ND" />
+      <xs:enumeration value="MP" />
+      <xs:enumeration value="OH" />
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="OR" />
+      <xs:enumeration value="PW" />
+      <xs:enumeration value="PA" />
+      <xs:enumeration value="PR" />
+      <xs:enumeration value="RI" />
+      <xs:enumeration value="SC" />
+      <xs:enumeration value="SD" />
+      <xs:enumeration value="TN" />
+      <xs:enumeration value="TX" />
+      <xs:enumeration value="UT" />
+      <xs:enumeration value="VT" />
+      <xs:enumeration value="VI" />
+      <xs:enumeration value="VA" />
+      <xs:enumeration value="WA" />
+      <xs:enumeration value="WV" />
+      <xs:enumeration value="WI" />
+      <xs:enumeration value="WY" />
+      <xs:enumeration value="AA" />
+      <xs:enumeration value="AE" />
+      <xs:enumeration value="AP" />
+      <xs:enumeration value="AB" />
+      <xs:enumeration value="BC" />
+      <xs:enumeration value="MB" />
+      <xs:enumeration value="NB" />
+      <xs:enumeration value="NF" />
+      <xs:enumeration value="NT" />
+      <xs:enumeration value="NS" />
+      <xs:enumeration value="NU" />
+      <xs:enumeration value="ON" />
+      <xs:enumeration value="PE" />
+      <xs:enumeration value="QC" />
+      <xs:enumeration value="SK" />
+      <xs:enumeration value="YK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeStateProvince" nillable="true" type="tns:TypeStateProvince" />
+  <xs:simpleType name="TypeISOCountryCodeA3">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="AFG" />
+      <xs:enumeration value="ALA" />
+      <xs:enumeration value="ALB" />
+      <xs:enumeration value="DZA" />
+      <xs:enumeration value="ASM" />
+      <xs:enumeration value="AND" />
+      <xs:enumeration value="AGO" />
+      <xs:enumeration value="AIA" />
+      <xs:enumeration value="ATA" />
+      <xs:enumeration value="ATG" />
+      <xs:enumeration value="ARG" />
+      <xs:enumeration value="ARM" />
+      <xs:enumeration value="ABW" />
+      <xs:enumeration value="AUS" />
+      <xs:enumeration value="AUT" />
+      <xs:enumeration value="AZE" />
+      <xs:enumeration value="BHS" />
+      <xs:enumeration value="BHR" />
+      <xs:enumeration value="BGD" />
+      <xs:enumeration value="BRB" />
+      <xs:enumeration value="BLR" />
+      <xs:enumeration value="BEL" />
+      <xs:enumeration value="BLZ" />
+      <xs:enumeration value="BEN" />
+      <xs:enumeration value="BMU" />
+      <xs:enumeration value="BTN" />
+      <xs:enumeration value="BOL" />
+      <xs:enumeration value="BIH" />
+      <xs:enumeration value="BWA" />
+      <xs:enumeration value="BVT" />
+      <xs:enumeration value="BRA" />
+      <xs:enumeration value="IOT" />
+      <xs:enumeration value="BRN" />
+      <xs:enumeration value="BGR" />
+      <xs:enumeration value="BFA" />
+      <xs:enumeration value="BDI" />
+      <xs:enumeration value="KHM" />
+      <xs:enumeration value="CMR" />
+      <xs:enumeration value="CAN" />
+      <xs:enumeration value="CPV" />
+      <xs:enumeration value="CYM" />
+      <xs:enumeration value="CAF" />
+      <xs:enumeration value="TCD" />
+      <xs:enumeration value="CHL" />
+      <xs:enumeration value="CHN" />
+      <xs:enumeration value="CXR" />
+      <xs:enumeration value="CCK" />
+      <xs:enumeration value="COL" />
+      <xs:enumeration value="COM" />
+      <xs:enumeration value="COG" />
+      <xs:enumeration value="COD" />
+      <xs:enumeration value="COK" />
+      <xs:enumeration value="CRI" />
+      <xs:enumeration value="CIV" />
+      <xs:enumeration value="HRV" />
+      <xs:enumeration value="CUB" />
+      <xs:enumeration value="CYP" />
+      <xs:enumeration value="CZE" />
+      <xs:enumeration value="DNK" />
+      <xs:enumeration value="DJI" />
+      <xs:enumeration value="DMA" />
+      <xs:enumeration value="DOM" />
+      <xs:enumeration value="ECU" />
+      <xs:enumeration value="EGY" />
+      <xs:enumeration value="SLV" />
+      <xs:enumeration value="GNQ" />
+      <xs:enumeration value="ERI" />
+      <xs:enumeration value="EST" />
+      <xs:enumeration value="ETH" />
+      <xs:enumeration value="FLK" />
+      <xs:enumeration value="FRO" />
+      <xs:enumeration value="FJI" />
+      <xs:enumeration value="FIN" />
+      <xs:enumeration value="FRA" />
+      <xs:enumeration value="FXX" />
+      <xs:enumeration value="GUF" />
+      <xs:enumeration value="PYF" />
+      <xs:enumeration value="ATF" />
+      <xs:enumeration value="GAB" />
+      <xs:enumeration value="GMB" />
+      <xs:enumeration value="GEO" />
+      <xs:enumeration value="DEU" />
+      <xs:enumeration value="GHA" />
+      <xs:enumeration value="GIB" />
+      <xs:enumeration value="GRC" />
+      <xs:enumeration value="GRL" />
+      <xs:enumeration value="GRD" />
+      <xs:enumeration value="GLP" />
+      <xs:enumeration value="GUM" />
+      <xs:enumeration value="GTM" />
+      <xs:enumeration value="GGY" />
+      <xs:enumeration value="GIN" />
+      <xs:enumeration value="GNB" />
+      <xs:enumeration value="GUY" />
+      <xs:enumeration value="HTI" />
+      <xs:enumeration value="HMD" />
+      <xs:enumeration value="VAT" />
+      <xs:enumeration value="HND" />
+      <xs:enumeration value="HKG" />
+      <xs:enumeration value="HUN" />
+      <xs:enumeration value="ISL" />
+      <xs:enumeration value="IND" />
+      <xs:enumeration value="IDN" />
+      <xs:enumeration value="IRN" />
+      <xs:enumeration value="IRQ" />
+      <xs:enumeration value="IRL" />
+      <xs:enumeration value="IMN" />
+      <xs:enumeration value="ISR" />
+      <xs:enumeration value="ITA" />
+      <xs:enumeration value="JAM" />
+      <xs:enumeration value="JPN" />
+      <xs:enumeration value="JEY" />
+      <xs:enumeration value="JOR" />
+      <xs:enumeration value="KAZ" />
+      <xs:enumeration value="KEN" />
+      <xs:enumeration value="KIR" />
+      <xs:enumeration value="PRK" />
+      <xs:enumeration value="KOR" />
+      <xs:enumeration value="KWT" />
+      <xs:enumeration value="KGZ" />
+      <xs:enumeration value="LAO" />
+      <xs:enumeration value="LVA" />
+      <xs:enumeration value="LBN" />
+      <xs:enumeration value="LSO" />
+      <xs:enumeration value="LBR" />
+      <xs:enumeration value="LBY" />
+      <xs:enumeration value="LIE" />
+      <xs:enumeration value="LTU" />
+      <xs:enumeration value="LUX" />
+      <xs:enumeration value="MAC" />
+      <xs:enumeration value="MKD" />
+      <xs:enumeration value="MDG" />
+      <xs:enumeration value="MWI" />
+      <xs:enumeration value="MYS" />
+      <xs:enumeration value="MDV" />
+      <xs:enumeration value="MLI" />
+      <xs:enumeration value="MLT" />
+      <xs:enumeration value="MHL" />
+      <xs:enumeration value="MTQ" />
+      <xs:enumeration value="MRT" />
+      <xs:enumeration value="MUS" />
+      <xs:enumeration value="MYT" />
+      <xs:enumeration value="MEX" />
+      <xs:enumeration value="FSM" />
+      <xs:enumeration value="MDA" />
+      <xs:enumeration value="MCO" />
+      <xs:enumeration value="MNG" />
+      <xs:enumeration value="MNE" />
+      <xs:enumeration value="MSR" />
+      <xs:enumeration value="MAR" />
+      <xs:enumeration value="MOZ" />
+      <xs:enumeration value="MMR" />
+      <xs:enumeration value="NAM" />
+      <xs:enumeration value="NRU" />
+      <xs:enumeration value="NPL" />
+      <xs:enumeration value="NLD" />
+      <xs:enumeration value="ANT" />
+      <xs:enumeration value="NCL" />
+      <xs:enumeration value="NZL" />
+      <xs:enumeration value="NIC" />
+      <xs:enumeration value="NER" />
+      <xs:enumeration value="NGA" />
+      <xs:enumeration value="NIU" />
+      <xs:enumeration value="NFK" />
+      <xs:enumeration value="MNP" />
+      <xs:enumeration value="NOR" />
+      <xs:enumeration value="OMN" />
+      <xs:enumeration value="PAK" />
+      <xs:enumeration value="PLW" />
+      <xs:enumeration value="PSE" />
+      <xs:enumeration value="PAN" />
+      <xs:enumeration value="PNG" />
+      <xs:enumeration value="PRY" />
+      <xs:enumeration value="PER" />
+      <xs:enumeration value="PHL" />
+      <xs:enumeration value="PCN" />
+      <xs:enumeration value="POL" />
+      <xs:enumeration value="PRT" />
+      <xs:enumeration value="PRI" />
+      <xs:enumeration value="QAT" />
+      <xs:enumeration value="REU" />
+      <xs:enumeration value="ROU" />
+      <xs:enumeration value="RUS" />
+      <xs:enumeration value="RWA" />
+      <xs:enumeration value="SHN" />
+      <xs:enumeration value="KNA" />
+      <xs:enumeration value="LCA" />
+      <xs:enumeration value="SPM" />
+      <xs:enumeration value="VCT" />
+      <xs:enumeration value="WSM" />
+      <xs:enumeration value="SMR" />
+      <xs:enumeration value="STP" />
+      <xs:enumeration value="SAU" />
+      <xs:enumeration value="SEN" />
+      <xs:enumeration value="SRB" />
+      <xs:enumeration value="SCG" />
+      <xs:enumeration value="SYC" />
+      <xs:enumeration value="SLE" />
+      <xs:enumeration value="SGP" />
+      <xs:enumeration value="SVK" />
+      <xs:enumeration value="SVN" />
+      <xs:enumeration value="SLB" />
+      <xs:enumeration value="SOM" />
+      <xs:enumeration value="ZAF" />
+      <xs:enumeration value="SGS" />
+      <xs:enumeration value="ESP" />
+      <xs:enumeration value="LKA" />
+      <xs:enumeration value="SDN" />
+      <xs:enumeration value="SUR" />
+      <xs:enumeration value="SJM" />
+      <xs:enumeration value="SWZ" />
+      <xs:enumeration value="SWE" />
+      <xs:enumeration value="CHE" />
+      <xs:enumeration value="SYR" />
+      <xs:enumeration value="TWN" />
+      <xs:enumeration value="TJK" />
+      <xs:enumeration value="TZA" />
+      <xs:enumeration value="THA" />
+      <xs:enumeration value="TLS" />
+      <xs:enumeration value="TGO" />
+      <xs:enumeration value="TKL" />
+      <xs:enumeration value="TMP" />
+      <xs:enumeration value="TON" />
+      <xs:enumeration value="TTO" />
+      <xs:enumeration value="TUN" />
+      <xs:enumeration value="TUR" />
+      <xs:enumeration value="TKM" />
+      <xs:enumeration value="TCA" />
+      <xs:enumeration value="TUV" />
+      <xs:enumeration value="UGA" />
+      <xs:enumeration value="UKR" />
+      <xs:enumeration value="ARE" />
+      <xs:enumeration value="GBR" />
+      <xs:enumeration value="USA" />
+      <xs:enumeration value="UMI" />
+      <xs:enumeration value="URY" />
+      <xs:enumeration value="UZB" />
+      <xs:enumeration value="VUT" />
+      <xs:enumeration value="VEN" />
+      <xs:enumeration value="VNM" />
+      <xs:enumeration value="VGB" />
+      <xs:enumeration value="VIR" />
+      <xs:enumeration value="WLF" />
+      <xs:enumeration value="ESH" />
+      <xs:enumeration value="YEM" />
+      <xs:enumeration value="YUG" />
+      <xs:enumeration value="ZMB" />
+      <xs:enumeration value="ZWE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeISOCountryCodeA3" nillable="true" type="tns:TypeISOCountryCodeA3" />
+  <xs:complexType name="BankcardMerchantData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABANumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AcquirerBIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgentBank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgentChain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Aggregator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClientNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndustryType" type="tns:IndustryType" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MerchantType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintCustomerServicePhone" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QualificationCodes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReimbursementAttribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryTerminalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettlementAgent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharingGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZoneDifferential" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankcardMerchantData" nillable="true" type="tns:BankcardMerchantData" />
+  <xs:simpleType name="IndustryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="MOTO" />
+      <xs:enumeration value="Ecommerce" />
+      <xs:enumeration value="Restaurant" />
+      <xs:enumeration value="Retail" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IndustryType" nillable="true" type="tns:IndustryType" />
+  <xs:complexType name="ElectronicCheckingMerchantData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrginatorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ElectronicCheckingMerchantData" nillable="true" type="tns:ElectronicCheckingMerchantData" />
+  <xs:complexType name="StoredValueMerchantData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentChain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndustryType" type="tns:IndustryType" />
+      <xs:element minOccurs="0" name="SIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminalId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredValueMerchantData" nillable="true" type="tns:StoredValueMerchantData" />
+  <xs:complexType name="MerchantProfileTransactionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankcardTransactionDataDefaults" nillable="true" type="tns:BankcardTransactionDataDefaults" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MerchantProfileTransactionData" nillable="true" type="tns:MerchantProfileTransactionData" />
+  <xs:complexType name="BankcardTransactionDataDefaults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyCode" type="tns:TypeISOCurrencyCodeA3" />
+      <xs:element minOccurs="0" name="CustomerPresent" type="tns:CustomerPresent" />
+      <xs:element minOccurs="0" name="EntryMode" type="tns:EntryMode" />
+      <xs:element minOccurs="0" name="RequestACI" type="tns:RequestACI" />
+      <xs:element minOccurs="0" name="RequestAdvice" type="tns:RequestAdvice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankcardTransactionDataDefaults" nillable="true" type="tns:BankcardTransactionDataDefaults" />
+  <xs:simpleType name="TypeISOCurrencyCodeA3">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="AFN" />
+      <xs:enumeration value="ALL" />
+      <xs:enumeration value="DZD" />
+      <xs:enumeration value="USD" />
+      <xs:enumeration value="EUR" />
+      <xs:enumeration value="AOA" />
+      <xs:enumeration value="XCD" />
+      <xs:enumeration value="ARS" />
+      <xs:enumeration value="AMD" />
+      <xs:enumeration value="AWG" />
+      <xs:enumeration value="AUD" />
+      <xs:enumeration value="AZN" />
+      <xs:enumeration value="BSD" />
+      <xs:enumeration value="BHD" />
+      <xs:enumeration value="BDT" />
+      <xs:enumeration value="BBD" />
+      <xs:enumeration value="BYR" />
+      <xs:enumeration value="BZD" />
+      <xs:enumeration value="BMD" />
+      <xs:enumeration value="BTN" />
+      <xs:enumeration value="BOB" />
+      <xs:enumeration value="BOV" />
+      <xs:enumeration value="BAM" />
+      <xs:enumeration value="BWP" />
+      <xs:enumeration value="BRL" />
+      <xs:enumeration value="BND" />
+      <xs:enumeration value="BGN" />
+      <xs:enumeration value="XOF" />
+      <xs:enumeration value="BIF" />
+      <xs:enumeration value="KHR" />
+      <xs:enumeration value="CAD" />
+      <xs:enumeration value="CVE" />
+      <xs:enumeration value="KYD" />
+      <xs:enumeration value="CLP" />
+      <xs:enumeration value="CLF" />
+      <xs:enumeration value="CNY" />
+      <xs:enumeration value="COP" />
+      <xs:enumeration value="COU" />
+      <xs:enumeration value="KMF" />
+      <xs:enumeration value="XAF" />
+      <xs:enumeration value="CDF" />
+      <xs:enumeration value="CRC" />
+      <xs:enumeration value="HRK" />
+      <xs:enumeration value="CUP" />
+      <xs:enumeration value="CYP" />
+      <xs:enumeration value="CZK" />
+      <xs:enumeration value="DKK" />
+      <xs:enumeration value="DJF" />
+      <xs:enumeration value="DOP" />
+      <xs:enumeration value="EGP" />
+      <xs:enumeration value="SVC" />
+      <xs:enumeration value="ERN" />
+      <xs:enumeration value="EEK" />
+      <xs:enumeration value="ETB" />
+      <xs:enumeration value="FKP" />
+      <xs:enumeration value="FJD" />
+      <xs:enumeration value="GMD" />
+      <xs:enumeration value="GEL" />
+      <xs:enumeration value="GHS" />
+      <xs:enumeration value="GIP" />
+      <xs:enumeration value="GTQ" />
+      <xs:enumeration value="GNF" />
+      <xs:enumeration value="GWP" />
+      <xs:enumeration value="GYD" />
+      <xs:enumeration value="HTG" />
+      <xs:enumeration value="HNL" />
+      <xs:enumeration value="HKD" />
+      <xs:enumeration value="HUF" />
+      <xs:enumeration value="ISK" />
+      <xs:enumeration value="INR" />
+      <xs:enumeration value="IDR" />
+      <xs:enumeration value="XDR" />
+      <xs:enumeration value="IRR" />
+      <xs:enumeration value="IQD" />
+      <xs:enumeration value="ILS" />
+      <xs:enumeration value="JMD" />
+      <xs:enumeration value="JPY" />
+      <xs:enumeration value="JOD" />
+      <xs:enumeration value="KZT" />
+      <xs:enumeration value="KES" />
+      <xs:enumeration value="KPW" />
+      <xs:enumeration value="KRW" />
+      <xs:enumeration value="KWD" />
+      <xs:enumeration value="KGS" />
+      <xs:enumeration value="LAK" />
+      <xs:enumeration value="LVL" />
+      <xs:enumeration value="LBP" />
+      <xs:enumeration value="LSL" />
+      <xs:enumeration value="LRD" />
+      <xs:enumeration value="LYD" />
+      <xs:enumeration value="LTL" />
+      <xs:enumeration value="MOP" />
+      <xs:enumeration value="MKD" />
+      <xs:enumeration value="MGA" />
+      <xs:enumeration value="MWK" />
+      <xs:enumeration value="MYR" />
+      <xs:enumeration value="MVR" />
+      <xs:enumeration value="MTL" />
+      <xs:enumeration value="MRO" />
+      <xs:enumeration value="MUR" />
+      <xs:enumeration value="MXN" />
+      <xs:enumeration value="MXV" />
+      <xs:enumeration value="MDL" />
+      <xs:enumeration value="MNT" />
+      <xs:enumeration value="MAD" />
+      <xs:enumeration value="MZN" />
+      <xs:enumeration value="MMK" />
+      <xs:enumeration value="NAD" />
+      <xs:enumeration value="NPR" />
+      <xs:enumeration value="ANG" />
+      <xs:enumeration value="XPF" />
+      <xs:enumeration value="NZD" />
+      <xs:enumeration value="NIO" />
+      <xs:enumeration value="NGN" />
+      <xs:enumeration value="NOK" />
+      <xs:enumeration value="OMR" />
+      <xs:enumeration value="PKR" />
+      <xs:enumeration value="PAB" />
+      <xs:enumeration value="PGK" />
+      <xs:enumeration value="PYG" />
+      <xs:enumeration value="PEN" />
+      <xs:enumeration value="PHP" />
+      <xs:enumeration value="PLN" />
+      <xs:enumeration value="QAR" />
+      <xs:enumeration value="RON" />
+      <xs:enumeration value="RUB" />
+      <xs:enumeration value="RWF" />
+      <xs:enumeration value="SHP" />
+      <xs:enumeration value="WST" />
+      <xs:enumeration value="STD" />
+      <xs:enumeration value="SAR" />
+      <xs:enumeration value="RSD" />
+      <xs:enumeration value="SCR" />
+      <xs:enumeration value="SLL" />
+      <xs:enumeration value="SGD" />
+      <xs:enumeration value="SKK" />
+      <xs:enumeration value="SBD" />
+      <xs:enumeration value="SOS" />
+      <xs:enumeration value="ZAR" />
+      <xs:enumeration value="LKR" />
+      <xs:enumeration value="SDG" />
+      <xs:enumeration value="SRD" />
+      <xs:enumeration value="SZL" />
+      <xs:enumeration value="SEK" />
+      <xs:enumeration value="CHF" />
+      <xs:enumeration value="CHW" />
+      <xs:enumeration value="CHE" />
+      <xs:enumeration value="SYP" />
+      <xs:enumeration value="TWD" />
+      <xs:enumeration value="TJS" />
+      <xs:enumeration value="TZS" />
+      <xs:enumeration value="THB" />
+      <xs:enumeration value="TOP" />
+      <xs:enumeration value="TTD" />
+      <xs:enumeration value="TND" />
+      <xs:enumeration value="TRY" />
+      <xs:enumeration value="TMM" />
+      <xs:enumeration value="UGX" />
+      <xs:enumeration value="UAH" />
+      <xs:enumeration value="AED" />
+      <xs:enumeration value="GBP" />
+      <xs:enumeration value="USS" />
+      <xs:enumeration value="USN" />
+      <xs:enumeration value="UYU" />
+      <xs:enumeration value="UYI" />
+      <xs:enumeration value="UZS" />
+      <xs:enumeration value="VUV" />
+      <xs:enumeration value="VEF" />
+      <xs:enumeration value="VND" />
+      <xs:enumeration value="YER" />
+      <xs:enumeration value="ZMK" />
+      <xs:enumeration value="ZWD" />
+      <xs:enumeration value="XBA" />
+      <xs:enumeration value="XBB" />
+      <xs:enumeration value="XBC" />
+      <xs:enumeration value="XBD" />
+      <xs:enumeration value="XPD" />
+      <xs:enumeration value="XPT" />
+      <xs:enumeration value="XAG" />
+      <xs:enumeration value="XAU" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeISOCurrencyCodeA3" nillable="true" type="tns:TypeISOCurrencyCodeA3" />
+  <xs:simpleType name="CustomerPresent">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Present" />
+      <xs:enumeration value="Suspicious" />
+      <xs:enumeration value="BillPayment" />
+      <xs:enumeration value="Transponder" />
+      <xs:enumeration value="MOTO" />
+      <xs:enumeration value="VisaOpenNetworkTransaction" />
+      <xs:enumeration value="VisaCardPresentStripeUnreadable" />
+      <xs:enumeration value="MailFax" />
+      <xs:enumeration value="Ecommerce" />
+      <xs:enumeration value="TelARU" />
+      <xs:enumeration value="MOTOCC" />
+      <xs:enumeration value="VoiceResponse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerPresent" nillable="true" type="tns:CustomerPresent" />
+  <xs:simpleType name="EntryMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="Keyed" />
+      <xs:enumeration value="KeyedBadMagRead" />
+      <xs:enumeration value="TrackDataFromMSR" />
+      <xs:enumeration value="ChipReliable" />
+      <xs:enumeration value="ChipUnreliable" />
+      <xs:enumeration value="ContactlessMChipOrSmartCard" />
+      <xs:enumeration value="ContactlessStripe" />
+      <xs:enumeration value="TerminalNotUsed" />
+      <xs:enumeration value="BarCode" />
+      <xs:enumeration value="OCRReader" />
+      <xs:enumeration value="VSCCapable" />
+      <xs:enumeration value="ChipTrackDataFromRFID" />
+      <xs:enumeration value="MSRTrackDataFromRFID" />
+      <xs:enumeration value="NFCCapable" />
+      <xs:enumeration value="Track2DataFromMSR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntryMode" nillable="true" type="tns:EntryMode" />
+  <xs:simpleType name="RequestACI">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotCPSMeritCapable" />
+      <xs:enumeration value="IsCPSMeritCapable" />
+      <xs:enumeration value="CPSMeritCapableIncAuth" />
+      <xs:enumeration value="PremierCustomer" />
+      <xs:enumeration value="RecurringInstallment" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestACI" nillable="true" type="tns:RequestACI" />
+  <xs:simpleType name="RequestAdvice">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="NotCapable" />
+      <xs:enumeration value="Capable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestAdvice" nillable="true" type="tns:RequestAdvice" />
+  <xs:element name="GetMerchantProfileIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfileIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMerchantProfileIdsResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfilesByProfileId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="merchantProfileId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfilesByProfileIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMerchantProfilesByProfileIdResult" nillable="true" type="tns:ArrayOfMerchantProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="merchantProfileId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMerchantProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMerchantProfileResult" nillable="true" type="tns:MerchantProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMerchantProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="merchantProfileId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMerchantProfileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMerchantProfiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+        <xs:element minOccurs="0" name="merchantProfiles" nillable="true" type="tns:ArrayOfMerchantProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMerchantProfilesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignOnWithUsernamePasswordForServiceKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignOnWithUsernamePasswordForServiceKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SignOnWithUsernamePasswordForServiceKeyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPasswordForServiceKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetPasswordForServiceKeyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordForServiceKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordForServiceKeyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUsernameForServiceKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUsername" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUsernameForServiceKeyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeEmailForServiceKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeEmailForServiceKeyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPasswordExpirationForServiceKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPasswordExpirationForServiceKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPasswordExpirationForServiceKeyResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateMerchantProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenderType" type="tns:TenderType" />
+        <xs:element minOccurs="0" name="merchantProfile" nillable="true" type="tns:MerchantProfile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateMerchantProfileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
