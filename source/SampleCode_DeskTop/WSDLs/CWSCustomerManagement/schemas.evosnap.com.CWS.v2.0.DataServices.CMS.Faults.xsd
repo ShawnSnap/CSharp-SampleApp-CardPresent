@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/DataServices/CMS/Faults" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/DataServices/CMS/Faults"><xs:complexType name="CMSCustomerAlreadyExistsFault"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Defines a CMS fault type.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:CMSBaseFault"><xs:sequence><xs:element minOccurs="0" name="CustomerReferenceId" nillable="true" type="xs:string"/></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="CMSCustomerAlreadyExistsFault" nillable="true" type="tns:CMSCustomerAlreadyExistsFault"/><xs:complexType name="CMSBaseFault"><xs:sequence><xs:element minOccurs="0" name="ErrorID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The error code of the fault.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="HelpURL" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The web URL that will display more information about the fault.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Operation" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The CMS operation name that originated the fault.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ProblemType" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Lists the specific error message for the associated fault.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="CMSBaseFault" nillable="true" type="tns:CMSBaseFault"/><xs:complexType name="CMSUnknownServiceKeyFault"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Defines a CMS fault type.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:CMSBaseFault"><xs:sequence/></xs:extension></xs:complexContent></xs:complexType><xs:element name="CMSUnknownServiceKeyFault" nillable="true" type="tns:CMSUnknownServiceKeyFault"/><xs:complexType name="CMSTransactionFailedFault"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Defines a CMS fault type.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:CMSBaseFault"><xs:sequence/></xs:extension></xs:complexContent></xs:complexType><xs:element name="CMSTransactionFailedFault" nillable="true" type="tns:CMSTransactionFailedFault"/><xs:complexType name="CMSUnavailableFault"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Indicates that the Customer Management Service is temporary unavailable.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:CMSBaseFault"><xs:sequence/></xs:extension></xs:complexContent></xs:complexType><xs:element name="CMSUnavailableFault" nillable="true" type="tns:CMSUnavailableFault"/></xs:schema>

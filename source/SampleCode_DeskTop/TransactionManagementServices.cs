@@ -146,7 +146,7 @@ namespace SampleCode
                 RtxtTMSResults.Clear();
 
                 Cursor = Cursors.WaitCursor;
-                ProcessQueryBatchResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryBatch(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QBP(), PP()));
+                ProcessQueryBatchResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryBatch(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QBP(), PP()).TransactionDetails);
 
                 if (RtxtTMSResults.TextLength < 1)
                 {
@@ -162,7 +162,7 @@ namespace SampleCode
                 {
                     ((SampleCode_DeskTop)(Owner)).Helper.SetTMSEndpoint();//Change the endpoint to use the backup.
 
-                    ProcessQueryBatchResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryBatch(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QBP(), PP()));
+                    ProcessQueryBatchResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryBatch(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QBP(), PP()).TransactionDetails);
                 }
                 catch (EndpointNotFoundException)
                 {
@@ -206,7 +206,7 @@ namespace SampleCode
                 RtxtTMSResults.Clear();
 
                 Cursor = Cursors.WaitCursor;
-                ProcessQueryTransactionSummaryResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsSummary(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), BlnIncludeRelated, PP())); ;
+                ProcessQueryTransactionSummaryResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsSummary(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), BlnIncludeRelated, PP()).TransactionDetails);
 
                 RtxtTMSResults.SelectionColor = Color.Blue;
                 RtxtTMSResults.AppendText("Last Transaction Summary Search : " + DateTime.Now);
@@ -220,7 +220,7 @@ namespace SampleCode
                 {
                     ((SampleCode_DeskTop)(Owner)).Helper.SetTMSEndpoint();//Change the endpoint to use the backup.
 
-                    ProcessQueryTransactionSummaryResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsSummary(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), BlnIncludeRelated, PP())); ;
+                    ProcessQueryTransactionSummaryResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsSummary(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), BlnIncludeRelated, PP()).TransactionDetails);
                 }
                 catch (EndpointNotFoundException)
                 {
@@ -257,7 +257,7 @@ namespace SampleCode
                 RtxtTMSResults.Clear();
 
                 Cursor = Cursors.WaitCursor;
-                ProcessQueryTransactionFamiliesResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionFamilies(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), PP()));
+                ProcessQueryTransactionFamiliesResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionFamilies(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), PP()).FamilyDetails);
 
                 Cursor = Cursors.Default;
             }
@@ -268,7 +268,7 @@ namespace SampleCode
                 {
                     ((SampleCode_DeskTop)(Owner)).Helper.SetTMSEndpoint();//Change the endpoint to use the backup.
 
-                    ProcessQueryTransactionFamiliesResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionFamilies(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), PP()));
+                    ProcessQueryTransactionFamiliesResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionFamilies(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), PP()).FamilyDetails);
                 }
                 catch (EndpointNotFoundException)
                 {
@@ -308,8 +308,8 @@ namespace SampleCode
                 Cursor = Cursors.WaitCursor;
 
                 TransactionDetailFormat TDF = (TransactionDetailFormat)CboTransactionDetailFormat.SelectedItem;
-                
-                ProcessQueryTransactionsDetailResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsDetail(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), TDF, BlnIncludeRelated, PP())); ;
+
+                ProcessQueryTransactionsDetailResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsDetail(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), TDF, BlnIncludeRelated, PP()).TransactionDetails);
 
                 if (RtxtTMSResults.Text.Length < 1)
                 {
@@ -327,7 +327,7 @@ namespace SampleCode
 
                     TransactionDetailFormat TDF = (TransactionDetailFormat)CboTransactionDetailFormat.SelectedItem;
 
-                    ProcessQueryTransactionsDetailResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsDetail(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), TDF, BlnIncludeRelated, PP()));
+                    ProcessQueryTransactionsDetailResponse(((SampleCode_DeskTop)(Owner)).Helper.Tmsoc.QueryTransactionsDetail(((SampleCode_DeskTop)(Owner)).Helper.SessionToken, QTP(), TDF, BlnIncludeRelated, PP()).TransactionDetails);
                 }
                 catch (EndpointNotFoundException)
                 {

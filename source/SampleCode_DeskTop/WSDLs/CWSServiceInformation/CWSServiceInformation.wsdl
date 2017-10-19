@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:i0="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+	xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://sis.service.evosnap.com/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy"
+	name="SIS" targetNamespace="http://sis.service.evosnap.com/">
+	<wsdl:import location="schemas.evosnap.com.CWS.v2.0.ServiceInformation.wsdl"
+		namespace="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation" />
+	<wsdl:types />
+	<wsdl:binding name="BasicHttpBinding_ICWSServiceInformation"
+		type="i0:ICWSServiceInformation">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="Ping">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common/IExternallyFacingStandardOperations/Ping"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SignOnWithToken">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithToken"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetServiceInformation">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformation"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SaveApplicationData">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationData"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetApplicationData">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationData"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteApplicationData">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationData"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="IsMerchantProfileInitialized">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitialized"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMerchantProfiles">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfiles"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMerchantProfileIds">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIds"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMerchantProfilesByProfileId">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileId"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMerchantProfile">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfile"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMerchantProfile">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfile"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SaveMerchantProfiles">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfiles"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SignOnWithUsernamePassword">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="OneTimePasswordFaultFault">
+				<soap:fault name="OneTimePasswordFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="BadAttemptThresholdExceededFaultFault">
+				<soap:fault name="BadAttemptThresholdExceededFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="LockedByAdminFaultFault">
+				<soap:fault name="LockedByAdminFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="PasswordExpiredFaultFault">
+				<soap:fault name="PasswordExpiredFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ChangePassword">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="PasswordInvalidFaultFault">
+				<soap:fault name="PasswordInvalidFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SendEmailFaultFault">
+				<soap:fault name="SendEmailFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeUsername">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsername"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SendEmailFaultFault">
+				<soap:fault name="SendEmailFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeEmail">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmail"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidEmailFaultFault">
+				<soap:fault name="InvalidEmailFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SendEmailFaultFault">
+				<soap:fault name="SendEmailFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPasswordExpiration">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpiration"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetAvailableSecurityQuestions">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestions"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetSecurityQuestions">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestions"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SaveSecurityQuestions">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestions"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="RequestPasswordReset">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordReset"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SecurityQuestionNotFoundFaultFault">
+				<soap:fault name="SecurityQuestionNotFoundFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ResetPassword">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPassword"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ArgumentNullFaultFault">
+				<soap:fault name="ArgumentNullFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SecurityQuestionNotFoundFaultFault">
+				<soap:fault name="SecurityQuestionNotFoundFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="UserNotFoundFaultFault">
+				<soap:fault name="UserNotFoundFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ValidateMerchantProfile">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfile"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetAllClaims">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaims"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFaultFault">
+				<soap:fault name="SystemFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetClaims">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaims"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="STSUnavailableFaultFault">
+				<soap:fault name="STSUnavailableFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFaultFault">
+				<soap:fault name="SystemFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SignOnAndAddClaims">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaims"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFaultFault">
+				<soap:fault name="SystemFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DelegatedSignOn">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOn"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFaultFault">
+				<soap:fault name="SystemFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="RequestUsername">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestUsername"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="SystemFaultFault">
+				<soap:fault name="SystemFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetUsername">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetUsername"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="SystemFaultFault">
+				<soap:fault name="SystemFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SaveEmailTemplate">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplate"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetEmailTemplate">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplate"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteEmailTemplate">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplate"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SaveLogo">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetLogo">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteLogo">
+			<soap:operation
+				soapAction="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogo"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CWSServiceInformationUnavailableFaultFault">
+				<soap:fault name="CWSServiceInformationUnavailableFaultFault"
+					use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSValidationResultFaultFault">
+				<soap:fault name="CWSValidationResultFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="CWSFaultFault">
+				<soap:fault name="CWSFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="ExpiredTokenFaultFault">
+				<soap:fault name="ExpiredTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTokenFaultFault">
+				<soap:fault name="InvalidTokenFaultFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="AuthenticationFaultFault">
+				<soap:fault name="AuthenticationFaultFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SIS">
+		<wsdl:port name="BasicHttpBinding_ICWSServiceInformation"
+			binding="tns:BasicHttpBinding_ICWSServiceInformation">
+			<soap:address location="https://api.cipcert.goevo.com/2.1.28/SIS.svc" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -165,8 +165,8 @@ namespace FaultHandler
             {
                 if (((FaultException<SampleCode.CWSServiceInformation.BadAttemptThresholdExceededFault>)(_ex)).Detail != null)  
                     _strErrorMessage = "BadAttemptThresholdExceededFault thrown however not handled by code"; 
-                if (((FaultException<SampleCode.CWSServiceInformation.GeneratePasswordFault>)(_ex)).Detail != null)  
-                    _strErrorMessage = "GeneratePasswordFault thrown however not handled by code"; 
+                //if (((FaultException<SampleCode.CWSServiceInformation.GeneratePasswordFault>)(_ex)).Detail != null)  
+                //    _strErrorMessage = "GeneratePasswordFault thrown however not handled by code"; 
                 if (((FaultException<SampleCode.CWSServiceInformation.InvalidEmailFault>)(_ex)).Detail != null)  
                     _strErrorMessage = "InvalidEmailFault thrown however not handled by code"; 
                 if (((FaultException<SampleCode.CWSServiceInformation.LockedByAdminFault>)(_ex)).Detail != null)  

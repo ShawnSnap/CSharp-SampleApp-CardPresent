@@ -232,7 +232,7 @@ namespace SampleCode
             }
 
             _bct.TenderData.CardData = null;
-            if (_bct.TenderData.CardSecurityData == null) { _bct.TenderData.CardSecurityData = new CardSecurityData(); }
+            if (_bct.TenderData.CardSecurityData == null) { _bct.TenderData.CardSecurityData = new CardSecurityData1(); }
             
             _bct.TenderData.CardSecurityData.CVData = null;
             _bct.TenderData.CardSecurityData.CVDataProvided = CVDataProvided.NotSet;

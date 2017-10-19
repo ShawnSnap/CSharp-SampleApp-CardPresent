@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:q32="http://schemas.evosnap.com/Identity/1.0/" xmlns:q156="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:q2="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:q165="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q89="http://schemas.evosnap.com/Identity/1.0/" xmlns:q45="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q79="http://schemas.evosnap.com/Identity/1.0/" xmlns:q164="http://schemas.evosnap.com/Identity/1.0/" xmlns:q180="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q38="http://schemas.evosnap.com/Identity/1.0/" xmlns:q27="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q135="http://schemas.evosnap.com/Identity/1.0/" xmlns:q42="http://schemas.evosnap.com/Identity/1.0/" xmlns:q159="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q55="http://schemas.evosnap.com/Identity/1.0/" xmlns:q140="http://schemas.evosnap.com/Identity/1.0/" xmlns:q14="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q48="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q105="http://schemas.evosnap.com/Identity/1.0/" xmlns:q74="http://schemas.evosnap.com/Identity/1.0/" xmlns:q128="http://schemas.evosnap.com/Identity/1.0/" xmlns:q138="http://schemas.evosnap.com/Identity/1.0/" xmlns:q136="http://schemas.evosnap.com/Identity/1.0/" xmlns:q52="http://schemas.evosnap.com/Identity/1.0/" xmlns:q163="http://schemas.evosnap.com/Identity/1.0/" xmlns:q65="http://schemas.evosnap.com/Identity/1.0/" xmlns:q177="http://schemas.evosnap.com/Identity/1.0/" xmlns:q24="http://schemas.evosnap.com/Identity/1.0/" xmlns:q58="http://schemas.evosnap.com/Identity/1.0/" xmlns:q108="http://schemas.evosnap.com/Identity/1.0/" xmlns:q37="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q62="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q7="http://schemas.evosnap.com/Identity/1.0/" xmlns:q21="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q133="http://schemas.evosnap.com/Identity/1.0/" xmlns:q110="http://schemas.evosnap.com/Identity/1.0/" xmlns:q68="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q176="http://schemas.evosnap.com/Identity/1.0/" xmlns:q152="http://schemas.evosnap.com/Identity/1.0/" xmlns:q47="http://schemas.evosnap.com/Identity/1.0/" xmlns:q174="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q72="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q112="http://schemas.evosnap.com/Identity/1.0/" xmlns:q161="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q31="http://schemas.evosnap.com/Identity/1.0/" xmlns:q8="http://schemas.evosnap.com/Identity/1.0/" xmlns:q44="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q78="http://schemas.evosnap.com/Identity/1.0/" xmlns:q88="http://schemas.evosnap.com/Identity/1.0/" xmlns:q179="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q57="http://schemas.evosnap.com/Identity/1.0/" xmlns:q16="http://schemas.evosnap.com/Identity/1.0/" xmlns:q125="http://schemas.evosnap.com/Identity/1.0/" xmlns:q41="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q149="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q54="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q13="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q150="http://schemas.evosnap.com/Identity/1.0/" xmlns:q26="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q117="http://schemas.evosnap.com/Identity/1.0/" xmlns:q119="http://schemas.evosnap.com/Identity/1.0/" xmlns:q85="http://schemas.evosnap.com/Identity/1.0/" xmlns:q51="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q182="http://schemas.evosnap.com/Identity/1.0/" xmlns:q131="http://schemas.evosnap.com/Identity/1.0/" xmlns:q10="http://schemas.evosnap.com/Identity/1.0/" xmlns:q153="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q77="http://schemas.evosnap.com/Identity/1.0/" xmlns:q144="http://schemas.evosnap.com/Identity/1.0/" xmlns:q5="http://schemas.evosnap.com/Identity/1.0/" xmlns:q82="http://schemas.evosnap.com/Identity/1.0/" xmlns:q36="http://schemas.evosnap.com/Identity/1.0/" xmlns:q95="http://schemas.evosnap.com/Identity/1.0/" xmlns:q61="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q99="http://schemas.evosnap.com/Identity/1.0/" xmlns:q168="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q9="http://schemas.evosnap.com/Identity/1.0/" xmlns:q114="http://schemas.evosnap.com/Identity/1.0/" xmlns:q33="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q100="http://schemas.evosnap.com/Identity/1.0/" xmlns:q92="http://schemas.evosnap.com/Identity/1.0/" xmlns:q28="http://schemas.evosnap.com/Identity/1.0/" xmlns:q46="http://schemas.evosnap.com/Identity/1.0/" xmlns:q101="http://schemas.evosnap.com/Identity/1.0/" xmlns:q71="http://schemas.evosnap.com/Identity/1.0/" xmlns:q137="http://schemas.evosnap.com/Identity/1.0/" xmlns:q98="http://schemas.evosnap.com/Identity/1.0/" xmlns:q127="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q151="http://schemas.evosnap.com/Identity/1.0/" xmlns:q20="http://schemas.evosnap.com/Identity/1.0/" xmlns:q43="http://schemas.evosnap.com/Identity/1.0/" xmlns:q169="http://schemas.evosnap.com/Identity/1.0/" xmlns:q104="http://schemas.evosnap.com/Identity/1.0/" xmlns:q56="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q157="http://schemas.evosnap.com/Identity/1.0/" xmlns:q23="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q34="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q106="http://schemas.evosnap.com/Identity/1.0/" xmlns:q40="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q139="http://schemas.evosnap.com/Identity/1.0/" xmlns:q87="http://schemas.evosnap.com/Identity/1.0/" xmlns:q53="http://schemas.evosnap.com/Identity/1.0/" xmlns:q146="http://schemas.evosnap.com/Identity/1.0/" xmlns:q183="http://schemas.evosnap.com/Identity/1.0/" xmlns:q121="http://schemas.evosnap.com/Identity/1.0/" xmlns:q155="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q109="http://schemas.evosnap.com/Identity/1.0/" xmlns:q154="http://schemas.evosnap.com/Identity/1.0/" xmlns:q84="http://schemas.evosnap.com/Identity/1.0/" xmlns:q50="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q97="http://schemas.evosnap.com/Identity/1.0/" xmlns:q63="http://schemas.evosnap.com/Identity/1.0/" xmlns:q170="http://schemas.evosnap.com/Identity/1.0/" xmlns:q76="http://schemas.evosnap.com/Identity/1.0/" xmlns:q134="http://schemas.evosnap.com/Identity/1.0/" xmlns:q67="http://schemas.evosnap.com/Identity/1.0/" xmlns:q81="http://schemas.evosnap.com/Identity/1.0/" xmlns:q116="http://schemas.evosnap.com/Identity/1.0/" xmlns:q94="http://schemas.evosnap.com/Identity/1.0/" xmlns:q60="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q17="http://schemas.evosnap.com/Identity/1.0/" xmlns:q73="http://schemas.evosnap.com/Identity/1.0/" xmlns:q113="http://schemas.evosnap.com/Identity/1.0/" xmlns:q130="http://schemas.evosnap.com/Identity/1.0/" xmlns:q147="http://schemas.evosnap.com/Identity/1.0/" xmlns:q166="http://schemas.evosnap.com/Identity/1.0/" xmlns:q91="http://schemas.evosnap.com/Identity/1.0/" xmlns:q19="http://schemas.evosnap.com/Identity/1.0/" xmlns:q70="http://schemas.evosnap.com/Identity/1.0/" xmlns:q64="http://schemas.evosnap.com/Identity/1.0/" xmlns:q181="http://schemas.evosnap.com/Identity/1.0/" xmlns:q126="http://schemas.evosnap.com/Identity/1.0/" xmlns:q29="http://schemas.evosnap.com/Identity/1.0/" xmlns:q132="http://schemas.evosnap.com/Identity/1.0/" xmlns:q175="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q129="http://schemas.evosnap.com/Identity/1.0/" xmlns:q6="http://schemas.evosnap.com/Identity/1.0/" xmlns:q86="http://schemas.evosnap.com/Identity/1.0/" xmlns:q141="http://schemas.evosnap.com/Identity/1.0/" xmlns:q102="http://schemas.evosnap.com/Identity/1.0/" xmlns:q39="http://schemas.evosnap.com/Identity/1.0/" xmlns:q1="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common" xmlns:q142="http://schemas.evosnap.com/Identity/1.0/" xmlns:q145="http://schemas.evosnap.com/Identity/1.0/" xmlns:q83="http://schemas.evosnap.com/Identity/1.0/" xmlns:q178="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q103="http://schemas.evosnap.com/Identity/1.0/" xmlns:q96="http://schemas.evosnap.com/Identity/1.0/" xmlns:q11="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q15="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q49="http://schemas.evosnap.com/Identity/1.0/" xmlns:q124="http://schemas.evosnap.com/Identity/1.0/" xmlns:q75="http://schemas.evosnap.com/Identity/1.0/" xmlns:q80="http://schemas.evosnap.com/Identity/1.0/" xmlns:q111="http://schemas.evosnap.com/Identity/1.0/" xmlns:q66="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q148="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q173="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q93="http://schemas.evosnap.com/Identity/1.0/" xmlns:q30="http://schemas.evosnap.com/Identity/1.0/" xmlns:q12="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q172="http://schemas.evosnap.com/Identity/1.0/" xmlns:q167="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q25="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q59="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q118="http://schemas.evosnap.com/Identity/1.0/" xmlns:q120="http://schemas.evosnap.com/Identity/1.0/" xmlns:q90="http://schemas.evosnap.com/Identity/1.0/" xmlns:q18="http://schemas.evosnap.com/Identity/1.0/" xmlns:q171="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q162="http://schemas.evosnap.com/Identity/1.0/" xmlns:q22="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q143="http://schemas.evosnap.com/Identity/1.0/" xmlns:q107="http://schemas.evosnap.com/Identity/1.0/" xmlns:q160="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q35="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q69="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q115="http://schemas.evosnap.com/Identity/1.0/" xmlns:q3="http://schemas.evosnap.com/Identity/1.0/" xmlns:q158="http://schemas.evosnap.com/Identity/1.0/" xmlns:q4="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q122="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:q123="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Imports">
+      <xs:import schemaLocation="../CwsCommon/schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.xsd" namespace="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="../CwsCommon/schemas.microsoft.com.2003.10.Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="../CwsCommon/schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.xsd" namespace="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common/External" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="schemas.evosnap.com.CWS.v2.0.ServiceInformation.xsd" namespace="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="../CwsCommon/schemas.evosnap.com.Identity.1.0.xsd" namespace="http://schemas.evosnap.com/Identity/1.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="schemas.evosnap.com.CWS.v2.0.ServiceInformation.Faults.xsd" namespace="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/Faults" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="../CwsCommon/schemas.microsoft.com.2003.10.Serialization.Arrays.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+      <xs:import schemaLocation="../CwsCommon/schemas.datacontract.org.2004.07.EvoSnap.General.Security.Sts.Trust.Ext.DataContracts.xsd" namespace="http://schemas.datacontract.org/2004/07/EvoSnap.General.Security.Sts.Trust.Ext.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICWSServiceInformation_Ping_InputMessage">
+    <wsdl:part name="parameters" element="q1:Ping" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="q1:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignOnWithToken" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignOnWithTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithToken_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceInformation" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetServiceInformation_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveApplicationData" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveApplicationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveApplicationData_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationData" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetApplicationData_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApplicationData" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApplicationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteApplicationData_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsMerchantProfileInitialized" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsMerchantProfileInitializedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_IsMerchantProfileInitialized_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfiles" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfiles_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfileIds" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfileIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfileIds_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfilesByProfileId" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfilesByProfileIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfilesByProfileId_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfile" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetMerchantProfile_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMerchantProfile" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMerchantProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteMerchantProfile_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMerchantProfiles" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMerchantProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveMerchantProfiles_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignOnWithUsernamePassword" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignOnWithUsernamePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_OneTimePasswordFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:OneTimePasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_BadAttemptThresholdExceededFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:BadAttemptThresholdExceededFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_LockedByAdminFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:LockedByAdminFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnWithUsernamePassword_PasswordExpiredFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:PasswordExpiredFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_PasswordInvalidFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:PasswordInvalidFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_SendEmailFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SendEmailFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangePassword_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUsername" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeUsername_SendEmailFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SendEmailFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeEmail" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_InvalidEmailFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidEmailFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ChangeEmail_SendEmailFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SendEmailFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetPasswordExpiration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasswordExpiration" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetPasswordExpiration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasswordExpirationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetPasswordExpiration_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetPasswordExpiration_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetPasswordExpiration_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetPasswordExpiration_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAvailableSecurityQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableSecurityQuestions" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAvailableSecurityQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableSecurityQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAvailableSecurityQuestions_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAvailableSecurityQuestions_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAvailableSecurityQuestions_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAvailableSecurityQuestions_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetSecurityQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityQuestions" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetSecurityQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetSecurityQuestions_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetSecurityQuestions_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetSecurityQuestions_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetSecurityQuestions_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveSecurityQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSecurityQuestions" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveSecurityQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSecurityQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveSecurityQuestions_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveSecurityQuestions_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveSecurityQuestions_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveSecurityQuestions_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestPasswordReset" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestPasswordResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_SecurityQuestionNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SecurityQuestionNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestPasswordReset_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_SecurityQuestionNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SecurityQuestionNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_UserNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:UserNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ResetPassword_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateMerchantProfile" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateMerchantProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_ValidateMerchantProfile_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClaims" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_SystemFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SystemFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetAllClaims_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaims" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_STSUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:STSUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_SystemFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SystemFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetClaims_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnAndAddClaims_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignOnAndAddClaims" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnAndAddClaims_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignOnAndAddClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnAndAddClaims_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnAndAddClaims_SystemFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SystemFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnAndAddClaims_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SignOnAndAddClaims_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DelegatedSignOn_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelegatedSignOn" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DelegatedSignOn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelegatedSignOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DelegatedSignOn_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DelegatedSignOn_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DelegatedSignOn_SystemFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SystemFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DelegatedSignOn_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestUsername" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_RequestUsername_SystemFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SystemFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsername" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetUsername_SystemFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:SystemFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEmailTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEmailTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveEmailTemplate_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetEmailTemplate_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmailTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmailTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteEmailTemplate_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLogo" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_SaveLogo_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogo" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_GetLogo_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLogo" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_CWSServiceInformationUnavailableFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSServiceInformationUnavailableFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_CWSValidationResultFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSValidationResultFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_CWSFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q123:CWSFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_ExpiredTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:ExpiredTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_InvalidTokenFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:InvalidTokenFault" />
+  </wsdl:message>
+  <wsdl:message name="ICWSServiceInformation_DeleteLogo_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q158:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:portType name="ICWSServiceInformation">
+    <wsdl:documentation>&lt;summary&gt;
+            SIS public interface
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common/IExternallyFacingStandardOperations/Ping" message="tns:ICWSServiceInformation_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common/IExternallyFacingStandardOperations/PingResponse" message="tns:ICWSServiceInformation_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOnWithToken">
+      <wsdl:documentation>&lt;summary&gt;
+            Sign on using an identity token.
+            &lt;/summary&gt;
+            &lt;param name="identityToken"&gt;Identity token associated with your service key&lt;/param&gt;
+            &lt;returns&gt;Session token&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithToken" message="tns:ICWSServiceInformation_SignOnWithToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithTokenResponse" message="tns:ICWSServiceInformation_SignOnWithToken_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithTokenSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_SignOnWithToken_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithTokenCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_SignOnWithToken_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithTokenExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_SignOnWithToken_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithTokenInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_SignOnWithToken_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithTokenAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SignOnWithToken_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceInformation">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieve service information.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;returns&gt;Service information associated with the session token&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformation" message="tns:ICWSServiceInformation_GetServiceInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformationResponse" message="tns:ICWSServiceInformation_GetServiceInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformationInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetServiceInformation_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformationExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetServiceInformation_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformationAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetServiceInformation_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformationCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetServiceInformation_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetServiceInformationCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetServiceInformation_CWSFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveApplicationData">
+      <wsdl:documentation>&lt;summary&gt;
+            Save application configuration data.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="applicationData"&gt;Application common configuration data&lt;/param&gt;
+            &lt;returns&gt;Application profile ID&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationData" message="tns:ICWSServiceInformation_SaveApplicationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataResponse" message="tns:ICWSServiceInformation_SaveApplicationData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_SaveApplicationData_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_SaveApplicationData_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_SaveApplicationData_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_SaveApplicationData_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_SaveApplicationData_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveApplicationDataAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SaveApplicationData_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationData">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves all current application configuration data associated with the Service Key.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="applicationProfileId"&gt;Application profile ID returned from SaveApplicationData()&lt;/param&gt;
+            &lt;returns&gt;Application common configuration data associated with the session token&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationData" message="tns:ICWSServiceInformation_GetApplicationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataResponse" message="tns:ICWSServiceInformation_GetApplicationData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetApplicationData_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetApplicationData_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetApplicationData_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetApplicationData_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetApplicationData_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetApplicationDataExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetApplicationData_ExpiredTokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplicationData">
+      <wsdl:documentation>&lt;summary&gt;
+            Deletes application configuration data.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="applicationProfileId"&gt;Application profile ID&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationData" message="tns:ICWSServiceInformation_DeleteApplicationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataResponse" message="tns:ICWSServiceInformation_DeleteApplicationData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_DeleteApplicationData_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_DeleteApplicationData_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_DeleteApplicationData_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_DeleteApplicationData_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_DeleteApplicationData_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteApplicationDataAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_DeleteApplicationData_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMerchantProfileInitialized">
+      <wsdl:documentation>&lt;summary&gt;
+            Tests whether merchant profile is initialized for a specific Tender Type.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="serviceId"&gt;Service ID&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant profile ID&lt;/param&gt;
+            &lt;param name="tenderType"&gt;Tender type&lt;/param&gt;
+            &lt;returns&gt;&lt;c&gt;true&lt;/c&gt; if the merchant profile has been initialized&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitialized" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedResponse" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/IsMerchantProfileInitializedExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_IsMerchantProfileInitialized_ExpiredTokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantProfiles">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves all merchant profiles associated with a specific Service ID and Tender Type.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="serviceId"&gt;Service ID&lt;/param&gt;
+            &lt;param name="tenderType"&gt;Tender type&lt;/param&gt;
+            &lt;returns&gt;Collection of merchant profiles&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfiles" message="tns:ICWSServiceInformation_GetMerchantProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesResponse" message="tns:ICWSServiceInformation_GetMerchantProfiles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfiles_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfiles_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfiles_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfiles_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfiles_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfiles_ExpiredTokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantProfileIds">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves all merchant profile IDs associated with a specific Service ID and Tender Type.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="serviceId"&gt;Service ID&lt;/param&gt;
+            &lt;param name="tenderType"&gt;Tender type&lt;/param&gt;
+            &lt;returns&gt;Collection of merchant profile IDs&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIds" message="tns:ICWSServiceInformation_GetMerchantProfileIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsResponse" message="tns:ICWSServiceInformation_GetMerchantProfileIds_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfileIds_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfileIds_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfileIds_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfileIds_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfileIds_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileIdsCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfileIds_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantProfilesByProfileId">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves a specific merchant's merchant profiles for all Service IDs and Tender Types.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant profile ID&lt;/param&gt;
+            &lt;returns&gt;Collection of merchant profiles&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileId" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdResponse" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfilesByProfileIdCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfilesByProfileId_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantProfile">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves the merchant profile associated with a specific Service ID and Tender Type.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant profile ID&lt;/param&gt;
+            &lt;param name="serviceId"&gt;Service ID&lt;/param&gt;
+            &lt;param name="tenderType"&gt;Tender type&lt;/param&gt;
+            &lt;returns&gt;The requested merchant profile&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfile" message="tns:ICWSServiceInformation_GetMerchantProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileResponse" message="tns:ICWSServiceInformation_GetMerchantProfile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfile_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfile_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfile_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfile_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfile_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetMerchantProfileCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetMerchantProfile_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMerchantProfile">
+      <wsdl:documentation>&lt;summary&gt;
+            Deletes a specific merchant profile for a Tender Type.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant profile ID&lt;/param&gt;
+            &lt;param name="serviceId"&gt;Service ID&lt;/param&gt;
+            &lt;param name="tenderType"&gt;Tender type&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfile" message="tns:ICWSServiceInformation_DeleteMerchantProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileResponse" message="tns:ICWSServiceInformation_DeleteMerchantProfile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_DeleteMerchantProfile_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_DeleteMerchantProfile_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_DeleteMerchantProfile_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_DeleteMerchantProfile_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_DeleteMerchantProfile_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteMerchantProfileCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_DeleteMerchantProfile_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMerchantProfiles">
+      <wsdl:documentation>&lt;summary&gt;
+            Saves one or more merchant profiles for a Tender Type.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="serviceId"&gt;Service ID&lt;/param&gt;
+            &lt;param name="tenderType"&gt;Tender type&lt;/param&gt;
+            &lt;param name="merchantProfiles"&gt;Merchant profiles&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfiles" message="tns:ICWSServiceInformation_SaveMerchantProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesResponse" message="tns:ICWSServiceInformation_SaveMerchantProfiles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SaveMerchantProfiles_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_SaveMerchantProfiles_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_SaveMerchantProfiles_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_SaveMerchantProfiles_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_SaveMerchantProfiles_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveMerchantProfilesCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_SaveMerchantProfiles_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOnWithUsernamePassword">
+      <wsdl:documentation>&lt;summary&gt;
+            Sign on using a username and password.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;Service key to sign on&lt;/param&gt;
+            &lt;param name="username"&gt;Username associated with the specified service key&lt;/param&gt;
+            &lt;param name="password"&gt;Password associated with the specified service key and username&lt;/param&gt;
+            &lt;returns&gt;Session token&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePassword" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordResponse" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordOneTimePasswordFaultFault" name="OneTimePasswordFaultFault" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_OneTimePasswordFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordBadAttemptThresholdExceededFaultFault" name="BadAttemptThresholdExceededFaultFault" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_BadAttemptThresholdExceededFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordLockedByAdminFaultFault" name="LockedByAdminFaultFault" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_LockedByAdminFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnWithUsernamePasswordPasswordExpiredFaultFault" name="PasswordExpiredFaultFault" message="tns:ICWSServiceInformation_SignOnWithUsernamePassword_PasswordExpiredFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:documentation>&lt;summary&gt;
+            Change the password for the specified service key and username.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;Service key&lt;/param&gt;
+            &lt;param name="userName"&gt;Username associated with specified service key&lt;/param&gt;
+            &lt;param name="password"&gt;Password currently associated with specified service key and username&lt;/param&gt;
+            &lt;param name="newPassword"&gt;New password to associate with specified service key and username&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePassword" message="tns:ICWSServiceInformation_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordResponse" message="tns:ICWSServiceInformation_ChangePassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordPasswordInvalidFaultFault" name="PasswordInvalidFaultFault" message="tns:ICWSServiceInformation_ChangePassword_PasswordInvalidFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_ChangePassword_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_ChangePassword_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordSendEmailFaultFault" name="SendEmailFaultFault" message="tns:ICWSServiceInformation_ChangePassword_SendEmailFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_ChangePassword_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangePasswordSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_ChangePassword_STSUnavailableFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUsername">
+      <wsdl:documentation>&lt;summary&gt;
+            Change the username for the specified service key and username.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;Service key&lt;/param&gt;
+            &lt;param name="userName"&gt;Username associated with specified service key&lt;/param&gt;
+            &lt;param name="password"&gt;Password associated with specified service key and username&lt;/param&gt;
+            &lt;param name="newUsername"&gt;New username to associate with specified service key&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsername" message="tns:ICWSServiceInformation_ChangeUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsernameResponse" message="tns:ICWSServiceInformation_ChangeUsername_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsernameArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_ChangeUsername_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsernameSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_ChangeUsername_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsernameAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_ChangeUsername_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsernameUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_ChangeUsername_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeUsernameSendEmailFaultFault" name="SendEmailFaultFault" message="tns:ICWSServiceInformation_ChangeUsername_SendEmailFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEmail">
+      <wsdl:documentation>&lt;summary&gt;
+            Change the email address for the specified service key and username.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;Service key&lt;/param&gt;
+            &lt;param name="userName"&gt;Username associated with specified service key&lt;/param&gt;
+            &lt;param name="password"&gt;Password associated with specified service key and username&lt;/param&gt;
+            &lt;param name="newEmail"&gt;New email to associate with specified service key and username&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmail" message="tns:ICWSServiceInformation_ChangeEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailResponse" message="tns:ICWSServiceInformation_ChangeEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_ChangeEmail_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_ChangeEmail_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_ChangeEmail_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_ChangeEmail_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailInvalidEmailFaultFault" name="InvalidEmailFaultFault" message="tns:ICWSServiceInformation_ChangeEmail_InvalidEmailFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ChangeEmailSendEmailFaultFault" name="SendEmailFaultFault" message="tns:ICWSServiceInformation_ChangeEmail_SendEmailFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPasswordExpiration">
+      <wsdl:documentation>&lt;summary&gt;
+            Change the username for the specified service key and username.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;Service key&lt;/param&gt;
+            &lt;param name="userName"&gt;Username associated with specified service key&lt;/param&gt;
+            &lt;param name="password"&gt;Password associated with specified service key and username&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpiration" message="tns:ICWSServiceInformation_GetPasswordExpiration_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpirationResponse" message="tns:ICWSServiceInformation_GetPasswordExpiration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpirationSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_GetPasswordExpiration_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpirationUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_GetPasswordExpiration_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpirationArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_GetPasswordExpiration_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetPasswordExpirationAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetPasswordExpiration_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSecurityQuestions">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets available security questions
+            &lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestions" message="tns:ICWSServiceInformation_GetAvailableSecurityQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestionsResponse" message="tns:ICWSServiceInformation_GetAvailableSecurityQuestions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestionsArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_GetAvailableSecurityQuestions_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestionsSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_GetAvailableSecurityQuestions_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestionsUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_GetAvailableSecurityQuestions_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAvailableSecurityQuestionsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetAvailableSecurityQuestions_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityQuestions">
+      <wsdl:documentation>&lt;summary&gt;
+            Gets user's security questions
+            &lt;/summary&gt;
+            &lt;param name="username"&gt;The userName&lt;/param&gt;
+            &lt;param name="serviceKey"&gt;The serviceKey that governs the username&lt;/param&gt;
+            &lt;param name="password"&gt;The current password of the user&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestions" message="tns:ICWSServiceInformation_GetSecurityQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestionsResponse" message="tns:ICWSServiceInformation_GetSecurityQuestions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestionsArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_GetSecurityQuestions_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestionsUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_GetSecurityQuestions_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestionsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetSecurityQuestions_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetSecurityQuestionsSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_GetSecurityQuestions_STSUnavailableFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSecurityQuestions">
+      <wsdl:documentation>&lt;summary&gt;
+            Creates user's security questions
+            &lt;/summary&gt;
+            &lt;param name="username"&gt;The userName&lt;/param&gt;
+            &lt;param name="serviceKey"&gt;The serviceKey that governs the username&lt;/param&gt;
+            &lt;param name="password"&gt;The current password of the user&lt;/param&gt;
+            &lt;param name="securityAnswers"&gt;The security question answers that will be used to authenticate user in the event user forgets password.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestions" message="tns:ICWSServiceInformation_SaveSecurityQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestionsResponse" message="tns:ICWSServiceInformation_SaveSecurityQuestions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestionsUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_SaveSecurityQuestions_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestionsSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_SaveSecurityQuestions_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestionsArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_SaveSecurityQuestions_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveSecurityQuestionsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SaveSecurityQuestions_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestPasswordReset">
+      <wsdl:documentation>&lt;summary&gt;
+            Randomly selects security question to be answered for password reset.
+            &lt;/summary&gt;
+            &lt;param name="username"&gt;The userName&lt;/param&gt;
+            &lt;param name="serviceKey"&gt;The serviceKey that governs the username&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordReset" message="tns:ICWSServiceInformation_RequestPasswordReset_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordResetResponse" message="tns:ICWSServiceInformation_RequestPasswordReset_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordResetArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_RequestPasswordReset_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordResetUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_RequestPasswordReset_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordResetSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_RequestPasswordReset_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordResetSecurityQuestionNotFoundFaultFault" name="SecurityQuestionNotFoundFaultFault" message="tns:ICWSServiceInformation_RequestPasswordReset_SecurityQuestionNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestPasswordResetAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_RequestPasswordReset_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:documentation>&lt;summary&gt;
+            Authenticates user via security question and resets password.
+            &lt;/summary&gt;
+            &lt;param name="username"&gt;The userName&lt;/param&gt;
+            &lt;param name="serviceKey"&gt;The serviceKey that governs the username&lt;/param&gt;
+            &lt;param name="securityQuestionToken"&gt;The signed SAML token with embedded random security question to be answered.&lt;/param&gt;
+            &lt;param name="securityAnswer"&gt;The answer to the randomly selected security question.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPassword" message="tns:ICWSServiceInformation_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPasswordResponse" message="tns:ICWSServiceInformation_ResetPassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPasswordArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:ICWSServiceInformation_ResetPassword_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPasswordSecurityQuestionNotFoundFaultFault" name="SecurityQuestionNotFoundFaultFault" message="tns:ICWSServiceInformation_ResetPassword_SecurityQuestionNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPasswordAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_ResetPassword_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPasswordUserNotFoundFaultFault" name="UserNotFoundFaultFault" message="tns:ICWSServiceInformation_ResetPassword_UserNotFoundFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ResetPasswordSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_ResetPassword_STSUnavailableFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMerchantProfile">
+      <wsdl:documentation>&lt;summary&gt;
+            Validates a provided merchant proifile. If the profile is invalid, the operation will throw a 
+            CWSValidationResultFault containing the details of the exception. If your application does not implement 
+            unmanaged merchant profiles ??? you do not need to call this method.  Your merchant profile will automatically 
+            be validated when you call SaveMerchantProfiles.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;The session token associated with this call.&lt;/param&gt;
+            &lt;param name="serviceId"&gt;The service id of record for the profile.&lt;/param&gt;
+            &lt;param name="tenderType"&gt;The tender type of record for the profile.&lt;/param&gt;
+            &lt;param name="merchantProfile"&gt;The merchant profile.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfile" message="tns:ICWSServiceInformation_ValidateMerchantProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileResponse" message="tns:ICWSServiceInformation_ValidateMerchantProfile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_ValidateMerchantProfile_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_ValidateMerchantProfile_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_ValidateMerchantProfile_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_ValidateMerchantProfile_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_ValidateMerchantProfile_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/ValidateMerchantProfileCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_ValidateMerchantProfile_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClaims">
+      <wsdl:documentation>&lt;summary&gt;
+            Get a list of claims given a pair of security tokens. The claims returned are presented as a list of ClaimMetaData objects which is a pairing of the claim namespace and the claim value.
+            &lt;/summary&gt;
+            &lt;param name="identityToken"&gt;Identity token associated with your service key&lt;/param&gt;
+            &lt;returns&gt;A list of claim namespace and value pairs.&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaims" message="tns:ICWSServiceInformation_GetAllClaims_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaimsResponse" message="tns:ICWSServiceInformation_GetAllClaims_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaimsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetAllClaims_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaimsSystemFaultFault" name="SystemFaultFault" message="tns:ICWSServiceInformation_GetAllClaims_SystemFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaimsSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_GetAllClaims_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaimsInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetAllClaims_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetAllClaimsExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetAllClaims_ExpiredTokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaims">
+      <wsdl:documentation>&lt;summary&gt;
+            Get a list of claims, within a specific list of claim namespaces, given a pair of security tokens. The claims returned are presented as a list of values that are sequenced to collate with the order of the 
+            list of namespaces passed in.
+            &lt;/summary&gt;
+            &lt;param name="identityToken"&gt;Identity token associated with your service key&lt;/param&gt;
+            &lt;param name="claimNSs"&gt;A list of claims namespaces to limit the list of claims returned. The returned list if claim values will be in the same order as specified in this list.&lt;/param&gt;
+            &lt;returns&gt;A list of claims values.&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaims" message="tns:ICWSServiceInformation_GetClaims_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaimsResponse" message="tns:ICWSServiceInformation_GetClaims_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaimsSTSUnavailableFaultFault" name="STSUnavailableFaultFault" message="tns:ICWSServiceInformation_GetClaims_STSUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaimsSystemFaultFault" name="SystemFaultFault" message="tns:ICWSServiceInformation_GetClaims_SystemFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaimsInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetClaims_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaimsExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetClaims_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetClaimsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetClaims_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOnAndAddClaims">
+      <wsdl:documentation>&lt;summary&gt;
+             Allows a service key identity token holder to add dynamic claims as allowed for their service key
+             to the resultant session token
+            &lt;/summary&gt;
+             &lt;param name="identityToken"&gt;Identity token associated with your service key&lt;/param&gt;
+            &lt;param name="claims"&gt;claims to add to the generated session token&lt;/param&gt;
+            &lt;returns&gt;session token&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaims" message="tns:ICWSServiceInformation_SignOnAndAddClaims_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaimsResponse" message="tns:ICWSServiceInformation_SignOnAndAddClaims_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaimsExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_SignOnAndAddClaims_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaimsSystemFaultFault" name="SystemFaultFault" message="tns:ICWSServiceInformation_SignOnAndAddClaims_SystemFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaimsAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SignOnAndAddClaims_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SignOnAndAddClaimsInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_SignOnAndAddClaims_InvalidTokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelegatedSignOn">
+      <wsdl:documentation>&lt;summary&gt;
+             Allows an initiator (IDT) to receive a session token for onBehalf SK and add dynamic claims as 
+             allowed for their service key
+            &lt;/summary&gt;
+             &lt;param name="identityToken"&gt;Identity token associated with your service key&lt;/param&gt;
+            &lt;param name="onBehalfOfServiceKey"&gt;Service key delegating permissions.&lt;/param&gt;
+            &lt;returns&gt;session token&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOn" message="tns:ICWSServiceInformation_DelegatedSignOn_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOnResponse" message="tns:ICWSServiceInformation_DelegatedSignOn_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOnExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_DelegatedSignOn_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOnAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_DelegatedSignOn_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOnSystemFaultFault" name="SystemFaultFault" message="tns:ICWSServiceInformation_DelegatedSignOn_SystemFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DelegatedSignOnInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_DelegatedSignOn_InvalidTokenFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestUsername">
+      <wsdl:documentation>&lt;summary&gt;
+             Allows a username to be created.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;The service key&lt;/param&gt;
+            &lt;param name="email"&gt;The email address.&lt;/param&gt;
+            &lt;returns&gt;SecurityQuestionResponse&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestUsername" message="tns:ICWSServiceInformation_RequestUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestUsernameResponse" message="tns:ICWSServiceInformation_RequestUsername_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/RequestUsernameSystemFaultFault" name="SystemFaultFault" message="tns:ICWSServiceInformation_RequestUsername_SystemFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsername">
+      <wsdl:documentation>&lt;summary&gt;
+             Sends a username to the user's email address.
+            &lt;/summary&gt;
+            &lt;param name="serviceKey"&gt;The service key&lt;/param&gt;
+            &lt;param name="securityQuestionToken"&gt;The security question token&lt;/param&gt;
+             ///&lt;param name="securityAnswer"&gt;The security answer&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetUsername" message="tns:ICWSServiceInformation_GetUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetUsernameResponse" message="tns:ICWSServiceInformation_GetUsername_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetUsernameSystemFaultFault" name="SystemFaultFault" message="tns:ICWSServiceInformation_GetUsername_SystemFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEmailTemplate">
+      <wsdl:documentation>&lt;summary&gt;
+             Saves an email template so that a merchant may send a customized receipt through the SendReceipt method.  Optional.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="scope"&gt;The scope of the template.&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant Profile ID&lt;/param&gt;
+            &lt;param name="emailTemplate"&gt;The template containing the configurable data elements for the receipt.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplate" message="tns:ICWSServiceInformation_SaveEmailTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateResponse" message="tns:ICWSServiceInformation_SaveEmailTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_SaveEmailTemplate_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_SaveEmailTemplate_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_SaveEmailTemplate_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_SaveEmailTemplate_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SaveEmailTemplate_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveEmailTemplateCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_SaveEmailTemplate_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailTemplate">
+      <wsdl:documentation>&lt;summary&gt;
+             Returns a saved email template.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="language"&gt;The language of the template.&lt;/param&gt;
+            &lt;param name="scope"&gt;The scope of the template.&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant Profile ID&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplate" message="tns:ICWSServiceInformation_GetEmailTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateResponse" message="tns:ICWSServiceInformation_GetEmailTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetEmailTemplate_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetEmailTemplate_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetEmailTemplate_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetEmailTemplate_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetEmailTemplate_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetEmailTemplateCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetEmailTemplate_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmailTemplate">
+      <wsdl:documentation>&lt;summary&gt;
+             Deletes an email template.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="scope"&gt;The scope of the template.&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant Profile ID&lt;/param&gt;
+            &lt;param name="language"&gt;The language of the template.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplate" message="tns:ICWSServiceInformation_DeleteEmailTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateResponse" message="tns:ICWSServiceInformation_DeleteEmailTemplate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_DeleteEmailTemplate_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_DeleteEmailTemplate_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_DeleteEmailTemplate_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_DeleteEmailTemplate_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_DeleteEmailTemplate_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteEmailTemplateCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_DeleteEmailTemplate_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLogo">
+      <wsdl:documentation>&lt;summary&gt;
+             Saves a merchant logo.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="scope"&gt;The scope of the logo.&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant Profile ID&lt;/param&gt;
+            &lt;param name="fileType"&gt;The type of file to be uploaded.&lt;/param&gt;
+            &lt;param name="logo"&gt;The string representation of the logo.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogo" message="tns:ICWSServiceInformation_SaveLogo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoResponse" message="tns:ICWSServiceInformation_SaveLogo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_SaveLogo_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_SaveLogo_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_SaveLogo_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_SaveLogo_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_SaveLogo_AuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/SaveLogoCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_SaveLogo_CWSValidationResultFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogo">
+      <wsdl:documentation>&lt;summary&gt;
+             Returns a merchant logo.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="scope"&gt;The scope of the logo.&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant Profile ID&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogo" message="tns:ICWSServiceInformation_GetLogo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoResponse" message="tns:ICWSServiceInformation_GetLogo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_GetLogo_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_GetLogo_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_GetLogo_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_GetLogo_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_GetLogo_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/GetLogoAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_GetLogo_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLogo">
+      <wsdl:documentation>&lt;summary&gt;
+             Deletes a merchant logo.
+            &lt;/summary&gt;
+            &lt;param name="sessionToken"&gt;Session token&lt;/param&gt;
+            &lt;param name="scope"&gt;The scope of the logo.&lt;/param&gt;
+            &lt;param name="merchantProfileId"&gt;Merchant Profile ID&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogo" message="tns:ICWSServiceInformation_DeleteLogo_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoResponse" message="tns:ICWSServiceInformation_DeleteLogo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoCWSServiceInformationUnavailableFaultFault" name="CWSServiceInformationUnavailableFaultFault" message="tns:ICWSServiceInformation_DeleteLogo_CWSServiceInformationUnavailableFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoCWSValidationResultFaultFault" name="CWSValidationResultFaultFault" message="tns:ICWSServiceInformation_DeleteLogo_CWSValidationResultFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoCWSFaultFault" name="CWSFaultFault" message="tns:ICWSServiceInformation_DeleteLogo_CWSFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoExpiredTokenFaultFault" name="ExpiredTokenFaultFault" message="tns:ICWSServiceInformation_DeleteLogo_ExpiredTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoInvalidTokenFaultFault" name="InvalidTokenFaultFault" message="tns:ICWSServiceInformation_DeleteLogo_InvalidTokenFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.evosnap.com/CWS/v2.0/ServiceInformation/ICWSServiceInformation/DeleteLogoAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:ICWSServiceInformation_DeleteLogo_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
