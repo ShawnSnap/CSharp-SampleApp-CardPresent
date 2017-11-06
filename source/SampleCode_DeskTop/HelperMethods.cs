@@ -60,7 +60,6 @@ using StoredValueTransactionResponse = SampleCode.CwsTransactionProcessing.Store
 using AlternativeMerchantData = SampleCode.CwsTransactionProcessing.AlternativeMerchantData;
 using AddressInfo = SampleCode.CwsTransactionProcessing.AddressInfo;
 using PrepaidCard = SampleCode.CwsTransactionProcessing.PrepaidCard;
-using TypeISOCountryCodeA3 = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3;
 
 
 namespace SampleCode
@@ -578,7 +577,7 @@ namespace SampleCode
                 AMD.Name = "ABC Merchant";
                 AMD.Address = new AddressInfo();
                 AMD.Address.City = "Denver";
-                AMD.Address.CountryCode = TypeISOCountryCodeA3.USA;
+                AMD.Address.CountryCode = "USA";
                 AMD.Address.StateProvince = "CO";
                 AMD.Address.Street1 = "1234 Happy St";
                 AMD.Address.PostalCode = "80023";
@@ -656,25 +655,25 @@ namespace SampleCode
                         _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
                     _Response = Cwsbc.CaptureAll(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose);
 				}
-                if (_TT == TransactionType.CaptureAllAsync)
-                {
-                    if (CredentialRequired())
-                        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
-                    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose));
-                }
+                //if (_TT == TransactionType.CaptureAllAsync)
+                //{
+                //    if (CredentialRequired())
+                //        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
+                //    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose));
+                //}
                 if (_TT == TransactionType.CaptureSelective)
 				{
                     if (CredentialRequired())
                         _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);                 
 					_Response = Cwsbc.CaptureSelective(_sessionToken, _TransactionIds, _CaptureDifferenceData, _applicationProfileId, _serviceId);
 				}
-                if (_TT == TransactionType.CaptureSelectiveAsync)
-                {
-                    if (CredentialRequired())
-                        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
-                    _Response.Add(Cwsbc.CaptureSelectiveAsync(_sessionToken, _TransactionIds, _CaptureDifferenceData,
-                                                              _applicationProfileId, _serviceId));
-                }
+                //if (_TT == TransactionType.CaptureSelectiveAsync)
+                //{
+                //    if (CredentialRequired())
+                //        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
+                //    _Response.Add(Cwsbc.CaptureSelectiveAsync(_sessionToken, _TransactionIds, _CaptureDifferenceData,
+                //                                              _applicationProfileId, _serviceId));
+                //}
                 if (_TT == TransactionType.ReturnById)
                 {
                     if (CredentialRequired())
@@ -822,13 +821,13 @@ namespace SampleCode
                     _Response = Cwsbc.CaptureAll(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId,
                                                  _merchantProfileId, _serviceId, _ForceClose);
                 }
-                if (_TT == TransactionType.CaptureAllAsync)
-                {
-                    if (CredentialRequired())
-                        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
-                    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, _BatchIds,
-                                                        _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose));
-                }
+                //if (_TT == TransactionType.CaptureAllAsync)
+                //{
+                //    if (CredentialRequired())
+                //        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
+                //    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, _BatchIds,
+                //                                        _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose));
+                //}
                 if (_TT == TransactionType.CaptureSelective)
                 {
                     if (CredentialRequired())
@@ -836,13 +835,13 @@ namespace SampleCode
                     _Response = Cwsbc.CaptureSelective(_sessionToken, _TransactionIds, _CaptureDifferenceData,
                                                        _applicationProfileId, _serviceId);
                 }
-                if (_TT == TransactionType.CaptureSelectiveAsync)
-                {
-                    if (CredentialRequired())
-                        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
-                    _Response.Add(Cwsbc.CaptureSelectiveAsync(_sessionToken, _TransactionIds, _CaptureDifferenceData,
-                                                              _applicationProfileId, _serviceId));
-                }
+                //if (_TT == TransactionType.CaptureSelectiveAsync)
+                //{
+                //    if (CredentialRequired())
+                //        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
+                //    _Response.Add(Cwsbc.CaptureSelectiveAsync(_sessionToken, _TransactionIds, _CaptureDifferenceData,
+                //                                              _applicationProfileId, _serviceId));
+                //}
                 if (_TT == TransactionType.ReturnById)
                 {
                     if (CredentialRequired())
@@ -1262,16 +1261,16 @@ namespace SampleCode
                     _Response = Cwsbc.CaptureAll(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId,
                                                  _merchantProfileId, _serviceId, _ForceClose);
                 }
-                if (_TT == TransactionType.CaptureAllAsync)
-                {
-                    _CaptureDifferenceData = new List<Capture>();
-                    Capture cap = new Capture();
-                    if (CredentialRequired())
-                        cap.Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
-                    cap.TransactionId = "-1";
-                    _CaptureDifferenceData.Add(cap);
-                    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose));
-                }
+                //if (_TT == TransactionType.CaptureAllAsync)
+                //{
+                //    _CaptureDifferenceData = new List<Capture>();
+                //    Capture cap = new Capture();
+                //    if (CredentialRequired())
+                //        cap.Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
+                //    cap.TransactionId = "-1";
+                //    _CaptureDifferenceData.Add(cap);
+                //    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, _BatchIds, _applicationProfileId, _merchantProfileId, _serviceId, _ForceClose));
+                //}
 
                 //if (_TT == TransactionType.CaptureSelective)
                 //if (_TT == TransactionType.CaptureSelectiveAsync)
@@ -1376,15 +1375,15 @@ namespace SampleCode
                     
                     _Response = Cwsbc.CaptureAll(_sessionToken, _CaptureDifferenceData, null, _applicationProfileId, _merchantProfileId, _serviceId, false);
 				}
-                if (_TT == TransactionType.CaptureAllAsync)
-                {
-                    if (CredentialRequired())
-                    {
-                        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
-                        _CaptureDifferenceData[0].TransactionId = "-1";
-                    }
-                    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, null, _applicationProfileId, _merchantProfileId, _serviceId, false));
-                }
+                //if (_TT == TransactionType.CaptureAllAsync)
+                //{
+                //    if (CredentialRequired())
+                //    {
+                //        _CaptureDifferenceData[0].Addendum = CredentialsRequired(_serviceId, _credUserName, _credPassword);
+                //        _CaptureDifferenceData[0].TransactionId = "-1";
+                //    }
+                //    _Response.Add(Cwsbc.CaptureAllAsync(_sessionToken, _CaptureDifferenceData, null, _applicationProfileId, _merchantProfileId, _serviceId, false));
+                //}
                 
 
                 List<ResponseDetails> RD = new List<ResponseDetails>();//Convert the response to response details so that we can report on the UI

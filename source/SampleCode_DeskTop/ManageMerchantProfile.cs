@@ -500,7 +500,7 @@ namespace SampleCode
             if (_ecks != null)
             {
                 MerP.MerchantData.ElectronicCheckingMerchantData = new ElectronicCheckingMerchantData();
-                MerP.MerchantData.ElectronicCheckingMerchantData.OrginatorId = txtMerchantId.Text;
+                //MerP.MerchantData.ElectronicCheckingMerchantData.OrginatorId = txtMerchantId.Text;
                 MerP.MerchantData.ElectronicCheckingMerchantData.ProductId = txtSocketNum.Text;
                 MerP.MerchantData.ElectronicCheckingMerchantData.SiteId = txtStoreId.Text;
             }
@@ -660,7 +660,7 @@ namespace SampleCode
             if (_ecks != null)
             {
                 //MerchantData.ElectronicCheckingMerchantData
-                txtMerchantId.Text = merchantProfile.MerchantData.ElectronicCheckingMerchantData.OrginatorId;
+                //txtMerchantId.Text = merchantProfile.MerchantData.ElectronicCheckingMerchantData.OrginatorId;
                 txtStoreId.Text = merchantProfile.MerchantData.ElectronicCheckingMerchantData.SiteId;
                 txtSocketNum.Text = merchantProfile.MerchantData.ElectronicCheckingMerchantData.ProductId;
             }

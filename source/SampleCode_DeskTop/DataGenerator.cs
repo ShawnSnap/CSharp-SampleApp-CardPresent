@@ -234,7 +234,7 @@ namespace SampleCode
             merchData.MerchantData.Address.Street2 = "Suite #310";
             merchData.MerchantData.CustomerServiceInternet = "test@test.com";
             merchData.MerchantData.CustomerServicePhone = "303 5553232";
-            merchData.MerchantData.Language = TypeISOLanguageCodeA3.ENG;
+            merchData.MerchantData.Language = CWSServiceInformation.TypeISOLanguageCodeA3.ENG;
             merchData.MerchantData.MerchantId = "123456789012";
             merchData.MerchantData.Name = "Acme Widgets";
             merchData.MerchantData.Phone = "720 8881212";
@@ -263,7 +263,7 @@ namespace SampleCode
             merchData.MerchantData.BankcardMerchantData.TimeZoneDifferential = "005";
             //ElectronicCheckingMerchantData : http://www.evosnap.com/support/knowledgebase/service-information-data-elements/#electroniccheckingmerchantdata
             merchData.MerchantData.ElectronicCheckingMerchantData = new ElectronicCheckingMerchantData();
-            merchData.MerchantData.ElectronicCheckingMerchantData.OrginatorId = "";
+            //merchData.MerchantData.ElectronicCheckingMerchantData.OrginatorId = "";
             merchData.MerchantData.ElectronicCheckingMerchantData.ProductId = "";
             merchData.MerchantData.ElectronicCheckingMerchantData.SiteId = "";
             //StoredValueMerchantData : http://www.evosnap.com/support/knowledgebase/service-information-data-elements/#storedvaluemerchantdata
@@ -347,14 +347,14 @@ namespace SampleCode
             catch { }
 
             
-            TxnData.TransactionDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz");
+            TxnData.TransactionDateTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz"));
 
             // Used for QuasiCash transactions
             TxnData.IsQuasiCash = false;
 
             TxnData.LaneId = "1";//Used for MasterCard 
 
-            TxnData.TransactionCode = TransactionCode.Override;
+            TxnData.TransactionCode = TransactionCode1.Override;
 
             //Used for Retail/Restaurant/MOTO
             TxnData.EmployeeId = "1234";
@@ -378,7 +378,7 @@ namespace SampleCode
             BCtransaction.CustomerData.CustomerId = TxnData.OrderNumber;
 
             BCtransaction.TenderData = new BankcardTenderData();
-            BCtransaction.TenderData.CardData = new CardData();
+            BCtransaction.TenderData.CardData = new CardData1();
 
             //Process as a Swipe or as a Keyed Transaction
             if (processAs == ProcessAs.Keyed)
@@ -395,7 +395,7 @@ namespace SampleCode
                 {
                     TxnData.EntryMode = SampleCode.CwsTransactionProcessing.EntryMode.Keyed;
                     TokenizedTransaction T = tokenizedTransaction;
-                    BCtransaction.TenderData.CardData = new CardData();
+                    BCtransaction.TenderData.CardData = new CardData1();
                     BCtransaction.TenderData.PaymentAccountDataToken = T.PaymentAccountDataToken;
                     BCtransaction.TenderData.CardData.CardType = T.CardType;
                     BCtransaction.TenderData.CardData.Expire = T.ExpireationDate; // Note : that in a swipe track data the format is "YYMM" however here it's "MMYY"
@@ -454,7 +454,7 @@ namespace SampleCode
                 if (processAs == ProcessAs.PINDebit)
                 {
                     if (BCtransaction.TenderData.CardSecurityData == null)
-                        BCtransaction.TenderData.CardSecurityData = new CardSecurityData();
+                        BCtransaction.TenderData.CardSecurityData = new CardSecurityData1();
                     BCtransaction.TenderData.CardSecurityData.KeySerialNumber = keySerialNumber;
                     BCtransaction.TenderData.CardSecurityData.PIN = encryptedPIN;
                     TxnData.AccountType = AccountType.CheckingAccount;
@@ -471,7 +471,7 @@ namespace SampleCode
             if (blnAVS | blnCVV)
             {
                 if (BCtransaction.TenderData.CardSecurityData == null)
-                    BCtransaction.TenderData.CardSecurityData = new CardSecurityData(); //Required if AVS or CV is used
+                    BCtransaction.TenderData.CardSecurityData = new CardSecurityData1(); //Required if AVS or CV is used
                 if (blnAVS)
                 {
                     if (!blnIntService)
@@ -562,7 +562,7 @@ namespace SampleCode
             BCtransaction.CustomerData.BillingData.InternationalAddress.Street1 = "Platte St";
             BCtransaction.CustomerData.BillingData.InternationalAddress.HouseNumber = "1553";
             BCtransaction.CustomerData.BillingData.InternationalAddress.City = "Denver";
-            BCtransaction.CustomerData.BillingData.InternationalAddress.CountryCode = CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
+            BCtransaction.CustomerData.BillingData.InternationalAddress.CountryCode = Convert.ToString(TypeISOCountryCodeA3.USA);
             BCtransaction.CustomerData.BillingData.InternationalAddress.PostalCode = "80228";
             BCtransaction.CustomerData.BillingData.InternationalAddress.StateProvince = "CO";
             BCtransaction.CustomerData.BillingData.InternationalAddress.Street2 = "Unit 310";
@@ -574,7 +574,7 @@ namespace SampleCode
             BCtransaction.CustomerData.ShippingData.Name.Last = "Dowell";
             BCtransaction.CustomerData.ShippingData.InternationalAddress.Street1 = "Larimer St";
             BCtransaction.CustomerData.ShippingData.InternationalAddress.City = "Lakewood";
-            BCtransaction.CustomerData.ShippingData.InternationalAddress.CountryCode = CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
+            BCtransaction.CustomerData.ShippingData.InternationalAddress.CountryCode = Convert.ToString(TypeISOCountryCodeA3.USA);
             BCtransaction.CustomerData.ShippingData.InternationalAddress.HouseNumber = "1625";
             BCtransaction.CustomerData.ShippingData.InternationalAddress.PostalCode = "80228";
             BCtransaction.CustomerData.ShippingData.InternationalAddress.StateProvince = "CO";
@@ -700,7 +700,7 @@ namespace SampleCode
                             BCtransaction.CustomerData.ShippingData.Address.City = "Mason";
                             BCtransaction.CustomerData.ShippingData.Address.StateProvince = "OH";
                             BCtransaction.CustomerData.ShippingData.Address.PostalCode = "45040";
-                            BCtransaction.CustomerData.ShippingData.Address.CountryCode = SampleCode.CwsTransactionProcessing.TypeISOCountryCodeA3.USA;
+                            BCtransaction.CustomerData.ShippingData.Address.CountryCode = Convert.ToString(TypeISOCountryCodeA3.USA);
                         }
                     }
                     if (L2L3 & PCL == PurchaseCardLevel.Level3)
@@ -847,7 +847,7 @@ namespace SampleCode
 
             #endregion Soft Descriptors
 
-            TxnData.Is3DSecure = true;
+            TxnData.Is3DSecure = false;
 
             BCtransaction.TransactionData = TxnData;
             return BCtransaction;
@@ -950,7 +950,7 @@ namespace SampleCode
             //Transaction Data
             ECKTransaction.TransactionData.Amount = Convert.ToDecimal(Amount);
             //ECKTransaction.TransactionData.CurrencyCode = SampleCode.CwsTransactionProcessing.TypeISOCurrencyCodeA3.USD;
-            ECKTransaction.TransactionData.EffectiveDate = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz"); ; //Specifies the effective date of the transaction. Required.
+            ECKTransaction.TransactionData.EffectiveDate = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz")); //Specifies the effective date of the transaction. Required.
             ECKTransaction.TransactionData.IsRecurring = false; //Indicates whether the transaction is recurring. Conditional, required if SECCode = 'WEB'.
             //Supported SEC Codes are PPD, CCD, TEL, WEB and BOC.  CCD and PPD transactions can be either credit or debit.  TEL, WEB and BOC are debit transactions only.
             ECKTransaction.TransactionData.SECCode = SECCode.WEB; //The three letter code that indicates what NACHA regulations the transaction must adhere to. Required.
@@ -985,15 +985,15 @@ namespace SampleCode
             SVATransaction.TransactionData.CurrencyCode = SampleCode.CwsTransactionProcessing.TypeISOCurrencyCodeA3.USD;
             SVATransaction.TransactionData.EmployeeId = "122";
 
-            SVATransaction.TransactionData.IndustryType = SampleCode.CwsTransactionProcessing.IndustryType.Retail;
+            //SVATransaction.TransactionData.IndustryType = SampleCode.CwsTransactionProcessing.IndustryType.Retail;
 
-            SVATransaction.TransactionData.TenderCurrencyCode = SampleCode.CwsTransactionProcessing.TypeISOCurrencyCodeA3.USD;
-            SVATransaction.TransactionData.TransactionDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz");
+            SVATransaction.TransactionData.CurrencyCode = SampleCode.CwsTransactionProcessing.TypeISOCurrencyCodeA3.USD;
+            SVATransaction.TransactionData.TransactionDateTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.fffzzz"));
 
             //Tender Data
             SVATransaction.TenderData = new StoredValueTenderData();
-            SVATransaction.TenderData.CardData = new CardData1();
-            SVATransaction.TenderData.CardSecurityData = new CardSecurityData1();
+            SVATransaction.TenderData.CardData = new CardData();
+            SVATransaction.TenderData.CardSecurityData = new CardSecurityData();
             SVATransaction.TenderData.CardSecurityData.CVDataProvided = CVDataProvided.Provided;
             SVATransaction.TenderData.CardSecurityData.CVData = "1111";
 

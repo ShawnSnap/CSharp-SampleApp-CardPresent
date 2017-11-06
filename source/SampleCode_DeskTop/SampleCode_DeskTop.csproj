@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleCode</RootNamespace>
     <AssemblyName>SampleCode</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -48,6 +49,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -160,69 +162,77 @@
     <Compile Include="TransactionManagementServices.Designer.cs">
       <DependentUpon>TransactionManagementServices.cs</DependentUpon>
     </Compile>
-    <None Include="Service References\CWSDataServices\CWSDataServices.wsdl" />
-    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.BatchDetailData.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.FamilyDetail.datasource">
+    <None Include="Service References\CWSDataServices\CWSDataServices1.wsdl" />
+    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.BatchDetailsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.PingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.SummaryDetail.datasource">
+    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.TransactionDetailsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.TransactionDetail.datasource">
+    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.TransactionFamiliesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSDataServices\schemas.xsd">
+    <None Include="Service References\CWSDataServices\SampleCode.CWSDataServices.TransactionsSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWSDataServices\schemas15.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas1.xsd">
+    <None Include="Service References\CWSDataServices\schemas151.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas10.xsd">
+    <None Include="Service References\CWSDataServices\schemas1510.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas11.xsd">
+    <None Include="Service References\CWSDataServices\schemas1511.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas12.xsd">
+    <None Include="Service References\CWSDataServices\schemas1512.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas13.xsd">
+    <None Include="Service References\CWSDataServices\schemas1513.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas14.xsd">
+    <None Include="Service References\CWSDataServices\schemas1514.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas2.xsd">
+    <None Include="Service References\CWSDataServices\schemas1515.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas3.xsd">
+    <None Include="Service References\CWSDataServices\schemas152.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas4.xsd">
+    <None Include="Service References\CWSDataServices\schemas153.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas5.xsd">
+    <None Include="Service References\CWSDataServices\schemas154.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas6.xsd">
+    <None Include="Service References\CWSDataServices\schemas155.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas7.xsd">
+    <None Include="Service References\CWSDataServices\schemas156.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas8.xsd">
+    <None Include="Service References\CWSDataServices\schemas157.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSDataServices\schemas9.xsd">
+    <None Include="Service References\CWSDataServices\schemas158.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSServiceInformation\CWSServiceInformation.wsdl" />
+    <None Include="Service References\CWSDataServices\schemas159.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.ApplicationData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.ClaimMetaData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.EmailTemplate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.MerchantProfile.datasource">
@@ -231,205 +241,286 @@
     <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.PingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.SecurityQuestion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.SecurityQuestionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.ServiceInformation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSServiceInformation\schemas.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSServiceInformation\schemas1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSServiceInformation\schemas2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSServiceInformation\schemas3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSServiceInformation\schemas4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSServiceInformation\schemas5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSServiceInformation\schemas6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CWSTransactionManagement\CwsDataServices.wsdl" />
-    <None Include="Service References\CWSTransactionManagement\CwsDataServicesBilling.wsdl" />
-    <None Include="Service References\CWSTransactionManagement\CWSTransactionManagement.wsdl" />
-    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.BatchDetailData.datasource">
+    <None Include="Service References\CWSServiceInformation\SampleCode.CWSServiceInformation.TokenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.BillingEventDetail.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\CWSServiceInformation\schemas.wsdl" />
+    <None Include="Service References\CWSServiceInformation\schemas7.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.BillingEventSummary.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\CWSServiceInformation\schemas71.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.FamilyDetail.datasource">
+    <None Include="Service References\CWSServiceInformation\schemas72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWSServiceInformation\schemas73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWSServiceInformation\schemas74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWSServiceInformation\schemas75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWSServiceInformation\schemas76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWSServiceInformation\schemas77.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CWSServiceInformation\SIS.wsdl" />
+    <None Include="Service References\CWSTransactionManagement\CwsDataServices1.wsdl" />
+    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.BatchDetailsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.PingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.SummaryDetail.datasource">
+    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.TransactionDetailsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.TransactionDetail.datasource">
+    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.TransactionFamiliesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas.xsd">
+    <None Include="Service References\CWSTransactionManagement\SampleCode.CWSTransactionManagement.TransactionsSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CWSTransactionManagement\schemas16.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas1.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas161.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas10.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas1610.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas11.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas1611.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas12.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas1612.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas13.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas1613.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas14.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas1614.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas15.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas1615.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas2.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas162.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas3.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas163.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas4.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas164.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas5.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas165.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas6.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas166.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas7.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas167.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas8.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas168.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CWSTransactionManagement\schemas9.xsd">
+    <None Include="Service References\CWSTransactionManagement\schemas169.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\CwsTransactionProcessing.wsdl" />
+    <None Include="Service References\CWSTransactionManagement\TMS.wsdl" />
     <None Include="Service References\CwsTransactionProcessing\SampleCode.CwsTransactionProcessing.PingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CwsTransactionProcessing\SampleCode.CwsTransactionProcessing.Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas.wsdl" />
+    <None Include="Service References\CwsTransactionProcessing\schemas12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas1.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas121.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas10.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas1210.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas11.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas1211.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas2.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas1212.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas3.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas122.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas4.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas123.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas5.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas124.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas6.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas125.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas7.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas126.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas8.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas127.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\CwsTransactionProcessing\schemas9.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas128.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\CWSDataServices.wsdl" />
-    <None Include="WSDLs\CwsDataServicesBilling.wsdl" />
-    <None Include="WSDLs\CWSServiceInformation.wsdl" />
-    <None Include="WSDLs\CWSTransactionManagement.wsdl" />
-    <None Include="WSDLs\CwsTransactionProcessing.wsdl" />
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_DataServices.xsd">
+    <None Include="Service References\CwsTransactionProcessing\schemas129.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_DataServices_Billing.xsd">
+    <None Include="Service References\CwsTransactionProcessing\TPS.wsdl" />
+    <None Include="WSDLs\CwsCommon\schemas.datacontract.org.2004.07.EvoSnap.General.Security.Sts.Trust.Ext.DataContracts.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_DataServices_TMS.xsd">
+    <None Include="WSDLs\CwsCommon\schemas.evosnap.com.Identity.1.0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_DataServices_TMS_Fault.xsd">
+    <None Include="WSDLs\CwsCommon\schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.External.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_DataServices_TMS_Faults.xsd">
+    <None Include="WSDLs\CwsCommon\schemas.evosnap.com.Ipc.General.WCF.Contracts.Common.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_ServiceInformation.xsd">
+    <None Include="WSDLs\CwsCommon\schemas.microsoft.com.2003.10.Serialization.Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_ServiceInformation_Faults.xsd">
+    <None Include="WSDLs\CwsCommon\schemas.microsoft.com.2003.10.Serialization.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_TransactionProcessing.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\CWSCustomerManagement.wsdl" />
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.BusinessIntelligence.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_Transactions.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.CustomerManagement.wsdl" />
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.CustomerManagement.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_Transactions_Bankcard.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Fault.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_Transactions_Bankcard_Pro.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Faults.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_Transactions_ElectronicChecking.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Invoices.wsdl" />
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Invoices.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_Transactions_Faults.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Promotions.wsdl" />
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Promotions.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_CWS_v2.0_Transactions_StoredValue.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Subscriptions.wsdl" />
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Subscriptions.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_Identity_1.0.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.CMS.Wallet.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_Ipc.General.WCF.Contracts.Common.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.DataServices.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.evosnap.com_Ipc.General.WCF.Contracts.Common_External.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.Transactions.Faults.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.microsoft.com_2003_10_Serialization.xsd">
+    <None Include="WSDLs\CWSCustomerManagement\schemas.evosnap.com.CWS.v2.0.Transactions.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="WSDLs\schemas.microsoft.com_2003_10_Serialization_Arrays.xsd">
+    <None Include="WSDLs\CWSDataServicesBilling\CwsDataServicesBilling.wsdl" />
+    <None Include="WSDLs\CWSDataServicesBilling\schemas.evosnap.com.CWS.v2.0.DataServices.Billing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSDataServicesBilling\schemas.evosnap.com.CWS.v2.0.DataServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSServiceInformation\CWSServiceInformation.wsdl" />
+    <None Include="WSDLs\CWSServiceInformation\schemas.evosnap.com.CWS.v2.0.ServiceInformation.Faults.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSServiceInformation\schemas.evosnap.com.CWS.v2.0.ServiceInformation.wsdl" />
+    <None Include="WSDLs\CWSServiceInformation\schemas.evosnap.com.CWS.v2.0.ServiceInformation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\CwsDataServices.wsdl" />
+    <None Include="WSDLs\CWSTransactionManagement\CWSTransactionManagement.wsdl" />
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.DataServices.TMS.Fault.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.DataServices.TMS.Faults.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.DataServices.TMS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.DataServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.ServiceInformation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.Transactions.Bankcard.Pro.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.Transactions.Bankcard.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.Transactions.ElectronicChecking.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.Transactions.Encryption.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.Transactions.StoredValue.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionManagement\schemas.evosnap.com.CWS.v2.0.Transactions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\CwsTransactionProcessing.wsdl" />
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.TransactionProcessing.wsdl" />
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.TransactionProcessing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.Bankcard.Pro.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.Bankcard.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.ElectronicChecking.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.Encryption.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.Faults.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.StoredValue.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WSDLs\CWSTransactionProcessing\schemas.evosnap.com.CWS.v2.0.Transactions.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -487,6 +578,7 @@
     <WCFMetadataStorage Include="Service References\CWSTransactionManagement\" />
     <WCFMetadataStorage Include="Service References\CwsTransactionProcessing\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

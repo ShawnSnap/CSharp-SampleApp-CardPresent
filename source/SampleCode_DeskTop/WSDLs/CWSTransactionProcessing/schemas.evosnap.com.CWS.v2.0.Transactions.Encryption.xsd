@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/Transactions/Encryption" xmlns:q1="http://schemas.evosnap.com/CWS/v2.0/Transactions" xmlns:q2="http://schemas.evosnap.com/CWS/v2.0/Transactions" xmlns:q3="http://schemas.evosnap.com/CWS/v2.0/Transactions" xmlns:q4="http://schemas.evosnap.com/CWS/v2.0/Transactions" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/Transactions/Encryption"><xs:import schemaLocation="schemas.evosnap.com.CWS.v2.0.Transactions.xsd" namespace="http://schemas.evosnap.com/CWS/v2.0/Transactions"/><xs:complexType name="ArrayOfInitialEncryptionKeys"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="InitialEncryptionKeys" nillable="true" type="tns:InitialEncryptionKeys"/></xs:sequence></xs:complexType><xs:element name="ArrayOfInitialEncryptionKeys" nillable="true" type="tns:ArrayOfInitialEncryptionKeys"/><xs:complexType name="InitialEncryptionKeys"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial or current encryption keys that are injected in to the device. These keys may be used to generate future unique encryption keys when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="EMVInitialKey" nillable="true" type="tns:EMVInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Emv data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="FieldInitialKey" nillable="true" type="tns:FieldInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Field data including MSR. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="GenericInitialKey" nillable="true" type="tns:GenericInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Pin, Emv, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MACInitialKey" nillable="true" type="tns:MACInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PINInitialKey" nillable="true" type="tns:PINInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="RegionId" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Region Id for the encryption keys. Expected.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="InitialEncryptionKeys" nillable="true" type="tns:InitialEncryptionKeys"/><xs:complexType name="EMVInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt EMV data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if EMVKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="EMVInitialKey" nillable="true" type="tns:EMVInitialKey"/><xs:complexType name="FieldInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt EMV data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if EMVKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="FieldInitialKey" nillable="true" type="tns:FieldInitialKey"/><xs:complexType name="GenericInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN, EMV, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if GenericKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="GenericInitialKey" nillable="true" type="tns:GenericInitialKey"/><xs:complexType name="MACInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN, EMV, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if MACKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="MACInitialKey" nillable="true" type="tns:MACInitialKey"/><xs:complexType name="PINInitialKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN, EMV, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if PINKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="PINInitialKey" nillable="true" type="tns:PINInitialKey"/><xs:complexType name="EncryptionResponse"><xs:complexContent mixed="false"><xs:extension base="q1:Response"><xs:sequence><xs:element minOccurs="0" name="InitialEncryptionKeys" nillable="true" type="tns:ArrayOfInitialEncryptionKeys"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial or current encryption keys that are injected in to the device. These keys may be used to generate future unique encryption keys when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ComponentKeys" nillable="true" type="tns:ArrayOfComponentKeys"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Status code returned from the service. Expected.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MessageAuthenticationCode" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            For Canadian debit transactions, key used to decrypt balance information. Key generated and provided to the PIN pad. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="EncryptionResponse" nillable="true" type="tns:EncryptionResponse"/><xs:complexType name="ArrayOfComponentKeys"><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ComponentKeys" nillable="true" type="tns:ComponentKeys"/></xs:sequence></xs:complexType><xs:element name="ArrayOfComponentKeys" nillable="true" type="tns:ArrayOfComponentKeys"/><xs:complexType name="ComponentKeys"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial or current encryption keys that are injected in to the device. These keys may be used to generate future unique encryption keys when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="RegionId" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Region Id for the encryption keys. Expected.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EMVComponentKey" nillable="true" type="tns:EMVComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Emv data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="FieldComponentKey" nillable="true" type="tns:FieldComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Field data including MSR. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="GenericComponentKey" nillable="true" type="tns:GenericComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Pin, Emv, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MACComponentKey" nillable="true" type="tns:MACComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PINComponentKey" nillable="true" type="tns:PINComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="ComponentKeys" nillable="true" type="tns:ComponentKeys"/><xs:complexType name="EMVComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt EMV data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if EMVKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key Check Value for the single component key used to ensure correct receipt of all key component values. Value will be provided if EMVKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="CombinedKeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Combined Key Check Value provides a means for verifying the correct receipt and entry of all key component values. Value will be provided if EMVKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="EMVComponentKey" nillable="true" type="tns:EMVComponentKey"/><xs:complexType name="FieldComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt Field data including MSR. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if FieldKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key Check Value for the single component key used to ensure correct receipt of all key component values. Value will be provided if FieldKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="CombinedKeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Combined Key Check Value provides a means for verifying the correct receipt and entry of all key component values. Value will be provided if FieldKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="FieldComponentKey" nillable="true" type="tns:FieldComponentKey"/><xs:complexType name="GenericComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN, EMV, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if GenericKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key Check Value for the single component key used to ensure correct receipt of all key component values. Value will be provided if GenericKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="CombinedKeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Combined Key Check Value provides a means for verifying the correct receipt and entry of all key component values. Value will be provided if GenericKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="GenericComponentKey" nillable="true" type="tns:GenericComponentKey"/><xs:complexType name="MACComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN, EMV, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if MACKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key Check Value for the single component key used to ensure correct receipt of all key component values. Value will be provided if MACKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="CombinedKeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Combined Key Check Value provides a means for verifying the correct receipt and entry of all key component values. Value will be provided if MACKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="MACComponentKey" nillable="true" type="tns:MACComponentKey"/><xs:complexType name="PINComponentKey"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key details for the encryption key that will be used to encrypt PIN, EMV, Field and/or MAC data. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="InitialKeySerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Initial key serial number to be used when device supports DUK/PT key management. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The encryption key value. Value will be provided if PINKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="KeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Key Check Value for the single component key used to ensure correct receipt of all key component values. Value will be provided if PINKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="CombinedKeyCheckValue" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Combined Key Check Value provides a means for verifying the correct receipt and entry of all key component values. Value will be provided if PINKey is present on response.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="PINComponentKey" nillable="true" type="tns:PINComponentKey"/><xs:complexType name="EncryptionTransaction"><xs:complexContent mixed="false"><xs:extension base="q2:Transaction"><xs:sequence><xs:element minOccurs="0" name="TenderData" nillable="true" type="tns:EncryptionTenderData"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Details about the tender. Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="TransactionData" nillable="true" type="tns:EncryptionTransactionData"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Details about the transaction data. Required.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="EncryptionTransaction" nillable="true" type="tns:EncryptionTransaction"/><xs:complexType name="EncryptionTenderData"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains information about the Electronic Checking transaction tender data. Required.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="EntryMode" type="q3:EntryMode"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Indicates how the cardholder data was retrieved. When authorizing with stored card data, either locally or with CardDataToken, indicate that the card data was manually collected (keyed or one of its variants). Optional.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="DeviceSerialNumber" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The serial number of the terminal.  Required.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="VendorId" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The vendor code of the terminal.  Required.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="RegionId" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The region code of the terminal.  Required.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="EncryptionTenderData" nillable="true" type="tns:EncryptionTenderData"/><xs:complexType name="EncryptionTransactionData"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains information about the Electronic Checking transaction data. Required.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="q4:TransactionData"><xs:sequence/></xs:extension></xs:complexContent></xs:complexType><xs:element name="EncryptionTransactionData" nillable="true" type="tns:EncryptionTransactionData"/></xs:schema>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6HCRWoVyVifRB2vkPtzcWEkqiXA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ylood/E96zIWcXx8pkrxaZ7pgXQ=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="TransactionProcessing_ICwsTransactionProcessing1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICwsTransactionProcessing">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>TransactionProcessing_ICwsTransactionProcessing1</serializedValue>
+          <serializedValue>BasicHttpBinding_ICwsTransactionProcessing</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -110,10 +110,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="TransactionProcessing_ICwsTransactionProcessing2">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICwsTransactionProcessing1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>TransactionProcessing_ICwsTransactionProcessing2</serializedValue>
+          <serializedValue>BasicHttpBinding_ICwsTransactionProcessing1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="TransactionProcessing_ICwsTransactionProcessing" contract="CwsTransactionProcessing.ICwsTransactionProcessing" bindingType="basicHttpBinding" address="https://localhost/Txn" bindingConfiguration="TransactionProcessing_ICwsTransactionProcessing1">
+    <endpoint name="BasicHttpBinding_ICwsTransactionProcessing" contract="CwsTransactionProcessing.ICwsTransactionProcessing" bindingType="basicHttpBinding" address="https://api.cipcert.goevo.com/2.1.28/TPS.svc" bindingConfiguration="BasicHttpBinding_ICwsTransactionProcessing">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://localhost/Txn</serializedValue>
+          <serializedValue>https://api.cipcert.goevo.com/2.1.28/TPS.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -233,7 +233,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>TransactionProcessing_ICwsTransactionProcessing1</serializedValue>
+          <serializedValue>BasicHttpBinding_ICwsTransactionProcessing</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>CwsTransactionProcessing.ICwsTransactionProcessing</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>TransactionProcessing_ICwsTransactionProcessing</serializedValue>
+          <serializedValue>BasicHttpBinding_ICwsTransactionProcessing</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

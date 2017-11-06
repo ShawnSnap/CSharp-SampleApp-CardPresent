@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://schemas.datacontract.org/2004/07/EvoSnap.General.Security.Sts.Trust.Ext.DataContracts"
+	xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/"
+	xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	elementFormDefault="qualified"
+	targetNamespace="http://schemas.datacontract.org/2004/07/EvoSnap.General.Security.Sts.Trust.Ext.DataContracts">
+	<xs:import
+		schemaLocation="schemas.microsoft.com.2003.10.Serialization.xsd"
+		namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+	<xs:import
+		schemaLocation="schemas.microsoft.com.2003.10.Serialization.Arrays.xsd"
+		namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+	<xs:complexType name="PaymentApplicationQueryParameters">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Region" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="SalesChannel" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PaymentApplicationQueryParameters"
+		nillable="true" type="tns:PaymentApplicationQueryParameters" />
+	<xs:simpleType name="TypePaymentApplicationSort">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CreatedDate" />
+			<xs:enumeration value="FriendlyName" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TypePaymentApplicationSort" nillable="true"
+		type="tns:TypePaymentApplicationSort" />
+	<xs:simpleType name="TypeSort">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Descending" />
+			<xs:enumeration value="Ascending" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TypeSort" nillable="true" type="tns:TypeSort" />
+	<xs:complexType name="PaymentApplicationResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+			<xs:element minOccurs="0" name="PaymentApplications"
+				nillable="true" type="tns:ArrayOfPaymentApplicationMetaData" />
+			<xs:element minOccurs="0" name="TotalItems" type="xs:int" />
+			<xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PaymentApplicationResponse" nillable="true"
+		type="tns:PaymentApplicationResponse" />
+	<xs:complexType name="ArrayOfPaymentApplicationMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded"
+				name="PaymentApplicationMetaData" nillable="true"
+				type="tns:PaymentApplicationMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfPaymentApplicationMetaData"
+		nillable="true" type="tns:ArrayOfPaymentApplicationMetaData" />
+	<xs:complexType name="PaymentApplicationMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FriendlyName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ServiceKey" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PaymentApplicationMetaData" nillable="true"
+		type="tns:PaymentApplicationMetaData" />
+	<xs:complexType name="MerchantQueryParameters">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="MerchantName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Region" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="SalesChannel" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ServiceKey" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MerchantQueryParameters" nillable="true"
+		type="tns:MerchantQueryParameters" />
+	<xs:simpleType name="TypeMerchantSort">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CreatedDate" />
+			<xs:enumeration value="Name" />
+			<xs:enumeration value="UpdatedDate" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TypeMerchantSort" nillable="true"
+		type="tns:TypeMerchantSort" />
+	<xs:complexType name="MerchantResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Merchants" nillable="true"
+				type="tns:ArrayOfMerchantMetaData" />
+			<xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+			<xs:element minOccurs="0" name="TotalItems" type="xs:int" />
+			<xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MerchantResponse" nillable="true"
+		type="tns:MerchantResponse" />
+	<xs:complexType name="ArrayOfMerchantMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="MerchantMetaData"
+				nillable="true" type="tns:MerchantMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfMerchantMetaData" nillable="true"
+		type="tns:ArrayOfMerchantMetaData" />
+	<xs:complexType name="MerchantMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="FriendlyName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="IdentityGuid" type="ser:guid" />
+			<xs:element minOccurs="0" name="MerchantProfileId"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="Region" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Roles" nillable="true"
+				type="q1:ArrayOfstring" />
+			<xs:element minOccurs="0" name="SalesChannel" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ServiceKeys" nillable="true"
+				type="q2:ArrayOfstring" />
+			<xs:element minOccurs="0" name="UpdatedDate" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MerchantMetaData" nillable="true"
+		type="tns:MerchantMetaData" />
+	<xs:complexType name="ArrayOfRoleClaimMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RoleClaimMetaData"
+				nillable="true" type="tns:RoleClaimMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfRoleClaimMetaData" nillable="true"
+		type="tns:ArrayOfRoleClaimMetaData" />
+	<xs:complexType name="RoleClaimMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Claims" nillable="true"
+				type="tns:ArrayOfClaimMetaData" />
+			<xs:element minOccurs="0" name="RoleName" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RoleClaimMetaData" nillable="true"
+		type="tns:RoleClaimMetaData" />
+	<xs:complexType name="TokenResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SessionToken" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="UserAccessToken" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TokenResponse" nillable="true"
+		type="tns:TokenResponse" />
+	<xs:complexType name="ArrayOfSecurityQuestion">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityQuestion"
+				nillable="true" type="tns:SecurityQuestion" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfSecurityQuestion" nillable="true"
+		type="tns:ArrayOfSecurityQuestion" />
+	<xs:complexType name="SecurityQuestion">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="QuestionCode" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="QuestionText" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SecurityQuestion" nillable="true"
+		type="tns:SecurityQuestion" />
+	<xs:complexType name="ArrayOfSecurityAnswer">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityAnswer"
+				nillable="true" type="tns:SecurityAnswer" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfSecurityAnswer" nillable="true"
+		type="tns:ArrayOfSecurityAnswer" />
+	<xs:complexType name="SecurityAnswer">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Answer" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="QuestionCode" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SecurityAnswer" nillable="true"
+		type="tns:SecurityAnswer" />
+	<xs:complexType name="SecurityQuestionResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SecurityQuestion"
+				nillable="true" type="tns:SecurityQuestion" />
+			<xs:element minOccurs="0" name="SecurityQuestionToken"
+				nillable="true" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SecurityQuestionResponse" nillable="true"
+		type="tns:SecurityQuestionResponse" />
+	<xs:complexType name="ArrayOfClaimMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ClaimMetaData"
+				nillable="true" type="tns:ClaimMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfClaimMetaData" nillable="true"
+		type="tns:ArrayOfClaimMetaData" />
+	<xs:complexType name="ClaimMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ClaimDescription"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="ClaimNS" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ClaimScope" nillable="true"
+				type="tns:ScopeMetaData" />
+			<xs:element minOccurs="0" name="ClaimType" type="tns:ClaimTypeEnum" />
+			<xs:element minOccurs="0" name="ClaimValue" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ClaimMetaData" nillable="true"
+		type="tns:ClaimMetaData" />
+	<xs:complexType name="ScopeMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AllowableIdentityTypes"
+				nillable="true" type="tns:ArrayOfIdentityTypeEnum" />
+			<xs:element minOccurs="0" name="ScopeId" type="xs:int" />
+			<xs:element minOccurs="0" name="ScopeName" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ScopeMetaData" nillable="true"
+		type="tns:ScopeMetaData" />
+	<xs:complexType name="ArrayOfIdentityTypeEnum">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="IdentityTypeEnum"
+				type="tns:IdentityTypeEnum" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfIdentityTypeEnum" nillable="true"
+		type="tns:ArrayOfIdentityTypeEnum" />
+	<xs:simpleType name="IdentityTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="User">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>1</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="System">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>2</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Windows">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>3</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemISV">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>4</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemRegion">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>5</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemMerchant">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>6</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemRelyingParty">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>7</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemSalesChannel">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>8</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="IdentityTypeEnum" nillable="true"
+		type="tns:IdentityTypeEnum" />
+	<xs:simpleType name="ClaimTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>1</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Data">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>2</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CWSAccess">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>3</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Custom">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>4</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ClaimTypeEnum" nillable="true"
+		type="tns:ClaimTypeEnum" />
+	<xs:complexType name="ArrayOfRoleMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="RoleMetaData"
+				nillable="true" type="tns:RoleMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfRoleMetaData" nillable="true"
+		type="tns:ArrayOfRoleMetaData" />
+	<xs:complexType name="RoleMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Description" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="RoleGuid" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="RoleName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Scope" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RoleMetaData" nillable="true" type="tns:RoleMetaData" />
+	<xs:complexType name="UserInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Email" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="FirstName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="LastName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="MerchantProfileId"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="Region" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Role" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ServiceKey" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Username" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+	<xs:complexType name="MerchantInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="FriendlyName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="MerchantMetaData"
+				nillable="true" type="q3:ArrayOfKeyValueOfstringstring" />
+			<xs:element minOccurs="0" name="MerchantProfileId"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="ServiceKey" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MerchantInfo" nillable="true" type="tns:MerchantInfo" />
+	<xs:complexType name="UserQueryParameters">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Email" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="FirstName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="LastName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="LockState" type="tns:LockState" />
+			<xs:element minOccurs="0" name="Merchant" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Region" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="SalesChannel" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="ServiceKey" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Username" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserQueryParameters" nillable="true"
+		type="tns:UserQueryParameters" />
+	<xs:simpleType name="LockState">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NotSet" />
+			<xs:enumeration value="ManuallyLocked" />
+			<xs:enumeration value="SystemLocked" />
+			<xs:enumeration value="Unlocked" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="LockState" nillable="true" type="tns:LockState" />
+	<xs:simpleType name="TypeUserSort">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CreatedDate" />
+			<xs:enumeration value="LastName" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="TypeUserSort" nillable="true" type="tns:TypeUserSort" />
+	<xs:complexType name="UserResponse">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+			<xs:element minOccurs="0" name="TotalItems" type="xs:int" />
+			<xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+			<xs:element minOccurs="0" name="Users" nillable="true"
+				type="tns:ArrayOfUserCredMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserResponse" nillable="true" type="tns:UserResponse" />
+	<xs:complexType name="ArrayOfUserCredMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="UserCredMetaData"
+				nillable="true" type="tns:UserCredMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfUserCredMetaData" nillable="true"
+		type="tns:ArrayOfUserCredMetaData" />
+	<xs:complexType name="UserCredMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="AssignedMerchants"
+				nillable="true" type="tns:ArrayOfMerchantInfo" />
+			<xs:element minOccurs="0" name="AssignedRoles" nillable="true"
+				type="q4:ArrayOfstring" />
+			<xs:element minOccurs="0" name="Email" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="FirstName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Identities" nillable="true"
+				type="tns:ArrayOfIdentityMetaData" />
+			<xs:element minOccurs="0" name="IsAdminLocked" type="xs:boolean" />
+			<xs:element minOccurs="0" name="IsSystemLocked" type="xs:boolean" />
+			<xs:element minOccurs="0" name="LastLoginDate" type="xs:dateTime" />
+			<xs:element minOccurs="0" name="LastName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="LastPasswordResetDate"
+				type="xs:dateTime" />
+			<xs:element minOccurs="0" name="LockCount" type="xs:int" />
+			<xs:element minOccurs="0" name="Merchants" nillable="true"
+				type="q5:ArrayOfstring" />
+			<xs:element minOccurs="0" name="Password" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="Region" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="SystemLockedTimeStamp"
+				type="xs:dateTime" />
+			<xs:element minOccurs="0" name="UserCredentialGuid"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="UserMustChangePassword"
+				type="xs:boolean" />
+			<xs:element minOccurs="0" name="Username" nillable="true"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="UserCredMetaData" nillable="true"
+		type="tns:UserCredMetaData" />
+	<xs:complexType name="ArrayOfMerchantInfo">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="MerchantInfo"
+				nillable="true" type="tns:MerchantInfo" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfMerchantInfo" nillable="true"
+		type="tns:ArrayOfMerchantInfo" />
+	<xs:complexType name="ArrayOfIdentityMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="IdentityMetaData"
+				nillable="true" type="tns:IdentityMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfIdentityMetaData" nillable="true"
+		type="tns:ArrayOfIdentityMetaData" />
+	<xs:complexType name="IdentityMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="IdentityDescription"
+				nillable="true" type="xs:string" />
+			<xs:element minOccurs="0" name="IdentityGuid" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="IdentityName" nillable="true"
+				type="xs:string" />
+			<xs:element minOccurs="0" name="IdentityType" type="tns:IdentityTypeEnum" />
+			<xs:element minOccurs="0" name="Scope" nillable="true"
+				type="tns:ScopeMetaData" />
+			<xs:element minOccurs="0" name="UserCreds" nillable="true"
+				type="tns:ArrayOfUserCredMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="IdentityMetaData" nillable="true"
+		type="tns:IdentityMetaData" />
+	<xs:simpleType name="OverrideTypeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Include">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>1</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Exclude">
+				<xs:annotation>
+					<xs:appinfo>
+						<EnumerationValue>2</EnumerationValue>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="OverrideTypeEnum" nillable="true"
+		type="tns:OverrideTypeEnum" />
+	<xs:complexType name="ArrayOfScopeMetaData">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ScopeMetaData"
+				nillable="true" type="tns:ScopeMetaData" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ArrayOfScopeMetaData" nillable="true"
+		type="tns:ArrayOfScopeMetaData" />
+</xs:schema>

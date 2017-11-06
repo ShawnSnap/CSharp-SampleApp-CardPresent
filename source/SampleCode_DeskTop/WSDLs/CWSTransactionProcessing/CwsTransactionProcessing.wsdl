@@ -1,0 +1,1101 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:i0="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tps.service.evosnap.com/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy" name="TPS" targetNamespace="http://tps.service.evosnap.com/">
+  <wsdl:import location="schemas.evosnap.com.CWS.v2.0.TransactionProcessing.wsdl" namespace="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_ICwsTransactionProcessing" type="i0:ICwsTransactionProcessing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://schemas.evosnap.com/Ipc.General.WCF.Contracts.Common/IExternallyFacingStandardOperations/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAccount">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/QueryAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Verify">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Verify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Authorize">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Authorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Adjust">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Adjust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeAndCapture">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/AuthorizeAndCapture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUnlinked">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/ReturnUnlinked" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnById">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/ReturnById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Undo">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Undo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Capture">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Capture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureAll">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/CaptureAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSelective">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/CaptureSelective" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Acknowledge">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Acknowledge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestTransaction">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/RequestTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ManageAccount">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/ManageAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ManageAccountById">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/ManageAccountById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Disburse">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Disburse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Resubmit">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/Resubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendReceipt">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/SendReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptWithTemplate">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/SendReceiptWithTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTransaction">
+      <soap:operation soapAction="http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing/ICwsTransactionProcessing/ImportTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExpiredTokenFaultFault">
+        <soap:fault name="ExpiredTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidTokenFaultFault">
+        <soap:fault name="InvalidTokenFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSDeserializationFaultFault">
+        <soap:fault name="CWSDeserializationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault name="AuthenticationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSConnectionFaultFault">
+        <soap:fault name="CWSConnectionFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionServiceUnavailableFaultFault">
+        <soap:fault name="CWSTransactionServiceUnavailableFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidServiceInformationFaultFault">
+        <soap:fault name="CWSInvalidServiceInformationFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionAlreadySettledFaultFault">
+        <soap:fault name="CWSTransactionAlreadySettledFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSValidationResultFaultFault">
+        <soap:fault name="CWSValidationResultFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSFaultFault">
+        <soap:fault name="CWSFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSTransactionFailedFaultFault">
+        <soap:fault name="CWSTransactionFailedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSExtendedDataNotSupportedFaultFault">
+        <soap:fault name="CWSExtendedDataNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidMessageFormatFaultFault">
+        <soap:fault name="CWSInvalidMessageFormatFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSOperationNotSupportedFaultFault">
+        <soap:fault name="CWSOperationNotSupportedFaultFault" use="literal" />
+      </wsdl:fault>
+      <wsdl:fault name="CWSInvalidOperationFaultFault">
+        <soap:fault name="CWSInvalidOperationFaultFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TPS">
+    <wsdl:port name="BasicHttpBinding_ICwsTransactionProcessing" binding="tns:BasicHttpBinding_ICwsTransactionProcessing">
+      <soap:address location="https://api.cipcert.goevo.com/2.1.28/TPS.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

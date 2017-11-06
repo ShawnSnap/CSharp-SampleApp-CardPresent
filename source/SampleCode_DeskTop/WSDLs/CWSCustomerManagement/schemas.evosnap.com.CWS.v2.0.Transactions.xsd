@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.evosnap.com/CWS/v2.0/Transactions" elementFormDefault="qualified" targetNamespace="http://schemas.evosnap.com/CWS/v2.0/Transactions"><xs:simpleType name="TransactionState"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Indicates the current state of the transaction.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:restriction base="xs:string"><xs:enumeration value="NotSet"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Value has not been explicitly set.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Declined"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The original transaction was successfully transmitted but declined by the service.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Verified"><xs:annotation><xs:documentation>&lt;summary&gt;
+            A verify transaction was successfully run. Check response for details.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Authorized"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The original transaction was successfully authorized. The transaction has not yet been captured.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Adjusted"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The original transaction was successfully authorized and the amount subsequently successfully adjusted.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Captured"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The transaction was successfully captured.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="CaptureDeclined"><xs:annotation><xs:documentation>&lt;summary&gt;
+            An attempt to capture the transaction was declined by the service provider.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="PartiallyCaptured"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The transaction was captured for a partial amount with the expectation that another capture may be attempted for the additional authorized funds.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Undone"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The transaction was completely voided or reversed.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="ReturnRequested"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Either the original transaction was a standalone return, or a successfully captured transaction was subsequently returned for the full amount. The return has not yet been captured.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="PartialReturnRequested"><xs:annotation><xs:documentation>&lt;summary&gt;
+            A successfully captured transaction was returned for less than the captured amount. The return has not yet been captured.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="ReturnUndone"><xs:annotation><xs:documentation>&lt;summary&gt;
+            A standalone return or a return of a successfully captured transaction was voided.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Returned"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Either the original transaction was a standalone return, or a successfully captured transaction was subsequently returned for the full amount. The return has been captured.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="PartiallyReturned"><xs:annotation><xs:documentation>&lt;summary&gt;
+            A successfully captured transaction was returned for less than the captured amount. The return has been captured.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="InProcess"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Transaction is in process.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="ErrorValidation"><xs:annotation><xs:documentation>&lt;summary&gt;
+            There was a validation error on the transaction.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="ErrorUnknown"><xs:annotation><xs:documentation>&lt;summary&gt;
+            An unknown error occured during the processing of this error.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="ErrorConnecting"><xs:annotation><xs:documentation>&lt;summary&gt;
+            There was a connection error during the processing of this transaction.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="FundsRequested"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Indicated funds have been requested for Disburse transaction.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="FundsTransferred"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Indicated funds have been transferred for Disburse transaction.
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration></xs:restriction></xs:simpleType><xs:element name="TransactionState" nillable="true" type="tns:TransactionState"/></xs:schema>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ilYfS9WEbEQXkl2dlWbZthfs/+0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8SCHhRz2NYG4A1zGGl4wbugC7es=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="ServiceInfoProcessing_ICWSServiceInformation1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICWSServiceInformation">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceInfoProcessing_ICWSServiceInformation1</serializedValue>
+          <serializedValue>BasicHttpBinding_ICWSServiceInformation</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -110,10 +110,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="ServiceInfoProcessing_ICWSServiceInformation2">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICWSServiceInformation1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceInfoProcessing_ICWSServiceInformation2</serializedValue>
+          <serializedValue>BasicHttpBinding_ICWSServiceInformation1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceInfoProcessing_ICWSServiceInformation" contract="CWSServiceInformation.ICWSServiceInformation" bindingType="basicHttpBinding" address="https://localhost/SvcInfo" bindingConfiguration="ServiceInfoProcessing_ICWSServiceInformation1">
+    <endpoint name="BasicHttpBinding_ICWSServiceInformation" contract="CWSServiceInformation.ICWSServiceInformation" bindingType="basicHttpBinding" address="https://api.cipcert.goevo.com/2.1.28/SIS.svc" bindingConfiguration="BasicHttpBinding_ICWSServiceInformation">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://localhost/SvcInfo</serializedValue>
+          <serializedValue>https://api.cipcert.goevo.com/2.1.28/SIS.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -233,7 +233,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceInfoProcessing_ICWSServiceInformation1</serializedValue>
+          <serializedValue>BasicHttpBinding_ICWSServiceInformation</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>CWSServiceInformation.ICWSServiceInformation</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceInfoProcessing_ICWSServiceInformation</serializedValue>
+          <serializedValue>BasicHttpBinding_ICWSServiceInformation</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
