@@ -1,5 +1,5 @@
 #region DISCLAIMER
-/* Copyright (c) 2013 EVO Payments International - All Rights Reserved.
+/* Copyright (c) 2018 EVO Payments International - All Rights Reserved.
  *
  * This software and documentation is subject to and made
  * available only pursuant to the terms of an executed license
@@ -104,7 +104,7 @@ namespace SampleCode
             
             DefaultSetupValues();
             #region Setup The Application
-            txtDisclaimer.Text = "Copyright (c) 2013 EVO Payments International - All Rights Reserved.\r\n\r\n"
+            txtDisclaimer.Text = "Copyright (c) 2018 EVO Payments International - All Rights Reserved.\r\n\r\n"
                                  + " This software and documentation is subject to and made"
                                  + " available only pursuant to the terms of an executed license"
                                  + " agreement, and may be used only in accordance with the terms"

@@ -69,10 +69,12 @@ namespace SampleCode
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.TxtServiceKey = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txtTMSSecondary = new System.Windows.Forms.TextBox();
             this.txtTMSPrimary = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lnkServiceKey = new System.Windows.Forms.LinkLabel();
             this.txtTxnSecondary = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTxnPrimary = new System.Windows.Forms.TextBox();
@@ -89,12 +91,9 @@ namespace SampleCode
             this.tbIntroduction = new System.Windows.Forms.TabPage();
             this.label35 = new System.Windows.Forms.Label();
             this.CboindustryType = new System.Windows.Forms.ComboBox();
-            this.TxtServiceKey = new System.Windows.Forms.TextBox();
             this.cmdPopulateWithMyTestValues = new System.Windows.Forms.Button();
             this.cmdGo = new System.Windows.Forms.Button();
             this.lnkIdentityToken = new System.Windows.Forms.LinkLabel();
-            this.lnkServiceKey = new System.Windows.Forms.LinkLabel();
-            this.label24 = new System.Windows.Forms.Label();
             this.txtIntroduction = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -730,10 +729,12 @@ namespace SampleCode
             // 
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.TxtServiceKey);
             this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.txtTMSSecondary);
             this.groupBox3.Controls.Add(this.txtTMSPrimary);
             this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.lnkServiceKey);
             this.groupBox3.Controls.Add(this.txtTxnSecondary);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.txtTxnPrimary);
@@ -743,9 +744,9 @@ namespace SampleCode
             this.groupBox3.Controls.Add(this.txtSvcPrimary);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(19, 367);
+            this.groupBox3.Location = new System.Drawing.Point(19, 493);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(485, 226);
+            this.groupBox3.Size = new System.Drawing.Size(532, 226);
             this.groupBox3.TabIndex = 114;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Accessing Web Service Endpoints";
@@ -767,6 +768,18 @@ namespace SampleCode
             this.label32.Size = new System.Drawing.Size(58, 13);
             this.label32.TabIndex = 114;
             this.label32.Text = "Secondary";
+            // 
+            // TxtServiceKey
+            // 
+            this.TxtServiceKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtServiceKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtServiceKey.ForeColor = System.Drawing.Color.OrangeRed;
+            this.TxtServiceKey.Location = new System.Drawing.Point(240, 13);
+            this.TxtServiceKey.Name = "TxtServiceKey";
+            this.TxtServiceKey.Size = new System.Drawing.Size(236, 14);
+            this.TxtServiceKey.TabIndex = 132;
+            this.TxtServiceKey.Text = "Service Key: ";
+            this.TxtServiceKey.Visible = false;
             // 
             // label30
             // 
@@ -799,6 +812,22 @@ namespace SampleCode
             this.label5.Size = new System.Drawing.Size(118, 13);
             this.label5.TabIndex = 105;
             this.label5.Text = "Transaction Processing";
+            // 
+            // lnkServiceKey
+            // 
+            this.lnkServiceKey.AutoSize = true;
+            this.lnkServiceKey.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnkServiceKey.Image = ((System.Drawing.Image)(resources.GetObject("lnkServiceKey.Image")));
+            this.lnkServiceKey.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lnkServiceKey.Location = new System.Drawing.Point(217, 10);
+            this.lnkServiceKey.Margin = new System.Windows.Forms.Padding(0);
+            this.lnkServiceKey.MinimumSize = new System.Drawing.Size(20, 20);
+            this.lnkServiceKey.Name = "lnkServiceKey";
+            this.lnkServiceKey.Size = new System.Drawing.Size(20, 20);
+            this.lnkServiceKey.TabIndex = 123;
+            this.lnkServiceKey.Tag = "";
+            this.linkLblToolTip.SetToolTip(this.lnkServiceKey, "Click Here to view more information");
+            this.lnkServiceKey.Click += new System.EventHandler(this.lnkServiceKey_Click);
             // 
             // txtTxnSecondary
             // 
@@ -880,7 +909,7 @@ namespace SampleCode
             this.lnkAccessingWebServiceEndpoints.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lnkAccessingWebServiceEndpoints.Image = ((System.Drawing.Image)(resources.GetObject("lnkAccessingWebServiceEndpoints.Image")));
             this.lnkAccessingWebServiceEndpoints.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lnkAccessingWebServiceEndpoints.Location = new System.Drawing.Point(511, 379);
+            this.lnkAccessingWebServiceEndpoints.Location = new System.Drawing.Point(-4, 493);
             this.lnkAccessingWebServiceEndpoints.Margin = new System.Windows.Forms.Padding(0);
             this.lnkAccessingWebServiceEndpoints.MinimumSize = new System.Drawing.Size(20, 20);
             this.lnkAccessingWebServiceEndpoints.Name = "lnkAccessingWebServiceEndpoints";
@@ -893,7 +922,7 @@ namespace SampleCode
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 258);
+            this.label2.Location = new System.Drawing.Point(20, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 100;
@@ -902,18 +931,17 @@ namespace SampleCode
             // txtIdentityToken
             // 
             this.txtIdentityToken.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIdentityToken.Location = new System.Drawing.Point(19, 274);
+            this.txtIdentityToken.Location = new System.Drawing.Point(19, 229);
             this.txtIdentityToken.Multiline = true;
             this.txtIdentityToken.Name = "txtIdentityToken";
             this.txtIdentityToken.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtIdentityToken.Size = new System.Drawing.Size(485, 87);
+            this.txtIdentityToken.Size = new System.Drawing.Size(532, 258);
             this.txtIdentityToken.TabIndex = 4;
             this.txtIdentityToken.TextChanged += new System.EventHandler(this.txtIdentityToken_TextChanged);
             this.txtIdentityToken.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdentityToken_KeyDown);
             // 
             // tabControl1
             // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tbIntroduction);
             this.tabControl1.Controls.Add(this.tbPreparingApplicationToTransact);
             this.tabControl1.Controls.Add(this.tbTransactionProcessing);
@@ -921,7 +949,7 @@ namespace SampleCode
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(853, 788);
+            this.tabControl1.Size = new System.Drawing.Size(865, 799);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 9;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -931,31 +959,28 @@ namespace SampleCode
             this.tbIntroduction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tbIntroduction.Controls.Add(this.label35);
             this.tbIntroduction.Controls.Add(this.CboindustryType);
-            this.tbIntroduction.Controls.Add(this.TxtServiceKey);
             this.tbIntroduction.Controls.Add(this.cmdPopulateWithMyTestValues);
             this.tbIntroduction.Controls.Add(this.lnkAccessingWebServiceEndpoints);
             this.tbIntroduction.Controls.Add(this.cmdGo);
             this.tbIntroduction.Controls.Add(this.lnkIdentityToken);
-            this.tbIntroduction.Controls.Add(this.lnkServiceKey);
-            this.tbIntroduction.Controls.Add(this.label24);
             this.tbIntroduction.Controls.Add(this.txtIntroduction);
             this.tbIntroduction.Controls.Add(this.groupBox3);
             this.tbIntroduction.Controls.Add(this.label21);
             this.tbIntroduction.Controls.Add(this.groupBox12);
             this.tbIntroduction.Controls.Add(this.txtIdentityToken);
             this.tbIntroduction.Controls.Add(this.label2);
-            this.tbIntroduction.Location = new System.Drawing.Point(4, 25);
+            this.tbIntroduction.Location = new System.Drawing.Point(4, 22);
             this.tbIntroduction.Name = "tbIntroduction";
             this.tbIntroduction.Padding = new System.Windows.Forms.Padding(3);
-            this.tbIntroduction.Size = new System.Drawing.Size(845, 759);
+            this.tbIntroduction.Size = new System.Drawing.Size(857, 773);
             this.tbIntroduction.TabIndex = 0;
-            this.tbIntroduction.Text = "Introduction";
+            this.tbIntroduction.Text = "Step 1: Introduction";
             this.tbIntroduction.UseVisualStyleBackColor = true;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(201, 248);
+            this.label35.Location = new System.Drawing.Point(245, 205);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(204, 13);
             this.label35.TabIndex = 144;
@@ -969,33 +994,21 @@ namespace SampleCode
             "MOTO",
             "Retail",
             "Restaurant"});
-            this.CboindustryType.Location = new System.Drawing.Point(408, 245);
+            this.CboindustryType.Location = new System.Drawing.Point(452, 202);
             this.CboindustryType.Name = "CboindustryType";
             this.CboindustryType.Size = new System.Drawing.Size(99, 21);
             this.CboindustryType.TabIndex = 143;
             this.industryToolTip.SetToolTip(this.CboindustryType, "Changing this value will override the settings in the app.config");
             this.CboindustryType.SelectedIndexChanged += new System.EventHandler(this.CboindustryType_SelectedIndexChanged);
             // 
-            // TxtServiceKey
-            // 
-            this.TxtServiceKey.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtServiceKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtServiceKey.ForeColor = System.Drawing.Color.OrangeRed;
-            this.TxtServiceKey.Location = new System.Drawing.Point(271, 225);
-            this.TxtServiceKey.Name = "TxtServiceKey";
-            this.TxtServiceKey.Size = new System.Drawing.Size(236, 14);
-            this.TxtServiceKey.TabIndex = 132;
-            this.TxtServiceKey.Text = "Service Key: ";
-            this.TxtServiceKey.Visible = false;
-            // 
             // cmdPopulateWithMyTestValues
             // 
             this.cmdPopulateWithMyTestValues.BackColor = System.Drawing.SystemColors.Control;
             this.cmdPopulateWithMyTestValues.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SeaGreen;
             this.cmdPopulateWithMyTestValues.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.cmdPopulateWithMyTestValues.Location = new System.Drawing.Point(536, 243);
+            this.cmdPopulateWithMyTestValues.Location = new System.Drawing.Point(557, 200);
             this.cmdPopulateWithMyTestValues.Name = "cmdPopulateWithMyTestValues";
-            this.cmdPopulateWithMyTestValues.Size = new System.Drawing.Size(160, 23);
+            this.cmdPopulateWithMyTestValues.Size = new System.Drawing.Size(280, 23);
             this.cmdPopulateWithMyTestValues.TabIndex = 130;
             this.cmdPopulateWithMyTestValues.Text = "Populate With My Test Values";
             this.industryToolTip.SetToolTip(this.cmdPopulateWithMyTestValues, "This will populate test values from the app.config");
@@ -1004,7 +1017,7 @@ namespace SampleCode
             // 
             // cmdGo
             // 
-            this.cmdGo.Location = new System.Drawing.Point(432, 599);
+            this.cmdGo.Location = new System.Drawing.Point(476, 725);
             this.cmdGo.Name = "cmdGo";
             this.cmdGo.Size = new System.Drawing.Size(75, 23);
             this.cmdGo.TabIndex = 128;
@@ -1018,7 +1031,7 @@ namespace SampleCode
             this.lnkIdentityToken.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lnkIdentityToken.Image = ((System.Drawing.Image)(resources.GetObject("lnkIdentityToken.Image")));
             this.lnkIdentityToken.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lnkIdentityToken.Location = new System.Drawing.Point(510, 274);
+            this.lnkIdentityToken.Location = new System.Drawing.Point(-3, 209);
             this.lnkIdentityToken.Margin = new System.Windows.Forms.Padding(0);
             this.lnkIdentityToken.MinimumSize = new System.Drawing.Size(20, 20);
             this.lnkIdentityToken.Name = "lnkIdentityToken";
@@ -1028,62 +1041,35 @@ namespace SampleCode
             this.linkLblToolTip.SetToolTip(this.lnkIdentityToken, "Click Here to view more information");
             this.lnkIdentityToken.Click += new System.EventHandler(this.lnkIdentityToken_Click);
             // 
-            // lnkServiceKey
-            // 
-            this.lnkServiceKey.AutoSize = true;
-            this.lnkServiceKey.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lnkServiceKey.Image = ((System.Drawing.Image)(resources.GetObject("lnkServiceKey.Image")));
-            this.lnkServiceKey.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lnkServiceKey.Location = new System.Drawing.Point(248, 222);
-            this.lnkServiceKey.Margin = new System.Windows.Forms.Padding(0);
-            this.lnkServiceKey.MinimumSize = new System.Drawing.Size(20, 20);
-            this.lnkServiceKey.Name = "lnkServiceKey";
-            this.lnkServiceKey.Size = new System.Drawing.Size(20, 20);
-            this.lnkServiceKey.TabIndex = 123;
-            this.lnkServiceKey.Tag = "";
-            this.linkLblToolTip.SetToolTip(this.lnkServiceKey, "Click Here to view more information");
-            this.lnkServiceKey.Click += new System.EventHandler(this.lnkServiceKey_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label24.Location = new System.Drawing.Point(18, 219);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(102, 24);
-            this.label24.TabIndex = 118;
-            this.label24.Text = "Let\'s Begin";
-            // 
             // txtIntroduction
             // 
             this.txtIntroduction.AcceptsReturn = true;
             this.txtIntroduction.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtIntroduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIntroduction.Location = new System.Drawing.Point(22, 50);
+            this.txtIntroduction.Location = new System.Drawing.Point(19, 39);
             this.txtIntroduction.Multiline = true;
             this.txtIntroduction.Name = "txtIntroduction";
             this.txtIntroduction.ReadOnly = true;
-            this.txtIntroduction.Size = new System.Drawing.Size(777, 155);
+            this.txtIntroduction.Size = new System.Drawing.Size(818, 155);
             this.txtIntroduction.TabIndex = 3;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label21.Location = new System.Drawing.Point(19, 23);
+            this.label21.ForeColor = System.Drawing.Color.DimGray;
+            this.label21.Location = new System.Drawing.Point(19, 12);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(286, 24);
+            this.label21.Size = new System.Drawing.Size(436, 24);
             this.label21.TabIndex = 2;
-            this.label21.Text = "Commerce Web Services (CWS)";
+            this.label21.Text = "Let\'s Begin Using Commerce Web Services (CWS)";
             // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.txtDisclaimer);
-            this.groupBox12.Location = new System.Drawing.Point(19, 628);
+            this.groupBox12.Location = new System.Drawing.Point(557, 229);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(789, 125);
+            this.groupBox12.Size = new System.Drawing.Size(280, 525);
             this.groupBox12.TabIndex = 1;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Disclaimer";
@@ -1094,18 +1080,18 @@ namespace SampleCode
             this.txtDisclaimer.Multiline = true;
             this.txtDisclaimer.Name = "txtDisclaimer";
             this.txtDisclaimer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtDisclaimer.Size = new System.Drawing.Size(777, 91);
+            this.txtDisclaimer.Size = new System.Drawing.Size(268, 500);
             this.txtDisclaimer.TabIndex = 0;
             // 
             // tbPreparingApplicationToTransact
             // 
             this.tbPreparingApplicationToTransact.Controls.Add(this.groupBox1);
-            this.tbPreparingApplicationToTransact.Location = new System.Drawing.Point(4, 25);
+            this.tbPreparingApplicationToTransact.Location = new System.Drawing.Point(4, 22);
             this.tbPreparingApplicationToTransact.Name = "tbPreparingApplicationToTransact";
             this.tbPreparingApplicationToTransact.Padding = new System.Windows.Forms.Padding(3);
-            this.tbPreparingApplicationToTransact.Size = new System.Drawing.Size(845, 759);
+            this.tbPreparingApplicationToTransact.Size = new System.Drawing.Size(857, 773);
             this.tbPreparingApplicationToTransact.TabIndex = 1;
-            this.tbPreparingApplicationToTransact.Text = "Preparing the Application to Transact";
+            this.tbPreparingApplicationToTransact.Text = "Step 2: Preparing the Application to Transact";
             this.tbPreparingApplicationToTransact.UseVisualStyleBackColor = true;
             // 
             // tbTransactionProcessing
@@ -1114,11 +1100,11 @@ namespace SampleCode
             this.tbTransactionProcessing.Controls.Add(this.lblCurrentService);
             this.tbTransactionProcessing.Controls.Add(this.menuStrip1);
             this.tbTransactionProcessing.Controls.Add(this.groupBox2);
-            this.tbTransactionProcessing.Location = new System.Drawing.Point(4, 25);
+            this.tbTransactionProcessing.Location = new System.Drawing.Point(4, 22);
             this.tbTransactionProcessing.Name = "tbTransactionProcessing";
-            this.tbTransactionProcessing.Size = new System.Drawing.Size(845, 759);
+            this.tbTransactionProcessing.Size = new System.Drawing.Size(857, 773);
             this.tbTransactionProcessing.TabIndex = 2;
-            this.tbTransactionProcessing.Text = "Transaction Processing";
+            this.tbTransactionProcessing.Text = "Step 3: Transaction Processing";
             this.tbTransactionProcessing.UseVisualStyleBackColor = true;
             // 
             // lblCurrentServiceClass
@@ -1152,7 +1138,7 @@ namespace SampleCode
             this.configurationValuesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(845, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(857, 24);
             this.menuStrip1.TabIndex = 133;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2134,10 +2120,10 @@ namespace SampleCode
             this.tbTransactionData.Controls.Add(this.GrpTrackDataFromMSR);
             this.tbTransactionData.Controls.Add(this.GrpTokenization);
             this.tbTransactionData.Controls.Add(this.GrpCNP);
-            this.tbTransactionData.Location = new System.Drawing.Point(4, 25);
+            this.tbTransactionData.Location = new System.Drawing.Point(4, 22);
             this.tbTransactionData.Name = "tbTransactionData";
             this.tbTransactionData.Padding = new System.Windows.Forms.Padding(3);
-            this.tbTransactionData.Size = new System.Drawing.Size(845, 759);
+            this.tbTransactionData.Size = new System.Drawing.Size(857, 773);
             this.tbTransactionData.TabIndex = 3;
             this.tbTransactionData.Text = "Processing Data";
             this.tbTransactionData.UseVisualStyleBackColor = true;
@@ -2738,7 +2724,7 @@ namespace SampleCode
             // 
             this.lnkOnlineDocumentation.AutoSize = true;
             this.lnkOnlineDocumentation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkOnlineDocumentation.Location = new System.Drawing.Point(711, 9);
+            this.lnkOnlineDocumentation.Location = new System.Drawing.Point(741, 11);
             this.lnkOnlineDocumentation.Name = "lnkOnlineDocumentation";
             this.lnkOnlineDocumentation.Size = new System.Drawing.Size(132, 13);
             this.lnkOnlineDocumentation.TabIndex = 10;
@@ -2760,7 +2746,7 @@ namespace SampleCode
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(952, 750);
+            this.ClientSize = new System.Drawing.Size(891, 827);
             this.Controls.Add(this.lnkOnlineDocumentation);
             this.Controls.Add(this.tabControl1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -2768,7 +2754,7 @@ namespace SampleCode
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SampleCode_DeskTop";
-            this.Text = "Sample Code - CWS 2.0.20";
+            this.Text = "Sample Code - CWS 2.1.28";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
@@ -2873,7 +2859,6 @@ namespace SampleCode
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtAboutTheService;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.LinkLabel lnkSignOnWithToken;
         private System.Windows.Forms.LinkLabel lnkRetrieveServiceInformation;
         private System.Windows.Forms.LinkLabel lnkManageApplicationData;
